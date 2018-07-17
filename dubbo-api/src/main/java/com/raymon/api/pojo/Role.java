@@ -1,4 +1,4 @@
-package com.raymon.pojo;
+package com.raymon.api.pojo;
 
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;

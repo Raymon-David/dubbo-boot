@@ -1,6 +1,6 @@
-package com.raymon.bean;
+package com.raymon.api.bean;
 
-import com.raymon.bean.success.StatusBean;
+import com.raymon.api.bean.success.StatusBean;
 
 public class SuccessResult {
     private StatusBean status;

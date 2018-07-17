@@ -1,4 +1,4 @@
-package com.raymon.bean;
+package com.raymon.api.bean;
 
 public class ConstClass {
     // 程序代码控制的渠道类型－－微信

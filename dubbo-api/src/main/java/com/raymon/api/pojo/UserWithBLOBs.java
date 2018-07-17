@@ -1,4 +1,4 @@
-package com.raymon.pojo;
+package com.raymon.api.pojo;
 
 public class UserWithBLOBs extends DubboUser {
     private byte[] sslCipher;

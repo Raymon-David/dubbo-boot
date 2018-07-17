@@ -1,4 +1,4 @@
-package com.raymon.bean.error;
+package com.raymon.api.bean.error;
 
 public class ErrorInfo {
 	private String type;

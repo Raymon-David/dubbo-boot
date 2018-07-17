@@ -1,4 +1,4 @@
-package com.raymon.pojo;
+package com.raymon.api.pojo;
 
 import com.google.common.collect.Lists;
 

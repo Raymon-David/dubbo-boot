@@ -1,27 +1,37 @@
 package com.raymon.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.raymon.pojo.DubboUser;
-import com.raymon.pojo.UserKey;
-import com.raymon.service.UserService;
-import org.apache.log4j.Logger;
+import com.raymon.api.pojo.DubboUser;
+import com.raymon.api.pojo.UserKey;
+import com.raymon.api.service.UserService;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.*;
 
+//@RequestMapping(value ="/user")
 @RestController
-@RequestMapping(value ="/user")
 public class UserController {
 
-    private Logger logger = Logger.getLogger(UserController.class);
+    private static final Logger log =  LoggerFactory.getLogger(UserController.class);
 
-    @Reference(url = "dubbo://127.0.0.1:20880")
+    //@Reference(url = "dubbo://localhost:20880")
+    @Reference(version = "${demo.service.version}",
+            application = "${dubbo.application.id}",
+            url = "dubbo://localhost:20880")
     private UserService userService;
 
-    @RequestMapping(value ="/hello")
+    @RequestMapping(value ="/user/hello")
     public DubboUser hello() {
         UserKey user = new UserKey();
         user.setHost("localhost");
         return userService.getUser(user);
+    }
+
+    @RequestMapping(value ="/sayHello/{name}")
+    public String sayHello(@PathVariable("name") String name) {
+        log.debug("name" + name);
+        return userService.sayHello(name);
     }
 
 }

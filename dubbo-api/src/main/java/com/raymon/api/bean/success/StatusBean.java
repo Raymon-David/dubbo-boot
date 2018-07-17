@@ -1,4 +1,4 @@
-package com.raymon.bean.success;
+package com.raymon.api.bean.success;
 
 import java.math.BigDecimal;
 import java.util.Map;

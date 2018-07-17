@@ -1,12 +1,11 @@
 package com.raymon.dao;
 
 
-import com.raymon.pojo.DubboUser;
-import com.raymon.pojo.UserKey;
-import com.raymon.pojo.UserWithBLOBs;
-import org.mybatis.spring.annotation.MapperScan;
+import com.raymon.api.pojo.DubboUser;
+import com.raymon.api.pojo.UserKey;
+import com.raymon.api.pojo.UserWithBLOBs;
 
-@MapperScan("com.raymon.dao.UserMapper")
+//@MapperScan("com.raymon.dao.UserMapper")
 public interface UserMapper {
     int deleteByPrimaryKey(UserKey key);
 

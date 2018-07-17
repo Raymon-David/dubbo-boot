@@ -44,7 +44,7 @@
     <result column="password_lifetime" property="passwordLifetime" jdbcType="SMALLINT" />
     <result column="account_locked" property="accountLocked" jdbcType="CHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.raymon.pojo.UserKey" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.raymon.api.pojo.UserKey" extends="BaseResultMap" >
     <result column="ssl_cipher" property="sslCipher" jdbcType="LONGVARBINARY" />
     <result column="x509_issuer" property="x509Issuer" jdbcType="LONGVARBINARY" />
     <result column="x509_subject" property="x509Subject" jdbcType="LONGVARBINARY" />
@@ -62,7 +62,7 @@
   <sql id="Blob_Column_List" >
     ssl_cipher, x509_issuer, x509_subject, authentication_string
   </sql>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.raymon.pojo.UserKey" >
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.raymon.api.pojo.UserKey" >
     select 
     <include refid="Base_Column_List" />
     ,
@@ -71,12 +71,12 @@
     where Host = #{host,jdbcType=CHAR}
       and User = #{user,jdbcType=CHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.raymon.pojo.UserKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.raymon.api.pojo.UserKey" >
     delete from user
     where Host = #{host,jdbcType=CHAR}
       and User = #{user,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="com.raymon.pojo.UserKey" >
+  <insert id="insert" parameterType="com.raymon.api.pojo.UserKey" >
     insert into user (Host, User, Select_priv, 
       Insert_priv, Update_priv, Delete_priv, 
       Create_priv, Drop_priv, Reload_priv, 
@@ -110,7 +110,7 @@
       #{x509Issuer,jdbcType=LONGVARBINARY}, #{x509Subject,jdbcType=LONGVARBINARY}, #{authenticationString,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.raymon.pojo.UserKey" >
+  <insert id="insertSelective" parameterType="com.raymon.api.pojo.UserKey" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="host != null" >
@@ -387,7 +387,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.raymon.pojo.UserKey" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.raymon.api.pojo.UserKey" >
     update user
     <set >
       <if test="selectPriv != null" >
@@ -523,7 +523,7 @@
     where Host = #{host,jdbcType=CHAR}
       and User = #{user,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.raymon.pojo.UserKey" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.raymon.api.pojo.UserKey" >
     update user
     set Select_priv = #{selectPriv,jdbcType=CHAR},
       Insert_priv = #{insertPriv,jdbcType=CHAR},

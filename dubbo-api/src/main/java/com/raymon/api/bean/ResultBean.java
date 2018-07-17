@@ -1,4 +1,4 @@
-package com.raymon.bean;
+package com.raymon.api.bean;
 
 public class ResultBean {
     private SuccessResult result;

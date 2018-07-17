@@ -1,6 +1,6 @@
-package com.raymon.bean;
+package com.raymon.api.bean;
 
-import com.raymon.constent.StatusCode;
+import com.raymon.api.constent.StatusCode;
 
 import java.io.Serializable;
 
