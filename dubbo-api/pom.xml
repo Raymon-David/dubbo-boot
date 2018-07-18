@@ -3,14 +3,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.raymon</groupId>
+    <artifactId>dubbo-api</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
     <parent>
         <artifactId>dubbo-boot</artifactId>
         <groupId>com.raymon</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-
-    <artifactId>dubbo-api</artifactId>
+    <name>dubbo-api</name>
+    <description>Dubbo api for Spring Boot</description>
 
     <dependencies>
         <dependency>
@@ -27,7 +32,6 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
         </dependency>
-
     </dependencies>
 
 </project>
