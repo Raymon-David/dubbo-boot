@@ -1,14 +1,13 @@
-package com.raymon.service.impl;
+package com.raymon.provider.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.raymon.dao.UserMapper;
+import com.raymon.provider.dao.UserMapper;
 import com.raymon.api.pojo.DubboUser;
 import com.raymon.api.pojo.UserKey;
 import com.raymon.api.pojo.UserWithBLOBs;
 import com.raymon.api.service.UserService;
 import org.slf4j.*;
-
-import javax.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
 
 //@Service(interfaceClass = UserService.class)
 @Service(version = "${demo.service.version}",
@@ -20,7 +19,7 @@ public class UserServiceImpl implements UserService {
 
     private static final Logger log =  LoggerFactory.getLogger(UserServiceImpl.class);
 
-    @Resource
+    @Autowired
     private UserMapper userMapper;
 
     @Override

@@ -1,4 +1,4 @@
-package com.raymon.controller;
+package com.raymon.provider.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.raymon.api.pojo.DubboUser;
