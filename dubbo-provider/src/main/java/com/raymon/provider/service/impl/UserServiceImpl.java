@@ -1,15 +1,12 @@
 package com.raymon.provider.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.raymon.provider.dao.UserMapper;
-import com.raymon.api.pojo.DubboUser;
-import com.raymon.api.pojo.UserKey;
-import com.raymon.api.pojo.UserWithBLOBs;
+import com.raymon.api.pojo.User;
 import com.raymon.api.service.UserService;
+import com.raymon.provider.dao.UserMapper;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-//@Service(interfaceClass = UserService.class)
 @Service(version = "${demo.service.version}",
         application = "${dubbo.application.id}",
         protocol = "${dubbo.protocol.id}",
@@ -23,10 +20,9 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public DubboUser getUser(UserKey uk) {
-
-        UserWithBLOBs us = userMapper.selectByPrimaryKey(uk);
-        return us;
+    public User getUser(User record) {
+        User u = new User();
+        return u ;
     }
 
     @Override

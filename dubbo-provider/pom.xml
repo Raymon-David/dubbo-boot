@@ -33,12 +33,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- mybatis核心包 -->
-		<!--<dependency>-->
-			<!--<groupId>org.mybatis</groupId>-->
-			<!--<artifactId>mybatis</artifactId>-->
-			<!--<version>3.2.6</version>-->
-		<!--</dependency>-->
 		<!-- mybatis/spring包 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -88,6 +82,15 @@
 	</dependencies>
 
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
