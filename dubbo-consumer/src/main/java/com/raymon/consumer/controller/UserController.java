@@ -20,6 +20,11 @@ public class UserController {
             url = "dubbo://localhost:20880")
     private UserService userService;
 
+
+    /**
+     * 测试调用后台数据
+     *
+     * */
     @RequestMapping(value ="/user/hello")
     public User hello() {
         User user = new User();
@@ -27,12 +32,21 @@ public class UserController {
         return userService.getUser(user);
     }
 
+    /**
+     * 测试传参，调用service
+     *
+     * */
     @RequestMapping(value ="/sayHello/{name}")
     public String sayHello(@PathVariable("name") String name) {
         log.debug("name" + name);
         return userService.sayHello(name);
     }
 
+
+    /**
+     * 测试返回页面，用controller返回渲染HTML
+     *
+     * */
     @RequestMapping(value ="/user/login")
     public ModelAndView hello (ModelAndView mv) {
         mv.setViewName("login");
