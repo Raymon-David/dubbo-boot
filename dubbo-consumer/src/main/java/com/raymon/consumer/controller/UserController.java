@@ -49,7 +49,7 @@ public class UserController {
      * */
     @RequestMapping(value ="/user/login")
     public ModelAndView hello (ModelAndView mv) {
-        mv.setViewName("login");
+        mv.setViewName("logon");
         return mv;
     }
 
