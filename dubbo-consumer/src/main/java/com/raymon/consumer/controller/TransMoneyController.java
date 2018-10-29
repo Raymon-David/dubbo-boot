@@ -18,13 +18,13 @@ public class TransMoneyController {
          * 连接地址，各个厂商提供单独记住
          * jdbc:oracle:thin: @10.40.61.39:1521:iBiz localhost 是ip地址。
          */
-        String url = "jdbc:oracle:thin:@10.40.61.39:1521:iBiz" ;
+        String url = "jdbc:oracle:thin:@//10.40.61.30:1521/iBiz" ;
 
         /**
          * 用户 密码
          */
         String dbuser= "dcfl";
-        String password= "dcfl123";
+        String password= "dxb170s";
 
         Connection conn = null;//表示数据库连接
         Statement stmt= null;//表示数据库的更新
@@ -70,7 +70,7 @@ public class TransMoneyController {
                     "and a.ext_cnt = b.ext_cnt\n" +
                     "where a.status = '5'\n" +
                     "and a.ext_cnt = '0001'" +
-                    "and a.cntrt_no in('218EX305740') \n" +
+//                    "and a.cntrt_no in('218EX305740') \n" +
                     "group by a.cntrt_no\n" +
                     "having max(b.REPAY_CNT) != '900'" +
                     "");
