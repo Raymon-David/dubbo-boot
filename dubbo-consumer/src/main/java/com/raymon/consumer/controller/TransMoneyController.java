@@ -41,6 +41,7 @@ public class TransMoneyController {
             System.out.println("cntrt_no :" + cntrt_no);
             System.out.println("uarv_amt :" + uarv_amt);
             System.out.println("req_ymd :" + req_ymd);
+            System.out.println("i :" + i);
 
             int j = insertBdm1101t(conn, stmt, drive, url, dbuser, password, cntrt_no, uarv_amt, req_ymd);
             if(j != 0){
