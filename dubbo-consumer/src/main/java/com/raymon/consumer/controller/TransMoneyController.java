@@ -16,15 +16,16 @@ public class TransMoneyController implements Runnable {
      * 连接地址，各个厂商提供单独记住
      * jdbc:oracle:thin: @10.40.61.39:1521:iBiz localhost 是ip地址。
      */
-    static String url = "jdbc:oracle:thin:@10.40.61.39:1521:iBiz" ;
+    static String url = "jdbc:oracle:thin:@//10.40.61.30:1521/iBiz" ;
 
     /**
      * 用户 密码
      */
     static String dbuser= "dcfl";
-    static String password= "dcfl123";
+    static String password= "dxb170s";
 
-    static Connection conn = null;//表示数据库连接
+    //表示数据库连接
+    static Connection conn = null;
     static Statement stmt= null;//表示数据库的更新
     static ResultSet result = null;//查询数据库
 
