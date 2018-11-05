@@ -1,5 +1,4 @@
 package com.raymon.consumer.controller;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,52 +8,58 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TransMoneyController {
+public class TransMoneyController implements Runnable {
+
+    //驱动程序就是之前在 classpath中配置的jdbc的驱动程序jar中
+    static String drive = "oracle.jdbc.driver.OracleDriver" ;
+    /**
+     * 连接地址，各个厂商提供单独记住
+     * jdbc:oracle:thin: @10.40.61.39:1521:iBiz localhost 是ip地址。
+     */
+    static String url = "jdbc:oracle:thin:@10.40.61.39:1521:iBiz" ;
+
+    /**
+     * 用户 密码
+     */
+    static String dbuser= "dcfl";
+    static String password= "dcfl123";
+
+    static Connection conn = null;//表示数据库连接
+    static Statement stmt= null;//表示数据库的更新
+    static ResultSet result = null;//查询数据库
 
     public static void main(String args[]){
-        //驱动程序就是之前在 classpath中配置的jdbc的驱动程序jar中
-        String drive = "oracle.jdbc.driver.OracleDriver" ;
-        /**
-         * 连接地址，各个厂商提供单独记住
-         * jdbc:oracle:thin: @10.40.61.39:1521:iBiz localhost 是ip地址。
-         */
-        String url = "jdbc:oracle:thin:@//10.40.61.30:1521/iBiz" ;
-
-        /**
-         * 用户 密码
-         */
-        String dbuser= "dcfl";
-        String password= "dxb170s";
-
-        Connection conn = null;//表示数据库连接
-        Statement stmt= null;//表示数据库的更新
-        ResultSet result = null;//查询数据库
-
-        //selectTransMoney
-        List<Map<String, Object>> ll = selectTransMoney(conn, stmt, result, drive, url, dbuser, password);
-
-        for(int i = 0; i < ll.size(); i++){
-            String cntrt_no = ll.get(i).get("cntrt_no").toString();
-            String uarv_amt = ll.get(i).get("uarv_amt").toString();
-            String req_ymd = ll.get(i).get("req_ymd").toString();
-
-            System.out.println("cntrt_no :" + cntrt_no);
-            System.out.println("uarv_amt :" + uarv_amt);
-            System.out.println("req_ymd :" + req_ymd);
-            System.out.println("i :" + i);
-
-            int j = insertBdm1101t(conn, stmt, drive, url, dbuser, password, cntrt_no, uarv_amt, req_ymd);
-            if(j != 0){
-                System.out.println("'"+cntrt_no+"'转让金生成成功");
-            }
-        }
-
+        Thread t = new Thread(new TransMoneyController());
+        t.start();
     }
 
-    public static List<Map<String, Object>> selectTransMoney(Connection conn, Statement stmt, ResultSet result, String drive, String url, String dbuser, String password){
+    public void run() {
+        try {
+            //selectTransMoney
+            List<Map<String, Object>> ll = selectTransMoney();
 
+            for (int i = 0; i < ll.size(); i++) {
+                String cntrt_no = ll.get(i).get("cntrt_no").toString();
+                String uarv_amt = ll.get(i).get("uarv_amt").toString();
+                String req_ymd = ll.get(i).get("req_ymd").toString();
+
+                System.out.println("cntrt_no :" + cntrt_no);
+                System.out.println("uarv_amt :" + uarv_amt);
+                System.out.println("req_ymd :" + req_ymd);
+                System.out.println("i :" + i);
+
+                int j = insertBdm1101t(cntrt_no, uarv_amt, req_ymd);
+                if (j != 0) {
+                    System.out.println("'" + cntrt_no + "'转让金生成成功");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public static List<Map<String, Object>> selectTransMoney(){
         List li = new ArrayList();
-
         try{
             Class.forName(drive);//使用class类来加载程序
             conn = DriverManager.getConnection(url,dbuser,password); //连接数据库
@@ -97,7 +102,7 @@ public class TransMoneyController {
         return li;
     }
 
-    public static int insertBdm1101t(Connection conn, Statement stmt, String drive, String url, String dbuser, String password, String cntrt_no, String uarv_amt, String req_ymd){
+    public static int insertBdm1101t(String cntrt_no, String uarv_amt, String req_ymd){
 
         int result = 0;
         try{
