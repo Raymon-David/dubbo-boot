@@ -1,100 +1,80 @@
 package com.raymon.api.pojo;
 
-import java.util.List;
-import org.apache.commons.lang3.StringUtils;
-import com.google.common.collect.Lists;
+import lombok.Data;
 
-public class Role extends BaseDataModel {
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
-    private String roleCode; // 角色编码
-    private String roleName; // 角色名称
-    private String roleType; // 角色类型
+import java.util.Date;
 
+@Data
+public class Role {
+    public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Date getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+	public Integer getCreator() {
+		return creator;
+	}
+	public void setCreator(Integer creator) {
+		this.creator = creator;
+	}
+	public Date getUpdateTime() {
+		return updateTime;
+	}
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
+	}
+	public Integer getUpdateUser() {
+		return updateUser;
+	}
+	public void setUpdateUser(Integer updateUser) {
+		this.updateUser = updateUser;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getCreatorUser() {
+		return creatorUser;
+	}
+	public void setCreatorUser(String creatorUser) {
+		this.creatorUser = creatorUser;
+	}
+	public int getUserid() {
+		return userid;
+	}
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+	private Integer id;
 
-    private User user;		// 根据用户ID查询角色列表
+    private String name;
 
-    private List<Menu> menuList = Lists.newArrayList(); // 拥有角色列表
+    private Date createTime;
 
+    private Integer creator;
 
-    public Role() {
-        super();
-    }
-    public Role(User user) {
-        this();
-        this.user = user;
-    }
+    private Date updateTime;
 
-    public String getRoleCode() {
-        return roleCode;
-    }
+    private Integer updateUser;
 
-    public void setRoleCode(String roleCode) {
-        this.roleCode = roleCode;
-    }
-
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public String getRoleType() {
-        return roleType;
-    }
-    public void setRoleType(String roleType) {
-        this.roleType = roleType;
-    }
-    public List<Menu> getMenuList() {
-        return menuList;
-    }
-    public void setMenuList(List<Menu> menuList) {
-        this.menuList = menuList;
-    }
-
-    public String getMenuIds() {
-        return StringUtils.join(getMenuIdList(), ",");
-    }
-
-    public void setMenuIds(String menuIds) {
-        menuList = Lists.newArrayList();
-        if (menuIds != null){
-            String[] ids = StringUtils.split(menuIds, ",");
-            List<Long> list = Lists.newArrayList();
-            for(String id:ids){
-                list.add(Long.valueOf(id));
-            }
-            setMenuIdList(list);
-        }
-    }
-
-    public List<Long> getMenuIdList() {
-        List<Long> menuIdList = Lists.newArrayList();
-        for (Menu menu : menuList) {
-            menuIdList.add(menu.getId());
-        }
-        return menuIdList;
-    }
-
-    public void setMenuIdList(List<Long> menuIdList) {
-        menuList = Lists.newArrayList();
-        for (Long menuId : menuIdList) {
-            Menu menu = new Menu();
-            menu.setId(menuId);
-            menuList.add(menu);
-        }
-    }
+    private String description;
+    private String creatorUser;
+    /** 页面中使用*/
+    private int userid;
 
 }
