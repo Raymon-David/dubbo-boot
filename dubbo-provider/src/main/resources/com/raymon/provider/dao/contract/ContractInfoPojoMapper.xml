@@ -1,0 +1,2370 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.raymon.provider.dao.contract.ContractInfoPojoMapper" >
+  <resultMap id="BaseResultMap" type="com.raymon.api.pojo.contract.ContractInfoPojo" >
+    <result column="firm_cd" property="firmCd" jdbcType="VARCHAR" />
+    <result column="cntrt_no" property="cntrtNo" jdbcType="VARCHAR" />
+    <result column="ext_cnt" property="extCnt" jdbcType="VARCHAR" />
+    <result column="goods_cd" property="goodsCd" jdbcType="VARCHAR" />
+    <result column="cont_frm" property="contFrm" jdbcType="VARCHAR" />
+    <result column="acct_proc" property="acctProc" jdbcType="VARCHAR" />
+    <result column="cust_no" property="custNo" jdbcType="VARCHAR" />
+    <result column="req_cust_no" property="reqCustNo" jdbcType="VARCHAR" />
+    <result column="req_clerk" property="reqClerk" jdbcType="VARCHAR" />
+    <result column="juso_gb" property="jusoGb" jdbcType="VARCHAR" />
+    <result column="use_clerk" property="useClerk" jdbcType="VARCHAR" />
+    <result column="ls_rls_gb" property="lsRlsGb" jdbcType="VARCHAR" />
+    <result column="sale_cmp" property="saleCmp" jdbcType="VARCHAR" />
+    <result column="vndr_cust_no" property="vndrCustNo" jdbcType="VARCHAR" />
+    <result column="cont_dept" property="contDept" jdbcType="VARCHAR" />
+    <result column="mgt_dept" property="mgtDept" jdbcType="VARCHAR" />
+    <result column="biz_clerk" property="bizClerk" jdbcType="VARCHAR" />
+    <result column="mgt_clerk" property="mgtClerk" jdbcType="VARCHAR" />
+    <result column="agree_req_ymd" property="agreeReqYmd" jdbcType="VARCHAR" />
+    <result column="cont_empno" property="contEmpno" jdbcType="VARCHAR" />
+    <result column="product_yn" property="productYn" jdbcType="VARCHAR" />
+    <result column="auto_agree_gb" property="autoAgreeGb" jdbcType="VARCHAR" />
+    <result column="agree_ymd" property="agreeYmd" jdbcType="VARCHAR" />
+    <result column="ack_rst" property="ackRst" jdbcType="VARCHAR" />
+    <result column="judge_empno" property="judgeEmpno" jdbcType="VARCHAR" />
+    <result column="cost_set_date" property="costSetDate" jdbcType="VARCHAR" />
+    <result column="goods_set_date" property="goodsSetDate" jdbcType="VARCHAR" />
+    <result column="doc_set_date" property="docSetDate" jdbcType="VARCHAR" />
+    <result column="cont_set_ymd" property="contSetYmd" jdbcType="VARCHAR" />
+    <result column="cont_set_empno" property="contSetEmpno" jdbcType="VARCHAR" />
+    <result column="cont_vlt_ymd" property="contVltYmd" jdbcType="VARCHAR" />
+    <result column="mrtg_gb" property="mrtgGb" jdbcType="VARCHAR" />
+    <result column="cont_ymd" property="contYmd" jdbcType="VARCHAR" />
+    <result column="exe_ymd" property="exeYmd" jdbcType="VARCHAR" />
+    <result column="expr_ymd" property="exprYmd" jdbcType="VARCHAR" />
+    <result column="end_ymd" property="endYmd" jdbcType="VARCHAR" />
+    <result column="end_slip_no" property="endSlipNo" jdbcType="VARCHAR" />
+    <result column="end_gb" property="endGb" jdbcType="VARCHAR" />
+    <result column="acct_ymd" property="acctYmd" jdbcType="VARCHAR" />
+    <result column="slip_no" property="slipNo" jdbcType="VARCHAR" />
+    <result column="lmt_mgt_mth" property="lmtMgtMth" jdbcType="VARCHAR" />
+    <result column="dly_rat_cd" property="dlyRatCd" jdbcType="VARCHAR" />
+    <result column="dly_remit_dd" property="dlyRemitDd" jdbcType="NUMERIC" />
+    <result column="pay_cyl" property="payCyl" jdbcType="VARCHAR" />
+    <result column="nxt_pay_ymd" property="nxtPayYmd" jdbcType="VARCHAR" />
+    <result column="lst_dat_yn" property="lstDatYn" jdbcType="VARCHAR" />
+    <result column="repay_mth" property="repayMth" jdbcType="VARCHAR" />
+    <result column="first_ija_calc_mth" property="firstIjaCalcMth" jdbcType="VARCHAR" />
+    <result column="first_ija_amt" property="firstIjaAmt" jdbcType="NUMERIC" />
+    <result column="rcp_mth" property="rcpMth" jdbcType="VARCHAR" />
+    <result column="chrg_asst_yn" property="chrgAsstYn" jdbcType="VARCHAR" />
+    <result column="charge_no" property="chargeNo" jdbcType="VARCHAR" />
+    <result column="pre_def_gb" property="preDefGb" jdbcType="VARCHAR" />
+    <result column="req_snd_yn" property="reqSndYn" jdbcType="VARCHAR" />
+    <result column="equipt_cd" property="equiptCd" jdbcType="VARCHAR" />
+    <result column="assu_sttl_way" property="assuSttlWay" jdbcType="VARCHAR" />
+    <result column="assu_rat" property="assuRat" jdbcType="NUMERIC" />
+    <result column="assrn_amt" property="assrnAmt" jdbcType="NUMERIC" />
+    <result column="assu_setoff_way" property="assuSetoffWay" jdbcType="VARCHAR" />
+    <result column="ass_stff_rat" property="assStffRat" jdbcType="NUMERIC" />
+    <result column="assrn_setoff_amt" property="assrnSetoffAmt" jdbcType="NUMERIC" />
+    <result column="uarv_rtn_rat" property="uarvRtnRat" jdbcType="NUMERIC" />
+    <result column="uarv_pay_amt" property="uarvPayAmt" jdbcType="NUMERIC" />
+    <result column="imp_fee_rat" property="impFeeRat" jdbcType="NUMERIC" />
+    <result column="imp_fee" property="impFee" jdbcType="NUMERIC" />
+    <result column="pay_fee_rat" property="payFeeRat" jdbcType="NUMERIC" />
+    <result column="pay_fee_amt" property="payFeeAmt" jdbcType="NUMERIC" />
+    <result column="obtn_cst" property="obtnCst" jdbcType="NUMERIC" />
+    <result column="std_rat_cd" property="stdRatCd" jdbcType="VARCHAR" />
+    <result column="std_rat" property="stdRat" jdbcType="NUMERIC" />
+    <result column="ftp_cd" property="ftpCd" jdbcType="VARCHAR" />
+    <result column="ftp_rat" property="ftpRat" jdbcType="NUMERIC" />
+    <result column="ftp_adst_rat" property="ftpAdstRat" jdbcType="NUMERIC" />
+    <result column="sbz_day_bef" property="sbzDayBef" jdbcType="NUMERIC" />
+    <result column="trm_calc_way" property="trmCalcWay" jdbcType="VARCHAR" />
+    <result column="min_rat" property="minRat" jdbcType="NUMERIC" />
+    <result column="inhr_rat" property="inhrRat" jdbcType="NUMERIC" />
+    <result column="bfr_irr" property="bfrIrr" jdbcType="NUMERIC" />
+    <result column="aft_irr" property="aftIrr" jdbcType="NUMERIC" />
+    <result column="pr_pt_rat" property="prPtRat" jdbcType="NUMERIC" />
+    <result column="use_rat" property="useRat" jdbcType="NUMERIC" />
+    <result column="biz_ls_pt" property="bizLsPt" jdbcType="NUMERIC" />
+    <result column="earn_amt" property="earnAmt" jdbcType="NUMERIC" />
+    <result column="dsp_lss_prf" property="dspLssPrf" jdbcType="NUMERIC" />
+    <result column="prs_val" property="prsVal" jdbcType="NUMERIC" />
+    <result column="term1_mm" property="term1Mm" jdbcType="NUMERIC" />
+    <result column="term1_dd" property="term1Dd" jdbcType="NUMERIC" />
+    <result column="term1_ww" property="term1Ww" jdbcType="NUMERIC" />
+    <result column="t1_pay_rat" property="t1PayRat" jdbcType="NUMERIC" />
+    <result column="t1_pay_amt" property="t1PayAmt" jdbcType="NUMERIC" />
+    <result column="t1_spread" property="t1Spread" jdbcType="NUMERIC" />
+    <result column="t1_cap_int_amt" property="t1CapIntAmt" jdbcType="NUMERIC" />
+    <result column="t1_car_tax" property="t1CarTax" jdbcType="NUMERIC" />
+    <result column="t1_insu_amt" property="t1InsuAmt" jdbcType="NUMERIC" />
+    <result column="term2_mm" property="term2Mm" jdbcType="NUMERIC" />
+    <result column="t2_pay_rat" property="t2PayRat" jdbcType="NUMERIC" />
+    <result column="t2_pay_amt" property="t2PayAmt" jdbcType="NUMERIC" />
+    <result column="t2_spread" property="t2Spread" jdbcType="NUMERIC" />
+    <result column="t2_cap_int_amt" property="t2CapIntAmt" jdbcType="NUMERIC" />
+    <result column="t2_car_tax" property="t2CarTax" jdbcType="NUMERIC" />
+    <result column="t2_insu_amt" property="t2InsuAmt" jdbcType="NUMERIC" />
+    <result column="term3_mm" property="term3Mm" jdbcType="NUMERIC" />
+    <result column="t3_pay_rat" property="t3PayRat" jdbcType="NUMERIC" />
+    <result column="t3_pay_amt" property="t3PayAmt" jdbcType="NUMERIC" />
+    <result column="t3_spread" property="t3Spread" jdbcType="NUMERIC" />
+    <result column="t3_cap_int_amt" property="t3CapIntAmt" jdbcType="NUMERIC" />
+    <result column="t3_car_tax" property="t3CarTax" jdbcType="NUMERIC" />
+    <result column="t3_insu_amt" property="t3InsuAmt" jdbcType="NUMERIC" />
+    <result column="rls_trm" property="rlsTrm" jdbcType="NUMERIC" />
+    <result column="rls_spr_rat" property="rlsSprRat" jdbcType="NUMERIC" />
+    <result column="rlr_cpin_amt" property="rlrCpinAmt" jdbcType="NUMERIC" />
+    <result column="rls_car_tax" property="rlsCarTax" jdbcType="NUMERIC" />
+    <result column="rls_ins_rat" property="rlsInsRat" jdbcType="NUMERIC" />
+    <result column="sngl_unt_cd" property="snglUntCd" jdbcType="VARCHAR" />
+    <result column="sngl_prc_cd" property="snglPrcCd" jdbcType="VARCHAR" />
+    <result column="stm_amt" property="stmAmt" jdbcType="NUMERIC" />
+    <result column="biz_mth_cd" property="bizMthCd" jdbcType="VARCHAR" />
+    <result column="dlr_cust_no" property="dlrCustNo" jdbcType="VARCHAR" />
+    <result column="dlr_pay_mth" property="dlrPayMth" jdbcType="VARCHAR" />
+    <result column="dlr_inc_rat" property="dlrIncRat" jdbcType="NUMERIC" />
+    <result column="dlr_inc_amt" property="dlrIncAmt" jdbcType="NUMERIC" />
+    <result column="agnt_cust_no" property="agntCustNo" jdbcType="VARCHAR" />
+    <result column="agt_pay_mth" property="agtPayMth" jdbcType="VARCHAR" />
+    <result column="agt_incn_rat" property="agtIncnRat" jdbcType="NUMERIC" />
+    <result column="agt_incn_amt" property="agtIncnAmt" jdbcType="NUMERIC" />
+    <result column="deal_ymd" property="dealYmd" jdbcType="VARCHAR" />
+    <result column="deal_seq" property="dealSeq" jdbcType="VARCHAR" />
+    <result column="grp_yn" property="grpYn" jdbcType="VARCHAR" />
+    <result column="cls_obj_std" property="clsObjStd" jdbcType="VARCHAR" />
+    <result column="app_crr_rat" property="appCrrRat" jdbcType="NUMERIC" />
+    <result column="rv_incl_mth" property="rvInclMth" jdbcType="VARCHAR" />
+    <result column="sil_rat_app_cd" property="silRatAppCd" jdbcType="VARCHAR" />
+    <result column="fr_fix_mm" property="frFixMm" jdbcType="NUMERIC" />
+    <result column="liq_term" property="liqTerm" jdbcType="NUMERIC" />
+    <result column="add_rat" property="addRat" jdbcType="NUMERIC" />
+    <result column="prpy_yn" property="prpyYn" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="doc_no" property="docNo" jdbcType="VARCHAR" />
+    <result column="vir_accnt_no" property="virAccntNo" jdbcType="VARCHAR" />
+    <result column="settle_day" property="settleDay" jdbcType="VARCHAR" />
+    <result column="rslt_dept" property="rsltDept" jdbcType="VARCHAR" />
+    <result column="rslt_clerk" property="rsltClerk" jdbcType="VARCHAR" />
+    <result column="rslt_amt1" property="rsltAmt1" jdbcType="NUMERIC" />
+    <result column="rslt_ymd1" property="rsltYmd1" jdbcType="VARCHAR" />
+    <result column="rslt_amt2" property="rsltAmt2" jdbcType="NUMERIC" />
+    <result column="rslt_ymd2" property="rsltYmd2" jdbcType="VARCHAR" />
+    <result column="rslt_amt3" property="rsltAmt3" jdbcType="NUMERIC" />
+    <result column="rslt_ymd3" property="rsltYmd3" jdbcType="VARCHAR" />
+    <result column="remark1" property="remark1" jdbcType="VARCHAR" />
+    <result column="remark2" property="remark2" jdbcType="VARCHAR" />
+    <result column="send_mth" property="sendMth" jdbcType="VARCHAR" />
+    <result column="chg_mth" property="chgMth" jdbcType="VARCHAR" />
+    <result column="expd_amt" property="expdAmt" jdbcType="NUMERIC" />
+    <result column="cnv_amt" property="cnvAmt" jdbcType="NUMERIC" />
+    <result column="notarial_fee" property="notarialFee" jdbcType="NUMERIC" />
+    <result column="pnt_prc_msg" property="pntPrcMsg" jdbcType="VARCHAR" />
+    <result column="exe_gb" property="exeGb" jdbcType="VARCHAR" />
+    <result column="cntr_trm" property="cntrTrm" jdbcType="NUMERIC" />
+    <result column="cont_end_ymd" property="contEndYmd" jdbcType="VARCHAR" />
+    <result column="cls_ymd" property="clsYmd" jdbcType="VARCHAR" />
+    <result column="cls_why" property="clsWhy" jdbcType="VARCHAR" />
+    <result column="mngr_cust_no" property="mngrCustNo" jdbcType="VARCHAR" />
+    <result column="lst_exe_yn" property="lstExeYn" jdbcType="VARCHAR" />
+    <result column="rent_frm" property="rentFrm" jdbcType="VARCHAR" />
+    <result column="dc_dd_cnt" property="dcDdCnt" jdbcType="NUMERIC" />
+    <result column="sttl_mth" property="sttlMth" jdbcType="VARCHAR" />
+    <result column="buy_amt" property="buyAmt" jdbcType="NUMERIC" />
+    <result column="sale_amt1" property="saleAmt1" jdbcType="NUMERIC" />
+    <result column="fee_cust_no" property="feeCustNo" jdbcType="VARCHAR" />
+    <result column="notarial_pay_subj" property="notarialPaySubj" jdbcType="VARCHAR" />
+    <result column="stm_pay_subj" property="stmPaySubj" jdbcType="VARCHAR" />
+    <result column="re_fix_ymd" property="reFixYmd" jdbcType="VARCHAR" />
+    <result column="lst_mrepay_ymd" property="lstMrepayYmd" jdbcType="VARCHAR" />
+    <result column="exe_no" property="exeNo" jdbcType="VARCHAR" />
+    <result column="jdg_seq" property="jdgSeq" jdbcType="VARCHAR" />
+    <result column="car_tax_reqyn" property="carTaxReqyn" jdbcType="VARCHAR" />
+    <result column="thpy_insu_amt" property="thpyInsuAmt" jdbcType="NUMERIC" />
+    <result column="rtl_calc_mth" property="rtlCalcMth" jdbcType="VARCHAR" />
+    <result column="ins_empno" property="insEmpno" jdbcType="VARCHAR" />
+    <result column="ins_dt" property="insDt" jdbcType="DATE" />
+    <result column="lst_udt_empno" property="lstUdtEmpno" jdbcType="VARCHAR" />
+    <result column="lst_udt_dt" property="lstUdtDt" jdbcType="DATE" />
+    <result column="escape_fee" property="escapeFee" jdbcType="NUMERIC" />
+    <result column="fee_cd" property="feeCd" jdbcType="VARCHAR" />
+    <result column="debt_style" property="debtStyle" jdbcType="VARCHAR" />
+    <result column="uarv_rtn_rat2" property="uarvRtnRat2" jdbcType="NUMERIC" />
+    <result column="uarv_pay_amt2" property="uarvPayAmt2" jdbcType="NUMERIC" />
+    <result column="return_amt" property="returnAmt" jdbcType="NUMERIC" />
+    <result column="return_ymd" property="returnYmd" jdbcType="VARCHAR" />
+    <result column="per_pay_yn" property="perPayYn" jdbcType="VARCHAR" />
+    <result column="per_pay_ymd1" property="perPayYmd1" jdbcType="VARCHAR" />
+    <result column="per_pay_ymd2" property="perPayYmd2" jdbcType="VARCHAR" />
+    <result column="per_pay_ymd3" property="perPayYmd3" jdbcType="VARCHAR" />
+    <result column="per_pay_ymd4" property="perPayYmd4" jdbcType="VARCHAR" />
+    <result column="per_pay_amt" property="perPayAmt" jdbcType="NUMERIC" />
+    <result column="per_pay_amt1" property="perPayAmt1" jdbcType="NUMERIC" />
+    <result column="per_pay_amt2" property="perPayAmt2" jdbcType="NUMERIC" />
+    <result column="per_pay_amt3" property="perPayAmt3" jdbcType="NUMERIC" />
+    <result column="per_pay_amt4" property="perPayAmt4" jdbcType="NUMERIC" />
+    <result column="imp_fee1_cd" property="impFee1Cd" jdbcType="VARCHAR" />
+    <result column="imp_fee2_cd" property="impFee2Cd" jdbcType="VARCHAR" />
+    <result column="imp_fee3_cd" property="impFee3Cd" jdbcType="VARCHAR" />
+    <result column="imp_fee4_cd" property="impFee4Cd" jdbcType="VARCHAR" />
+    <result column="imp_fee_1" property="impFee1" jdbcType="NUMERIC" />
+    <result column="imp_fee_2" property="impFee2" jdbcType="NUMERIC" />
+    <result column="imp_fee_3" property="impFee3" jdbcType="NUMERIC" />
+    <result column="imp_fee_4" property="impFee4" jdbcType="NUMERIC" />
+    <result column="imp_fee_yn" property="impFeeYn" jdbcType="VARCHAR" />
+    <result column="agt_assrn_rat" property="agtAssrnRat" jdbcType="NUMERIC" />
+    <result column="agt_assrn_amt" property="agtAssrnAmt" jdbcType="NUMERIC" />
+    <result column="s_loan_mgt_no" property="sLoanMgtNo" jdbcType="VARCHAR" />
+    <result column="agnt_cntrt_no" property="agntCntrtNo" jdbcType="VARCHAR" />
+    <result column="agnt_ext_cnt" property="agntExtCnt" jdbcType="VARCHAR" />
+    <result column="ext_gb" property="extGb" jdbcType="VARCHAR" />
+    <result column="real_user" property="realUser" jdbcType="VARCHAR" />
+    <result column="rent_txt" property="rentTxt" jdbcType="VARCHAR" />
+    <result column="en_indust_form0" property="enIndustForm0" jdbcType="VARCHAR" />
+    <result column="en_indust_txt" property="enIndustTxt" jdbcType="VARCHAR" />
+    <result column="indust_addr" property="industAddr" jdbcType="VARCHAR" />
+    <result column="nolocal_yn" property="nolocalYn" jdbcType="VARCHAR" />
+    <result column="indust_month" property="industMonth" jdbcType="VARCHAR" />
+    <result column="indust_income" property="industIncome" jdbcType="NUMERIC" />
+    <result column="indust_account" property="industAccount" jdbcType="VARCHAR" />
+    <result column="idea" property="idea" jdbcType="VARCHAR" />
+    <result column="sys_level" property="sysLevel" jdbcType="VARCHAR" />
+    <result column="sys_result" property="sysResult" jdbcType="VARCHAR" />
+    <result column="final_status" property="finalStatus" jdbcType="VARCHAR" />
+    <result column="seq_no" property="seqNo" jdbcType="VARCHAR" />
+    <result column="apply_no" property="applyNo" jdbcType="VARCHAR" />
+    <result column="en_indust_form1" property="enIndustForm1" jdbcType="VARCHAR" />
+    <result column="en_indust_form2" property="enIndustForm2" jdbcType="VARCHAR" />
+    <result column="en_indust_form3" property="enIndustForm3" jdbcType="VARCHAR" />
+    <result column="en_indust_form4" property="enIndustForm4" jdbcType="VARCHAR" />
+    <result column="en_indust_form5" property="enIndustForm5" jdbcType="VARCHAR" />
+    <result column="en_indust_form6" property="enIndustForm6" jdbcType="VARCHAR" />
+    <result column="en_indust_form7" property="enIndustForm7" jdbcType="VARCHAR" />
+    <result column="std_rat_cd_add" property="stdRatCdAdd" jdbcType="VARCHAR" />
+    <result column="pay_cyl_type" property="payCylType" jdbcType="VARCHAR" />
+    <result column="rls_pay_rat" property="rlsPayRat" jdbcType="NUMERIC" />
+    <result column="rls_pay_amt" property="rlsPayAmt" jdbcType="NUMERIC" />
+    <result column="t1_app_rat" property="t1AppRat" jdbcType="NUMERIC" />
+    <result column="t2_app_rat" property="t2AppRat" jdbcType="NUMERIC" />
+    <result column="t3_app_rat" property="t3AppRat" jdbcType="NUMERIC" />
+    <result column="rls_app_rat" property="rlsAppRat" jdbcType="NUMERIC" />
+    <result column="agnt_cust_nm" property="agntCustNm" jdbcType="VARCHAR" />
+    <result column="finally_no" property="finallyNo" jdbcType="VARCHAR" />
+    <result column="calc_way" property="calcWay" jdbcType="VARCHAR" />
+    <result column="close_state" property="closeState" jdbcType="VARCHAR" />
+    <result column="synd_cust_no" property="syndCustNo" jdbcType="VARCHAR" />
+    <result column="synd_cust_cnt" property="syndCustCnt" jdbcType="VARCHAR" />
+    <result column="sort_no" property="sortNo" jdbcType="VARCHAR" />
+    <result column="imp_fee1_cd_rat" property="impFee1CdRat" jdbcType="NUMERIC" />
+    <result column="imp_fee2_cd_rat" property="impFee2CdRat" jdbcType="NUMERIC" />
+    <result column="cntrt_empno" property="cntrtEmpno" jdbcType="VARCHAR" />
+    <result column="cntrt_ins_dt" property="cntrtInsDt" jdbcType="DATE" />
+    <result column="obtn_cst_net_amt" property="obtnCstNetAmt" jdbcType="NUMERIC" />
+    <result column="obtn_cst_vat_amt" property="obtnCstVatAmt" jdbcType="NUMERIC" />
+    <result column="imp_fee_net_amt" property="impFeeNetAmt" jdbcType="NUMERIC" />
+    <result column="imp_fee_vat_amt" property="impFeeVatAmt" jdbcType="NUMERIC" />
+    <result column="pak_info" property="pakInfo" jdbcType="VARCHAR" />
+    <result column="insur_yn" property="insurYn" jdbcType="VARCHAR" />
+    <result column="insur_rat" property="insurRat" jdbcType="VARCHAR" />
+    <result column="insur_fee" property="insurFee" jdbcType="NUMERIC" />
+    <result column="cntrt_type" property="cntrtType" jdbcType="VARCHAR" />
+    <result column="sunshidanbao_yn" property="sunshidanbaoYn" jdbcType="VARCHAR" />
+    <result column="dc_cssh_installment_type" property="dcCsshInstallmentType" jdbcType="VARCHAR" />
+    <result column="dc_cssh_installment_rate" property="dcCsshInstallmentRate" jdbcType="NUMERIC" />
+    <result column="dc_cssh_installment_amt" property="dcCsshInstallmentAmt" jdbcType="NUMERIC" />
+    <result column="dc_cssh_installment_mm" property="dcCsshInstallmentMm" jdbcType="NUMERIC" />
+    <result column="installment_rat_cd" property="installmentRatCd" jdbcType="VARCHAR" />
+    <result column="installment_rat" property="installmentRat" jdbcType="NUMERIC" />
+    <result column="installment_rat_cd_add" property="installmentRatCdAdd" jdbcType="VARCHAR" />
+    <result column="trade_type" property="tradeType" jdbcType="VARCHAR" />
+    <result column="fix_rent_amt" property="fixRentAmt" jdbcType="NUMERIC" />
+    <result column="rent_assrn_amt" property="rentAssrnAmt" jdbcType="NUMERIC" />
+    <result column="sms_send_yn" property="smsSendYn" jdbcType="VARCHAR" />
+    <result column="dcs_no" property="dcsNo" jdbcType="VARCHAR" />
+    <result column="dc_cssh_amt_ze" property="dcCsshAmtZe" jdbcType="NUMERIC" />
+    <result column="pay_int_ze" property="payIntZe" jdbcType="NUMERIC" />
+    <result column="goods_cd_2" property="goodsCd2" jdbcType="VARCHAR" />
+    <result column="advances_yn" property="advancesYn" jdbcType="VARCHAR" />
+    <result column="advances_amt" property="advancesAmt" jdbcType="NUMERIC" />
+    <result column="dir_imp_fee_yn" property="dirImpFeeYn" jdbcType="VARCHAR" />
+    <result column="dir_imp_fee_sub_yn" property="dirImpFeeSubYn" jdbcType="VARCHAR" />
+    <result column="dir_imp_fee_rat" property="dirImpFeeRat" jdbcType="NUMERIC" />
+    <result column="dir_imp_fee_amt" property="dirImpFeeAmt" jdbcType="NUMERIC" />
+    <result column="cap_mon_yn" property="capMonYn" jdbcType="VARCHAR" />
+    <result column="cap_mon_amt" property="capMonAmt" jdbcType="NUMERIC" />
+    <result column="delay_mm" property="delayMm" jdbcType="NUMERIC" />
+    <result column="delay_rat" property="delayRat" jdbcType="NUMERIC" />
+    <result column="auth_ver_type" property="authVerType" jdbcType="VARCHAR" />
+    <result column="schedule_change_cd" property="scheduleChangeCd" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+      firm_cd, cntrt_no, ext_cnt,
+      goods_cd, cont_frm, acct_proc,
+      cust_no, req_cust_no, req_clerk,
+      juso_gb, use_clerk, ls_rls_gb,
+      sale_cmp, vndr_cust_no, cont_dept,
+      mgt_dept, biz_clerk, mgt_clerk,
+      agree_req_ymd, cont_empno, product_yn,
+      auto_agree_gb, agree_ymd, ack_rst,
+      judge_empno, cost_set_date, goods_set_date,
+      doc_set_date, cont_set_ymd, cont_set_empno,
+      cont_vlt_ymd, mrtg_gb, cont_ymd,
+      exe_ymd, expr_ymd, end_ymd,
+      end_slip_no, end_gb, acct_ymd,
+      slip_no, lmt_mgt_mth, dly_rat_cd,
+      dly_remit_dd, pay_cyl, nxt_pay_ymd,
+      lst_dat_yn, repay_mth, first_ija_calc_mth,
+      first_ija_amt, rcp_mth, chrg_asst_yn,
+      charge_no, pre_def_gb, req_snd_yn,
+      equipt_cd, assu_sttl_way, assu_rat,
+      assrn_amt, assu_setoff_way, ass_stff_rat,
+      assrn_setoff_amt, uarv_rtn_rat, uarv_pay_amt,
+      imp_fee_rat, imp_fee, pay_fee_rat,
+      pay_fee_amt, obtn_cst, std_rat_cd,
+      std_rat, ftp_cd, ftp_rat,
+      ftp_adst_rat, sbz_day_bef, trm_calc_way,
+      min_rat, inhr_rat, bfr_irr,
+      aft_irr, pr_pt_rat, use_rat,
+      biz_ls_pt, earn_amt, dsp_lss_prf,
+      prs_val, term1_mm, term1_dd,
+      term1_ww, t1_pay_rat, t1_pay_amt,
+      t1_spread, t1_cap_int_amt, t1_car_tax,
+      t1_insu_amt, term2_mm, t2_pay_rat,
+      t2_pay_amt, t2_spread, t2_cap_int_amt,
+      t2_car_tax, t2_insu_amt, term3_mm,
+      t3_pay_rat, t3_pay_amt, t3_spread,
+      t3_cap_int_amt, t3_car_tax, t3_insu_amt,
+      rls_trm, rls_spr_rat, rlr_cpin_amt,
+      rls_car_tax, rls_ins_rat, sngl_unt_cd,
+      sngl_prc_cd, stm_amt, biz_mth_cd,
+      dlr_cust_no, dlr_pay_mth, dlr_inc_rat,
+      dlr_inc_amt, agnt_cust_no, agt_pay_mth,
+      agt_incn_rat, agt_incn_amt, deal_ymd,
+      deal_seq, grp_yn, cls_obj_std,
+      app_crr_rat, rv_incl_mth, sil_rat_app_cd,
+      fr_fix_mm, liq_term, add_rat,
+      prpy_yn, status, doc_no,
+      vir_accnt_no, settle_day, rslt_dept,
+      rslt_clerk, rslt_amt1, rslt_ymd1,
+      rslt_amt2, rslt_ymd2, rslt_amt3,
+      rslt_ymd3, remark1, remark2,
+      send_mth, chg_mth, expd_amt,
+      cnv_amt, notarial_fee, pnt_prc_msg,
+      exe_gb, cntr_trm, cont_end_ymd,
+      cls_ymd, cls_why, mngr_cust_no,
+      lst_exe_yn, rent_frm, dc_dd_cnt,
+      sttl_mth, buy_amt, sale_amt1,
+      fee_cust_no, notarial_pay_subj, stm_pay_subj,
+      re_fix_ymd, lst_mrepay_ymd, exe_no,
+      jdg_seq, car_tax_reqyn, thpy_insu_amt,
+      rtl_calc_mth, ins_empno, ins_dt,
+      lst_udt_empno, lst_udt_dt, escape_fee,
+      fee_cd, debt_style, uarv_rtn_rat2,
+      uarv_pay_amt2, return_amt, return_ymd,
+      per_pay_yn, per_pay_ymd1, per_pay_ymd2,
+      per_pay_ymd3, per_pay_ymd4, per_pay_amt,
+      per_pay_amt1, per_pay_amt2, per_pay_amt3,
+      per_pay_amt4, imp_fee1_cd, imp_fee2_cd,
+      imp_fee3_cd, imp_fee4_cd, imp_fee_1,
+      imp_fee_2, imp_fee_3, imp_fee_4,
+      imp_fee_yn, agt_assrn_rat, agt_assrn_amt,
+      s_loan_mgt_no, agnt_cntrt_no, agnt_ext_cnt,
+      ext_gb, real_user, rent_txt,
+      en_indust_form0, en_indust_txt, indust_addr,
+      nolocal_yn, indust_month, indust_income,
+      indust_account, idea, sys_level,
+      sys_result, final_status, seq_no,
+      apply_no, en_indust_form1, en_indust_form2,
+      en_indust_form3, en_indust_form4, en_indust_form5,
+      en_indust_form6, en_indust_form7, std_rat_cd_add,
+      pay_cyl_type, rls_pay_rat, rls_pay_amt,
+      t1_app_rat, t2_app_rat, t3_app_rat,
+      rls_app_rat, agnt_cust_nm, finally_no,
+      calc_way, close_state, synd_cust_no,
+      synd_cust_cnt, sort_no, imp_fee1_cd_rat,
+      imp_fee2_cd_rat, cntrt_empno, cntrt_ins_dt,
+      obtn_cst_net_amt, obtn_cst_vat_amt, imp_fee_net_amt,
+      imp_fee_vat_amt, pak_info, insur_yn,
+      insur_rat, insur_fee, cntrt_type,
+      sunshidanbao_yn, dc_cssh_installment_type,
+      dc_cssh_installment_rate, dc_cssh_installment_amt,
+      dc_cssh_installment_mm, installment_rat_cd,
+      installment_rat, installment_rat_cd_add, trade_type,
+      fix_rent_amt, rent_assrn_amt, sms_send_yn,
+      dcs_no, dc_cssh_amt_ze, pay_int_ze,
+      goods_cd_2, advances_yn, advances_amt,
+      dir_imp_fee_yn, dir_imp_fee_sub_yn, dir_imp_fee_rat,
+      dir_imp_fee_amt, cap_mon_yn, cap_mon_amt,
+      delay_mm, delay_rat, auth_ver_type,
+      schedule_change_cd
+  </sql>
+  <select id="queryData" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from bex1000t
+    where cntrt_no = '217EX200189'
+  </select>
+  <select id="queryDataByContractNO" resultMap="BaseResultMap" parameterType="com.raymon.api.pojo.contract.ContractInfoPojo">
+    select
+    <include refid="Base_Column_List" />
+    from bex1000t
+    where cntrt_no = #{cntrtNo,jdbcType=VARCHAR}
+  </select>
+  <insert id="insert" parameterType="com.raymon.api.pojo.contract.ContractInfoPojo" >
+    insert into bex1000t (firm_cd, cntrt_no, ext_cnt, 
+      goods_cd, cont_frm, acct_proc, 
+      cust_no, req_cust_no, req_clerk, 
+      juso_gb, use_clerk, ls_rls_gb, 
+      sale_cmp, vndr_cust_no, cont_dept, 
+      mgt_dept, biz_clerk, mgt_clerk, 
+      agree_req_ymd, cont_empno, product_yn, 
+      auto_agree_gb, agree_ymd, ack_rst, 
+      judge_empno, cost_set_date, goods_set_date, 
+      doc_set_date, cont_set_ymd, cont_set_empno, 
+      cont_vlt_ymd, mrtg_gb, cont_ymd, 
+      exe_ymd, expr_ymd, end_ymd, 
+      end_slip_no, end_gb, acct_ymd, 
+      slip_no, lmt_mgt_mth, dly_rat_cd, 
+      dly_remit_dd, pay_cyl, nxt_pay_ymd, 
+      lst_dat_yn, repay_mth, first_ija_calc_mth, 
+      first_ija_amt, rcp_mth, chrg_asst_yn, 
+      charge_no, pre_def_gb, req_snd_yn, 
+      equipt_cd, assu_sttl_way, assu_rat, 
+      assrn_amt, assu_setoff_way, ass_stff_rat, 
+      assrn_setoff_amt, uarv_rtn_rat, uarv_pay_amt, 
+      imp_fee_rat, imp_fee, pay_fee_rat, 
+      pay_fee_amt, obtn_cst, std_rat_cd, 
+      std_rat, ftp_cd, ftp_rat, 
+      ftp_adst_rat, sbz_day_bef, trm_calc_way, 
+      min_rat, inhr_rat, bfr_irr, 
+      aft_irr, pr_pt_rat, use_rat, 
+      biz_ls_pt, earn_amt, dsp_lss_prf, 
+      prs_val, term1_mm, term1_dd, 
+      term1_ww, t1_pay_rat, t1_pay_amt, 
+      t1_spread, t1_cap_int_amt, t1_car_tax, 
+      t1_insu_amt, term2_mm, t2_pay_rat, 
+      t2_pay_amt, t2_spread, t2_cap_int_amt, 
+      t2_car_tax, t2_insu_amt, term3_mm, 
+      t3_pay_rat, t3_pay_amt, t3_spread, 
+      t3_cap_int_amt, t3_car_tax, t3_insu_amt, 
+      rls_trm, rls_spr_rat, rlr_cpin_amt, 
+      rls_car_tax, rls_ins_rat, sngl_unt_cd, 
+      sngl_prc_cd, stm_amt, biz_mth_cd, 
+      dlr_cust_no, dlr_pay_mth, dlr_inc_rat, 
+      dlr_inc_amt, agnt_cust_no, agt_pay_mth, 
+      agt_incn_rat, agt_incn_amt, deal_ymd, 
+      deal_seq, grp_yn, cls_obj_std, 
+      app_crr_rat, rv_incl_mth, sil_rat_app_cd, 
+      fr_fix_mm, liq_term, add_rat, 
+      prpy_yn, status, doc_no, 
+      vir_accnt_no, settle_day, rslt_dept, 
+      rslt_clerk, rslt_amt1, rslt_ymd1, 
+      rslt_amt2, rslt_ymd2, rslt_amt3, 
+      rslt_ymd3, remark1, remark2, 
+      send_mth, chg_mth, expd_amt, 
+      cnv_amt, notarial_fee, pnt_prc_msg, 
+      exe_gb, cntr_trm, cont_end_ymd, 
+      cls_ymd, cls_why, mngr_cust_no, 
+      lst_exe_yn, rent_frm, dc_dd_cnt, 
+      sttl_mth, buy_amt, sale_amt1, 
+      fee_cust_no, notarial_pay_subj, stm_pay_subj, 
+      re_fix_ymd, lst_mrepay_ymd, exe_no, 
+      jdg_seq, car_tax_reqyn, thpy_insu_amt, 
+      rtl_calc_mth, ins_empno, ins_dt, 
+      lst_udt_empno, lst_udt_dt, escape_fee, 
+      fee_cd, debt_style, uarv_rtn_rat2, 
+      uarv_pay_amt2, return_amt, return_ymd, 
+      per_pay_yn, per_pay_ymd1, per_pay_ymd2, 
+      per_pay_ymd3, per_pay_ymd4, per_pay_amt, 
+      per_pay_amt1, per_pay_amt2, per_pay_amt3, 
+      per_pay_amt4, imp_fee1_cd, imp_fee2_cd, 
+      imp_fee3_cd, imp_fee4_cd, imp_fee_1, 
+      imp_fee_2, imp_fee_3, imp_fee_4, 
+      imp_fee_yn, agt_assrn_rat, agt_assrn_amt, 
+      s_loan_mgt_no, agnt_cntrt_no, agnt_ext_cnt, 
+      ext_gb, real_user, rent_txt, 
+      en_indust_form0, en_indust_txt, indust_addr, 
+      nolocal_yn, indust_month, indust_income, 
+      indust_account, idea, sys_level, 
+      sys_result, final_status, seq_no, 
+      apply_no, en_indust_form1, en_indust_form2, 
+      en_indust_form3, en_indust_form4, en_indust_form5, 
+      en_indust_form6, en_indust_form7, std_rat_cd_add, 
+      pay_cyl_type, rls_pay_rat, rls_pay_amt, 
+      t1_app_rat, t2_app_rat, t3_app_rat, 
+      rls_app_rat, agnt_cust_nm, finally_no, 
+      calc_way, close_state, synd_cust_no, 
+      synd_cust_cnt, sort_no, imp_fee1_cd_rat, 
+      imp_fee2_cd_rat, cntrt_empno, cntrt_ins_dt, 
+      obtn_cst_net_amt, obtn_cst_vat_amt, imp_fee_net_amt, 
+      imp_fee_vat_amt, pak_info, insur_yn, 
+      insur_rat, insur_fee, cntrt_type, 
+      sunshidanbao_yn, dc_cssh_installment_type, 
+      dc_cssh_installment_rate, dc_cssh_installment_amt, 
+      dc_cssh_installment_mm, installment_rat_cd, 
+      installment_rat, installment_rat_cd_add, trade_type, 
+      fix_rent_amt, rent_assrn_amt, sms_send_yn, 
+      dcs_no, dc_cssh_amt_ze, pay_int_ze, 
+      goods_cd_2, advances_yn, advances_amt, 
+      dir_imp_fee_yn, dir_imp_fee_sub_yn, dir_imp_fee_rat, 
+      dir_imp_fee_amt, cap_mon_yn, cap_mon_amt, 
+      delay_mm, delay_rat, auth_ver_type, 
+      schedule_change_cd)
+    values (#{firmCd,jdbcType=VARCHAR}, #{cntrtNo,jdbcType=VARCHAR}, #{extCnt,jdbcType=VARCHAR}, 
+      #{goodsCd,jdbcType=VARCHAR}, #{contFrm,jdbcType=VARCHAR}, #{acctProc,jdbcType=VARCHAR}, 
+      #{custNo,jdbcType=VARCHAR}, #{reqCustNo,jdbcType=VARCHAR}, #{reqClerk,jdbcType=VARCHAR}, 
+      #{jusoGb,jdbcType=VARCHAR}, #{useClerk,jdbcType=VARCHAR}, #{lsRlsGb,jdbcType=VARCHAR}, 
+      #{saleCmp,jdbcType=VARCHAR}, #{vndrCustNo,jdbcType=VARCHAR}, #{contDept,jdbcType=VARCHAR}, 
+      #{mgtDept,jdbcType=VARCHAR}, #{bizClerk,jdbcType=VARCHAR}, #{mgtClerk,jdbcType=VARCHAR}, 
+      #{agreeReqYmd,jdbcType=VARCHAR}, #{contEmpno,jdbcType=VARCHAR}, #{productYn,jdbcType=VARCHAR}, 
+      #{autoAgreeGb,jdbcType=VARCHAR}, #{agreeYmd,jdbcType=VARCHAR}, #{ackRst,jdbcType=VARCHAR}, 
+      #{judgeEmpno,jdbcType=VARCHAR}, #{costSetDate,jdbcType=VARCHAR}, #{goodsSetDate,jdbcType=VARCHAR}, 
+      #{docSetDate,jdbcType=VARCHAR}, #{contSetYmd,jdbcType=VARCHAR}, #{contSetEmpno,jdbcType=VARCHAR}, 
+      #{contVltYmd,jdbcType=VARCHAR}, #{mrtgGb,jdbcType=VARCHAR}, #{contYmd,jdbcType=VARCHAR}, 
+      #{exeYmd,jdbcType=VARCHAR}, #{exprYmd,jdbcType=VARCHAR}, #{endYmd,jdbcType=VARCHAR}, 
+      #{endSlipNo,jdbcType=VARCHAR}, #{endGb,jdbcType=VARCHAR}, #{acctYmd,jdbcType=VARCHAR}, 
+      #{slipNo,jdbcType=VARCHAR}, #{lmtMgtMth,jdbcType=VARCHAR}, #{dlyRatCd,jdbcType=VARCHAR}, 
+      #{dlyRemitDd,jdbcType=NUMERIC}, #{payCyl,jdbcType=VARCHAR}, #{nxtPayYmd,jdbcType=VARCHAR}, 
+      #{lstDatYn,jdbcType=VARCHAR}, #{repayMth,jdbcType=VARCHAR}, #{firstIjaCalcMth,jdbcType=VARCHAR}, 
+      #{firstIjaAmt,jdbcType=NUMERIC}, #{rcpMth,jdbcType=VARCHAR}, #{chrgAsstYn,jdbcType=VARCHAR}, 
+      #{chargeNo,jdbcType=VARCHAR}, #{preDefGb,jdbcType=VARCHAR}, #{reqSndYn,jdbcType=VARCHAR}, 
+      #{equiptCd,jdbcType=VARCHAR}, #{assuSttlWay,jdbcType=VARCHAR}, #{assuRat,jdbcType=NUMERIC}, 
+      #{assrnAmt,jdbcType=NUMERIC}, #{assuSetoffWay,jdbcType=VARCHAR}, #{assStffRat,jdbcType=NUMERIC}, 
+      #{assrnSetoffAmt,jdbcType=NUMERIC}, #{uarvRtnRat,jdbcType=NUMERIC}, #{uarvPayAmt,jdbcType=NUMERIC}, 
+      #{impFeeRat,jdbcType=NUMERIC}, #{impFee,jdbcType=NUMERIC}, #{payFeeRat,jdbcType=NUMERIC}, 
+      #{payFeeAmt,jdbcType=NUMERIC}, #{obtnCst,jdbcType=NUMERIC}, #{stdRatCd,jdbcType=VARCHAR}, 
+      #{stdRat,jdbcType=NUMERIC}, #{ftpCd,jdbcType=VARCHAR}, #{ftpRat,jdbcType=NUMERIC}, 
+      #{ftpAdstRat,jdbcType=NUMERIC}, #{sbzDayBef,jdbcType=NUMERIC}, #{trmCalcWay,jdbcType=VARCHAR}, 
+      #{minRat,jdbcType=NUMERIC}, #{inhrRat,jdbcType=NUMERIC}, #{bfrIrr,jdbcType=NUMERIC}, 
+      #{aftIrr,jdbcType=NUMERIC}, #{prPtRat,jdbcType=NUMERIC}, #{useRat,jdbcType=NUMERIC}, 
+      #{bizLsPt,jdbcType=NUMERIC}, #{earnAmt,jdbcType=NUMERIC}, #{dspLssPrf,jdbcType=NUMERIC}, 
+      #{prsVal,jdbcType=NUMERIC}, #{term1Mm,jdbcType=NUMERIC}, #{term1Dd,jdbcType=NUMERIC}, 
+      #{term1Ww,jdbcType=NUMERIC}, #{t1PayRat,jdbcType=NUMERIC}, #{t1PayAmt,jdbcType=NUMERIC}, 
+      #{t1Spread,jdbcType=NUMERIC}, #{t1CapIntAmt,jdbcType=NUMERIC}, #{t1CarTax,jdbcType=NUMERIC}, 
+      #{t1InsuAmt,jdbcType=NUMERIC}, #{term2Mm,jdbcType=NUMERIC}, #{t2PayRat,jdbcType=NUMERIC}, 
+      #{t2PayAmt,jdbcType=NUMERIC}, #{t2Spread,jdbcType=NUMERIC}, #{t2CapIntAmt,jdbcType=NUMERIC}, 
+      #{t2CarTax,jdbcType=NUMERIC}, #{t2InsuAmt,jdbcType=NUMERIC}, #{term3Mm,jdbcType=NUMERIC}, 
+      #{t3PayRat,jdbcType=NUMERIC}, #{t3PayAmt,jdbcType=NUMERIC}, #{t3Spread,jdbcType=NUMERIC}, 
+      #{t3CapIntAmt,jdbcType=NUMERIC}, #{t3CarTax,jdbcType=NUMERIC}, #{t3InsuAmt,jdbcType=NUMERIC}, 
+      #{rlsTrm,jdbcType=NUMERIC}, #{rlsSprRat,jdbcType=NUMERIC}, #{rlrCpinAmt,jdbcType=NUMERIC}, 
+      #{rlsCarTax,jdbcType=NUMERIC}, #{rlsInsRat,jdbcType=NUMERIC}, #{snglUntCd,jdbcType=VARCHAR}, 
+      #{snglPrcCd,jdbcType=VARCHAR}, #{stmAmt,jdbcType=NUMERIC}, #{bizMthCd,jdbcType=VARCHAR}, 
+      #{dlrCustNo,jdbcType=VARCHAR}, #{dlrPayMth,jdbcType=VARCHAR}, #{dlrIncRat,jdbcType=NUMERIC}, 
+      #{dlrIncAmt,jdbcType=NUMERIC}, #{agntCustNo,jdbcType=VARCHAR}, #{agtPayMth,jdbcType=VARCHAR}, 
+      #{agtIncnRat,jdbcType=NUMERIC}, #{agtIncnAmt,jdbcType=NUMERIC}, #{dealYmd,jdbcType=VARCHAR}, 
+      #{dealSeq,jdbcType=VARCHAR}, #{grpYn,jdbcType=VARCHAR}, #{clsObjStd,jdbcType=VARCHAR}, 
+      #{appCrrRat,jdbcType=NUMERIC}, #{rvInclMth,jdbcType=VARCHAR}, #{silRatAppCd,jdbcType=VARCHAR}, 
+      #{frFixMm,jdbcType=NUMERIC}, #{liqTerm,jdbcType=NUMERIC}, #{addRat,jdbcType=NUMERIC}, 
+      #{prpyYn,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{docNo,jdbcType=VARCHAR}, 
+      #{virAccntNo,jdbcType=VARCHAR}, #{settleDay,jdbcType=VARCHAR}, #{rsltDept,jdbcType=VARCHAR}, 
+      #{rsltClerk,jdbcType=VARCHAR}, #{rsltAmt1,jdbcType=NUMERIC}, #{rsltYmd1,jdbcType=VARCHAR}, 
+      #{rsltAmt2,jdbcType=NUMERIC}, #{rsltYmd2,jdbcType=VARCHAR}, #{rsltAmt3,jdbcType=NUMERIC}, 
+      #{rsltYmd3,jdbcType=VARCHAR}, #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}, 
+      #{sendMth,jdbcType=VARCHAR}, #{chgMth,jdbcType=VARCHAR}, #{expdAmt,jdbcType=NUMERIC}, 
+      #{cnvAmt,jdbcType=NUMERIC}, #{notarialFee,jdbcType=NUMERIC}, #{pntPrcMsg,jdbcType=VARCHAR}, 
+      #{exeGb,jdbcType=VARCHAR}, #{cntrTrm,jdbcType=NUMERIC}, #{contEndYmd,jdbcType=VARCHAR}, 
+      #{clsYmd,jdbcType=VARCHAR}, #{clsWhy,jdbcType=VARCHAR}, #{mngrCustNo,jdbcType=VARCHAR}, 
+      #{lstExeYn,jdbcType=VARCHAR}, #{rentFrm,jdbcType=VARCHAR}, #{dcDdCnt,jdbcType=NUMERIC}, 
+      #{sttlMth,jdbcType=VARCHAR}, #{buyAmt,jdbcType=NUMERIC}, #{saleAmt1,jdbcType=NUMERIC}, 
+      #{feeCustNo,jdbcType=VARCHAR}, #{notarialPaySubj,jdbcType=VARCHAR}, #{stmPaySubj,jdbcType=VARCHAR}, 
+      #{reFixYmd,jdbcType=VARCHAR}, #{lstMrepayYmd,jdbcType=VARCHAR}, #{exeNo,jdbcType=VARCHAR}, 
+      #{jdgSeq,jdbcType=VARCHAR}, #{carTaxReqyn,jdbcType=VARCHAR}, #{thpyInsuAmt,jdbcType=NUMERIC}, 
+      #{rtlCalcMth,jdbcType=VARCHAR}, #{insEmpno,jdbcType=VARCHAR}, #{insDt,jdbcType=DATE}, 
+      #{lstUdtEmpno,jdbcType=VARCHAR}, #{lstUdtDt,jdbcType=DATE}, #{escapeFee,jdbcType=NUMERIC}, 
+      #{feeCd,jdbcType=VARCHAR}, #{debtStyle,jdbcType=VARCHAR}, #{uarvRtnRat2,jdbcType=NUMERIC}, 
+      #{uarvPayAmt2,jdbcType=NUMERIC}, #{returnAmt,jdbcType=NUMERIC}, #{returnYmd,jdbcType=VARCHAR}, 
+      #{perPayYn,jdbcType=VARCHAR}, #{perPayYmd1,jdbcType=VARCHAR}, #{perPayYmd2,jdbcType=VARCHAR}, 
+      #{perPayYmd3,jdbcType=VARCHAR}, #{perPayYmd4,jdbcType=VARCHAR}, #{perPayAmt,jdbcType=NUMERIC}, 
+      #{perPayAmt1,jdbcType=NUMERIC}, #{perPayAmt2,jdbcType=NUMERIC}, #{perPayAmt3,jdbcType=NUMERIC}, 
+      #{perPayAmt4,jdbcType=NUMERIC}, #{impFee1Cd,jdbcType=VARCHAR}, #{impFee2Cd,jdbcType=VARCHAR}, 
+      #{impFee3Cd,jdbcType=VARCHAR}, #{impFee4Cd,jdbcType=VARCHAR}, #{impFee1,jdbcType=NUMERIC}, 
+      #{impFee2,jdbcType=NUMERIC}, #{impFee3,jdbcType=NUMERIC}, #{impFee4,jdbcType=NUMERIC}, 
+      #{impFeeYn,jdbcType=VARCHAR}, #{agtAssrnRat,jdbcType=NUMERIC}, #{agtAssrnAmt,jdbcType=NUMERIC}, 
+      #{sLoanMgtNo,jdbcType=VARCHAR}, #{agntCntrtNo,jdbcType=VARCHAR}, #{agntExtCnt,jdbcType=VARCHAR}, 
+      #{extGb,jdbcType=VARCHAR}, #{realUser,jdbcType=VARCHAR}, #{rentTxt,jdbcType=VARCHAR}, 
+      #{enIndustForm0,jdbcType=VARCHAR}, #{enIndustTxt,jdbcType=VARCHAR}, #{industAddr,jdbcType=VARCHAR}, 
+      #{nolocalYn,jdbcType=VARCHAR}, #{industMonth,jdbcType=VARCHAR}, #{industIncome,jdbcType=NUMERIC}, 
+      #{industAccount,jdbcType=VARCHAR}, #{idea,jdbcType=VARCHAR}, #{sysLevel,jdbcType=VARCHAR}, 
+      #{sysResult,jdbcType=VARCHAR}, #{finalStatus,jdbcType=VARCHAR}, #{seqNo,jdbcType=VARCHAR}, 
+      #{applyNo,jdbcType=VARCHAR}, #{enIndustForm1,jdbcType=VARCHAR}, #{enIndustForm2,jdbcType=VARCHAR}, 
+      #{enIndustForm3,jdbcType=VARCHAR}, #{enIndustForm4,jdbcType=VARCHAR}, #{enIndustForm5,jdbcType=VARCHAR}, 
+      #{enIndustForm6,jdbcType=VARCHAR}, #{enIndustForm7,jdbcType=VARCHAR}, #{stdRatCdAdd,jdbcType=VARCHAR}, 
+      #{payCylType,jdbcType=VARCHAR}, #{rlsPayRat,jdbcType=NUMERIC}, #{rlsPayAmt,jdbcType=NUMERIC}, 
+      #{t1AppRat,jdbcType=NUMERIC}, #{t2AppRat,jdbcType=NUMERIC}, #{t3AppRat,jdbcType=NUMERIC}, 
+      #{rlsAppRat,jdbcType=NUMERIC}, #{agntCustNm,jdbcType=VARCHAR}, #{finallyNo,jdbcType=VARCHAR}, 
+      #{calcWay,jdbcType=VARCHAR}, #{closeState,jdbcType=VARCHAR}, #{syndCustNo,jdbcType=VARCHAR}, 
+      #{syndCustCnt,jdbcType=VARCHAR}, #{sortNo,jdbcType=VARCHAR}, #{impFee1CdRat,jdbcType=NUMERIC}, 
+      #{impFee2CdRat,jdbcType=NUMERIC}, #{cntrtEmpno,jdbcType=VARCHAR}, #{cntrtInsDt,jdbcType=DATE}, 
+      #{obtnCstNetAmt,jdbcType=NUMERIC}, #{obtnCstVatAmt,jdbcType=NUMERIC}, #{impFeeNetAmt,jdbcType=NUMERIC}, 
+      #{impFeeVatAmt,jdbcType=NUMERIC}, #{pakInfo,jdbcType=VARCHAR}, #{insurYn,jdbcType=VARCHAR}, 
+      #{insurRat,jdbcType=VARCHAR}, #{insurFee,jdbcType=NUMERIC}, #{cntrtType,jdbcType=VARCHAR}, 
+      #{sunshidanbaoYn,jdbcType=VARCHAR}, #{dcCsshInstallmentType,jdbcType=VARCHAR}, 
+      #{dcCsshInstallmentRate,jdbcType=NUMERIC}, #{dcCsshInstallmentAmt,jdbcType=NUMERIC}, 
+      #{dcCsshInstallmentMm,jdbcType=NUMERIC}, #{installmentRatCd,jdbcType=VARCHAR}, 
+      #{installmentRat,jdbcType=NUMERIC}, #{installmentRatCdAdd,jdbcType=VARCHAR}, #{tradeType,jdbcType=VARCHAR}, 
+      #{fixRentAmt,jdbcType=NUMERIC}, #{rentAssrnAmt,jdbcType=NUMERIC}, #{smsSendYn,jdbcType=VARCHAR}, 
+      #{dcsNo,jdbcType=VARCHAR}, #{dcCsshAmtZe,jdbcType=NUMERIC}, #{payIntZe,jdbcType=NUMERIC}, 
+      #{goodsCd2,jdbcType=VARCHAR}, #{advancesYn,jdbcType=VARCHAR}, #{advancesAmt,jdbcType=NUMERIC}, 
+      #{dirImpFeeYn,jdbcType=VARCHAR}, #{dirImpFeeSubYn,jdbcType=VARCHAR}, #{dirImpFeeRat,jdbcType=NUMERIC}, 
+      #{dirImpFeeAmt,jdbcType=NUMERIC}, #{capMonYn,jdbcType=VARCHAR}, #{capMonAmt,jdbcType=NUMERIC}, 
+      #{delayMm,jdbcType=NUMERIC}, #{delayRat,jdbcType=NUMERIC}, #{authVerType,jdbcType=VARCHAR}, 
+      #{scheduleChangeCd,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.raymon.api.pojo.contract.ContractInfoPojo" >
+    insert into bex1000t
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="firmCd != null" >
+        firm_cd,
+      </if>
+      <if test="cntrtNo != null" >
+        cntrt_no,
+      </if>
+      <if test="extCnt != null" >
+        ext_cnt,
+      </if>
+      <if test="goodsCd != null" >
+        goods_cd,
+      </if>
+      <if test="contFrm != null" >
+        cont_frm,
+      </if>
+      <if test="acctProc != null" >
+        acct_proc,
+      </if>
+      <if test="custNo != null" >
+        cust_no,
+      </if>
+      <if test="reqCustNo != null" >
+        req_cust_no,
+      </if>
+      <if test="reqClerk != null" >
+        req_clerk,
+      </if>
+      <if test="jusoGb != null" >
+        juso_gb,
+      </if>
+      <if test="useClerk != null" >
+        use_clerk,
+      </if>
+      <if test="lsRlsGb != null" >
+        ls_rls_gb,
+      </if>
+      <if test="saleCmp != null" >
+        sale_cmp,
+      </if>
+      <if test="vndrCustNo != null" >
+        vndr_cust_no,
+      </if>
+      <if test="contDept != null" >
+        cont_dept,
+      </if>
+      <if test="mgtDept != null" >
+        mgt_dept,
+      </if>
+      <if test="bizClerk != null" >
+        biz_clerk,
+      </if>
+      <if test="mgtClerk != null" >
+        mgt_clerk,
+      </if>
+      <if test="agreeReqYmd != null" >
+        agree_req_ymd,
+      </if>
+      <if test="contEmpno != null" >
+        cont_empno,
+      </if>
+      <if test="productYn != null" >
+        product_yn,
+      </if>
+      <if test="autoAgreeGb != null" >
+        auto_agree_gb,
+      </if>
+      <if test="agreeYmd != null" >
+        agree_ymd,
+      </if>
+      <if test="ackRst != null" >
+        ack_rst,
+      </if>
+      <if test="judgeEmpno != null" >
+        judge_empno,
+      </if>
+      <if test="costSetDate != null" >
+        cost_set_date,
+      </if>
+      <if test="goodsSetDate != null" >
+        goods_set_date,
+      </if>
+      <if test="docSetDate != null" >
+        doc_set_date,
+      </if>
+      <if test="contSetYmd != null" >
+        cont_set_ymd,
+      </if>
+      <if test="contSetEmpno != null" >
+        cont_set_empno,
+      </if>
+      <if test="contVltYmd != null" >
+        cont_vlt_ymd,
+      </if>
+      <if test="mrtgGb != null" >
+        mrtg_gb,
+      </if>
+      <if test="contYmd != null" >
+        cont_ymd,
+      </if>
+      <if test="exeYmd != null" >
+        exe_ymd,
+      </if>
+      <if test="exprYmd != null" >
+        expr_ymd,
+      </if>
+      <if test="endYmd != null" >
+        end_ymd,
+      </if>
+      <if test="endSlipNo != null" >
+        end_slip_no,
+      </if>
+      <if test="endGb != null" >
+        end_gb,
+      </if>
+      <if test="acctYmd != null" >
+        acct_ymd,
+      </if>
+      <if test="slipNo != null" >
+        slip_no,
+      </if>
+      <if test="lmtMgtMth != null" >
+        lmt_mgt_mth,
+      </if>
+      <if test="dlyRatCd != null" >
+        dly_rat_cd,
+      </if>
+      <if test="dlyRemitDd != null" >
+        dly_remit_dd,
+      </if>
+      <if test="payCyl != null" >
+        pay_cyl,
+      </if>
+      <if test="nxtPayYmd != null" >
+        nxt_pay_ymd,
+      </if>
+      <if test="lstDatYn != null" >
+        lst_dat_yn,
+      </if>
+      <if test="repayMth != null" >
+        repay_mth,
+      </if>
+      <if test="firstIjaCalcMth != null" >
+        first_ija_calc_mth,
+      </if>
+      <if test="firstIjaAmt != null" >
+        first_ija_amt,
+      </if>
+      <if test="rcpMth != null" >
+        rcp_mth,
+      </if>
+      <if test="chrgAsstYn != null" >
+        chrg_asst_yn,
+      </if>
+      <if test="chargeNo != null" >
+        charge_no,
+      </if>
+      <if test="preDefGb != null" >
+        pre_def_gb,
+      </if>
+      <if test="reqSndYn != null" >
+        req_snd_yn,
+      </if>
+      <if test="equiptCd != null" >
+        equipt_cd,
+      </if>
+      <if test="assuSttlWay != null" >
+        assu_sttl_way,
+      </if>
+      <if test="assuRat != null" >
+        assu_rat,
+      </if>
+      <if test="assrnAmt != null" >
+        assrn_amt,
+      </if>
+      <if test="assuSetoffWay != null" >
+        assu_setoff_way,
+      </if>
+      <if test="assStffRat != null" >
+        ass_stff_rat,
+      </if>
+      <if test="assrnSetoffAmt != null" >
+        assrn_setoff_amt,
+      </if>
+      <if test="uarvRtnRat != null" >
+        uarv_rtn_rat,
+      </if>
+      <if test="uarvPayAmt != null" >
+        uarv_pay_amt,
+      </if>
+      <if test="impFeeRat != null" >
+        imp_fee_rat,
+      </if>
+      <if test="impFee != null" >
+        imp_fee,
+      </if>
+      <if test="payFeeRat != null" >
+        pay_fee_rat,
+      </if>
+      <if test="payFeeAmt != null" >
+        pay_fee_amt,
+      </if>
+      <if test="obtnCst != null" >
+        obtn_cst,
+      </if>
+      <if test="stdRatCd != null" >
+        std_rat_cd,
+      </if>
+      <if test="stdRat != null" >
+        std_rat,
+      </if>
+      <if test="ftpCd != null" >
+        ftp_cd,
+      </if>
+      <if test="ftpRat != null" >
+        ftp_rat,
+      </if>
+      <if test="ftpAdstRat != null" >
+        ftp_adst_rat,
+      </if>
+      <if test="sbzDayBef != null" >
+        sbz_day_bef,
+      </if>
+      <if test="trmCalcWay != null" >
+        trm_calc_way,
+      </if>
+      <if test="minRat != null" >
+        min_rat,
+      </if>
+      <if test="inhrRat != null" >
+        inhr_rat,
+      </if>
+      <if test="bfrIrr != null" >
+        bfr_irr,
+      </if>
+      <if test="aftIrr != null" >
+        aft_irr,
+      </if>
+      <if test="prPtRat != null" >
+        pr_pt_rat,
+      </if>
+      <if test="useRat != null" >
+        use_rat,
+      </if>
+      <if test="bizLsPt != null" >
+        biz_ls_pt,
+      </if>
+      <if test="earnAmt != null" >
+        earn_amt,
+      </if>
+      <if test="dspLssPrf != null" >
+        dsp_lss_prf,
+      </if>
+      <if test="prsVal != null" >
+        prs_val,
+      </if>
+      <if test="term1Mm != null" >
+        term1_mm,
+      </if>
+      <if test="term1Dd != null" >
+        term1_dd,
+      </if>
+      <if test="term1Ww != null" >
+        term1_ww,
+      </if>
+      <if test="t1PayRat != null" >
+        t1_pay_rat,
+      </if>
+      <if test="t1PayAmt != null" >
+        t1_pay_amt,
+      </if>
+      <if test="t1Spread != null" >
+        t1_spread,
+      </if>
+      <if test="t1CapIntAmt != null" >
+        t1_cap_int_amt,
+      </if>
+      <if test="t1CarTax != null" >
+        t1_car_tax,
+      </if>
+      <if test="t1InsuAmt != null" >
+        t1_insu_amt,
+      </if>
+      <if test="term2Mm != null" >
+        term2_mm,
+      </if>
+      <if test="t2PayRat != null" >
+        t2_pay_rat,
+      </if>
+      <if test="t2PayAmt != null" >
+        t2_pay_amt,
+      </if>
+      <if test="t2Spread != null" >
+        t2_spread,
+      </if>
+      <if test="t2CapIntAmt != null" >
+        t2_cap_int_amt,
+      </if>
+      <if test="t2CarTax != null" >
+        t2_car_tax,
+      </if>
+      <if test="t2InsuAmt != null" >
+        t2_insu_amt,
+      </if>
+      <if test="term3Mm != null" >
+        term3_mm,
+      </if>
+      <if test="t3PayRat != null" >
+        t3_pay_rat,
+      </if>
+      <if test="t3PayAmt != null" >
+        t3_pay_amt,
+      </if>
+      <if test="t3Spread != null" >
+        t3_spread,
+      </if>
+      <if test="t3CapIntAmt != null" >
+        t3_cap_int_amt,
+      </if>
+      <if test="t3CarTax != null" >
+        t3_car_tax,
+      </if>
+      <if test="t3InsuAmt != null" >
+        t3_insu_amt,
+      </if>
+      <if test="rlsTrm != null" >
+        rls_trm,
+      </if>
+      <if test="rlsSprRat != null" >
+        rls_spr_rat,
+      </if>
+      <if test="rlrCpinAmt != null" >
+        rlr_cpin_amt,
+      </if>
+      <if test="rlsCarTax != null" >
+        rls_car_tax,
+      </if>
+      <if test="rlsInsRat != null" >
+        rls_ins_rat,
+      </if>
+      <if test="snglUntCd != null" >
+        sngl_unt_cd,
+      </if>
+      <if test="snglPrcCd != null" >
+        sngl_prc_cd,
+      </if>
+      <if test="stmAmt != null" >
+        stm_amt,
+      </if>
+      <if test="bizMthCd != null" >
+        biz_mth_cd,
+      </if>
+      <if test="dlrCustNo != null" >
+        dlr_cust_no,
+      </if>
+      <if test="dlrPayMth != null" >
+        dlr_pay_mth,
+      </if>
+      <if test="dlrIncRat != null" >
+        dlr_inc_rat,
+      </if>
+      <if test="dlrIncAmt != null" >
+        dlr_inc_amt,
+      </if>
+      <if test="agntCustNo != null" >
+        agnt_cust_no,
+      </if>
+      <if test="agtPayMth != null" >
+        agt_pay_mth,
+      </if>
+      <if test="agtIncnRat != null" >
+        agt_incn_rat,
+      </if>
+      <if test="agtIncnAmt != null" >
+        agt_incn_amt,
+      </if>
+      <if test="dealYmd != null" >
+        deal_ymd,
+      </if>
+      <if test="dealSeq != null" >
+        deal_seq,
+      </if>
+      <if test="grpYn != null" >
+        grp_yn,
+      </if>
+      <if test="clsObjStd != null" >
+        cls_obj_std,
+      </if>
+      <if test="appCrrRat != null" >
+        app_crr_rat,
+      </if>
+      <if test="rvInclMth != null" >
+        rv_incl_mth,
+      </if>
+      <if test="silRatAppCd != null" >
+        sil_rat_app_cd,
+      </if>
+      <if test="frFixMm != null" >
+        fr_fix_mm,
+      </if>
+      <if test="liqTerm != null" >
+        liq_term,
+      </if>
+      <if test="addRat != null" >
+        add_rat,
+      </if>
+      <if test="prpyYn != null" >
+        prpy_yn,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="docNo != null" >
+        doc_no,
+      </if>
+      <if test="virAccntNo != null" >
+        vir_accnt_no,
+      </if>
+      <if test="settleDay != null" >
+        settle_day,
+      </if>
+      <if test="rsltDept != null" >
+        rslt_dept,
+      </if>
+      <if test="rsltClerk != null" >
+        rslt_clerk,
+      </if>
+      <if test="rsltAmt1 != null" >
+        rslt_amt1,
+      </if>
+      <if test="rsltYmd1 != null" >
+        rslt_ymd1,
+      </if>
+      <if test="rsltAmt2 != null" >
+        rslt_amt2,
+      </if>
+      <if test="rsltYmd2 != null" >
+        rslt_ymd2,
+      </if>
+      <if test="rsltAmt3 != null" >
+        rslt_amt3,
+      </if>
+      <if test="rsltYmd3 != null" >
+        rslt_ymd3,
+      </if>
+      <if test="remark1 != null" >
+        remark1,
+      </if>
+      <if test="remark2 != null" >
+        remark2,
+      </if>
+      <if test="sendMth != null" >
+        send_mth,
+      </if>
+      <if test="chgMth != null" >
+        chg_mth,
+      </if>
+      <if test="expdAmt != null" >
+        expd_amt,
+      </if>
+      <if test="cnvAmt != null" >
+        cnv_amt,
+      </if>
+      <if test="notarialFee != null" >
+        notarial_fee,
+      </if>
+      <if test="pntPrcMsg != null" >
+        pnt_prc_msg,
+      </if>
+      <if test="exeGb != null" >
+        exe_gb,
+      </if>
+      <if test="cntrTrm != null" >
+        cntr_trm,
+      </if>
+      <if test="contEndYmd != null" >
+        cont_end_ymd,
+      </if>
+      <if test="clsYmd != null" >
+        cls_ymd,
+      </if>
+      <if test="clsWhy != null" >
+        cls_why,
+      </if>
+      <if test="mngrCustNo != null" >
+        mngr_cust_no,
+      </if>
+      <if test="lstExeYn != null" >
+        lst_exe_yn,
+      </if>
+      <if test="rentFrm != null" >
+        rent_frm,
+      </if>
+      <if test="dcDdCnt != null" >
+        dc_dd_cnt,
+      </if>
+      <if test="sttlMth != null" >
+        sttl_mth,
+      </if>
+      <if test="buyAmt != null" >
+        buy_amt,
+      </if>
+      <if test="saleAmt1 != null" >
+        sale_amt1,
+      </if>
+      <if test="feeCustNo != null" >
+        fee_cust_no,
+      </if>
+      <if test="notarialPaySubj != null" >
+        notarial_pay_subj,
+      </if>
+      <if test="stmPaySubj != null" >
+        stm_pay_subj,
+      </if>
+      <if test="reFixYmd != null" >
+        re_fix_ymd,
+      </if>
+      <if test="lstMrepayYmd != null" >
+        lst_mrepay_ymd,
+      </if>
+      <if test="exeNo != null" >
+        exe_no,
+      </if>
+      <if test="jdgSeq != null" >
+        jdg_seq,
+      </if>
+      <if test="carTaxReqyn != null" >
+        car_tax_reqyn,
+      </if>
+      <if test="thpyInsuAmt != null" >
+        thpy_insu_amt,
+      </if>
+      <if test="rtlCalcMth != null" >
+        rtl_calc_mth,
+      </if>
+      <if test="insEmpno != null" >
+        ins_empno,
+      </if>
+      <if test="insDt != null" >
+        ins_dt,
+      </if>
+      <if test="lstUdtEmpno != null" >
+        lst_udt_empno,
+      </if>
+      <if test="lstUdtDt != null" >
+        lst_udt_dt,
+      </if>
+      <if test="escapeFee != null" >
+        escape_fee,
+      </if>
+      <if test="feeCd != null" >
+        fee_cd,
+      </if>
+      <if test="debtStyle != null" >
+        debt_style,
+      </if>
+      <if test="uarvRtnRat2 != null" >
+        uarv_rtn_rat2,
+      </if>
+      <if test="uarvPayAmt2 != null" >
+        uarv_pay_amt2,
+      </if>
+      <if test="returnAmt != null" >
+        return_amt,
+      </if>
+      <if test="returnYmd != null" >
+        return_ymd,
+      </if>
+      <if test="perPayYn != null" >
+        per_pay_yn,
+      </if>
+      <if test="perPayYmd1 != null" >
+        per_pay_ymd1,
+      </if>
+      <if test="perPayYmd2 != null" >
+        per_pay_ymd2,
+      </if>
+      <if test="perPayYmd3 != null" >
+        per_pay_ymd3,
+      </if>
+      <if test="perPayYmd4 != null" >
+        per_pay_ymd4,
+      </if>
+      <if test="perPayAmt != null" >
+        per_pay_amt,
+      </if>
+      <if test="perPayAmt1 != null" >
+        per_pay_amt1,
+      </if>
+      <if test="perPayAmt2 != null" >
+        per_pay_amt2,
+      </if>
+      <if test="perPayAmt3 != null" >
+        per_pay_amt3,
+      </if>
+      <if test="perPayAmt4 != null" >
+        per_pay_amt4,
+      </if>
+      <if test="impFee1Cd != null" >
+        imp_fee1_cd,
+      </if>
+      <if test="impFee2Cd != null" >
+        imp_fee2_cd,
+      </if>
+      <if test="impFee3Cd != null" >
+        imp_fee3_cd,
+      </if>
+      <if test="impFee4Cd != null" >
+        imp_fee4_cd,
+      </if>
+      <if test="impFee1 != null" >
+        imp_fee_1,
+      </if>
+      <if test="impFee2 != null" >
+        imp_fee_2,
+      </if>
+      <if test="impFee3 != null" >
+        imp_fee_3,
+      </if>
+      <if test="impFee4 != null" >
+        imp_fee_4,
+      </if>
+      <if test="impFeeYn != null" >
+        imp_fee_yn,
+      </if>
+      <if test="agtAssrnRat != null" >
+        agt_assrn_rat,
+      </if>
+      <if test="agtAssrnAmt != null" >
+        agt_assrn_amt,
+      </if>
+      <if test="sLoanMgtNo != null" >
+        s_loan_mgt_no,
+      </if>
+      <if test="agntCntrtNo != null" >
+        agnt_cntrt_no,
+      </if>
+      <if test="agntExtCnt != null" >
+        agnt_ext_cnt,
+      </if>
+      <if test="extGb != null" >
+        ext_gb,
+      </if>
+      <if test="realUser != null" >
+        real_user,
+      </if>
+      <if test="rentTxt != null" >
+        rent_txt,
+      </if>
+      <if test="enIndustForm0 != null" >
+        en_indust_form0,
+      </if>
+      <if test="enIndustTxt != null" >
+        en_indust_txt,
+      </if>
+      <if test="industAddr != null" >
+        indust_addr,
+      </if>
+      <if test="nolocalYn != null" >
+        nolocal_yn,
+      </if>
+      <if test="industMonth != null" >
+        indust_month,
+      </if>
+      <if test="industIncome != null" >
+        indust_income,
+      </if>
+      <if test="industAccount != null" >
+        indust_account,
+      </if>
+      <if test="idea != null" >
+        idea,
+      </if>
+      <if test="sysLevel != null" >
+        sys_level,
+      </if>
+      <if test="sysResult != null" >
+        sys_result,
+      </if>
+      <if test="finalStatus != null" >
+        final_status,
+      </if>
+      <if test="seqNo != null" >
+        seq_no,
+      </if>
+      <if test="applyNo != null" >
+        apply_no,
+      </if>
+      <if test="enIndustForm1 != null" >
+        en_indust_form1,
+      </if>
+      <if test="enIndustForm2 != null" >
+        en_indust_form2,
+      </if>
+      <if test="enIndustForm3 != null" >
+        en_indust_form3,
+      </if>
+      <if test="enIndustForm4 != null" >
+        en_indust_form4,
+      </if>
+      <if test="enIndustForm5 != null" >
+        en_indust_form5,
+      </if>
+      <if test="enIndustForm6 != null" >
+        en_indust_form6,
+      </if>
+      <if test="enIndustForm7 != null" >
+        en_indust_form7,
+      </if>
+      <if test="stdRatCdAdd != null" >
+        std_rat_cd_add,
+      </if>
+      <if test="payCylType != null" >
+        pay_cyl_type,
+      </if>
+      <if test="rlsPayRat != null" >
+        rls_pay_rat,
+      </if>
+      <if test="rlsPayAmt != null" >
+        rls_pay_amt,
+      </if>
+      <if test="t1AppRat != null" >
+        t1_app_rat,
+      </if>
+      <if test="t2AppRat != null" >
+        t2_app_rat,
+      </if>
+      <if test="t3AppRat != null" >
+        t3_app_rat,
+      </if>
+      <if test="rlsAppRat != null" >
+        rls_app_rat,
+      </if>
+      <if test="agntCustNm != null" >
+        agnt_cust_nm,
+      </if>
+      <if test="finallyNo != null" >
+        finally_no,
+      </if>
+      <if test="calcWay != null" >
+        calc_way,
+      </if>
+      <if test="closeState != null" >
+        close_state,
+      </if>
+      <if test="syndCustNo != null" >
+        synd_cust_no,
+      </if>
+      <if test="syndCustCnt != null" >
+        synd_cust_cnt,
+      </if>
+      <if test="sortNo != null" >
+        sort_no,
+      </if>
+      <if test="impFee1CdRat != null" >
+        imp_fee1_cd_rat,
+      </if>
+      <if test="impFee2CdRat != null" >
+        imp_fee2_cd_rat,
+      </if>
+      <if test="cntrtEmpno != null" >
+        cntrt_empno,
+      </if>
+      <if test="cntrtInsDt != null" >
+        cntrt_ins_dt,
+      </if>
+      <if test="obtnCstNetAmt != null" >
+        obtn_cst_net_amt,
+      </if>
+      <if test="obtnCstVatAmt != null" >
+        obtn_cst_vat_amt,
+      </if>
+      <if test="impFeeNetAmt != null" >
+        imp_fee_net_amt,
+      </if>
+      <if test="impFeeVatAmt != null" >
+        imp_fee_vat_amt,
+      </if>
+      <if test="pakInfo != null" >
+        pak_info,
+      </if>
+      <if test="insurYn != null" >
+        insur_yn,
+      </if>
+      <if test="insurRat != null" >
+        insur_rat,
+      </if>
+      <if test="insurFee != null" >
+        insur_fee,
+      </if>
+      <if test="cntrtType != null" >
+        cntrt_type,
+      </if>
+      <if test="sunshidanbaoYn != null" >
+        sunshidanbao_yn,
+      </if>
+      <if test="dcCsshInstallmentType != null" >
+        dc_cssh_installment_type,
+      </if>
+      <if test="dcCsshInstallmentRate != null" >
+        dc_cssh_installment_rate,
+      </if>
+      <if test="dcCsshInstallmentAmt != null" >
+        dc_cssh_installment_amt,
+      </if>
+      <if test="dcCsshInstallmentMm != null" >
+        dc_cssh_installment_mm,
+      </if>
+      <if test="installmentRatCd != null" >
+        installment_rat_cd,
+      </if>
+      <if test="installmentRat != null" >
+        installment_rat,
+      </if>
+      <if test="installmentRatCdAdd != null" >
+        installment_rat_cd_add,
+      </if>
+      <if test="tradeType != null" >
+        trade_type,
+      </if>
+      <if test="fixRentAmt != null" >
+        fix_rent_amt,
+      </if>
+      <if test="rentAssrnAmt != null" >
+        rent_assrn_amt,
+      </if>
+      <if test="smsSendYn != null" >
+        sms_send_yn,
+      </if>
+      <if test="dcsNo != null" >
+        dcs_no,
+      </if>
+      <if test="dcCsshAmtZe != null" >
+        dc_cssh_amt_ze,
+      </if>
+      <if test="payIntZe != null" >
+        pay_int_ze,
+      </if>
+      <if test="goodsCd2 != null" >
+        goods_cd_2,
+      </if>
+      <if test="advancesYn != null" >
+        advances_yn,
+      </if>
+      <if test="advancesAmt != null" >
+        advances_amt,
+      </if>
+      <if test="dirImpFeeYn != null" >
+        dir_imp_fee_yn,
+      </if>
+      <if test="dirImpFeeSubYn != null" >
+        dir_imp_fee_sub_yn,
+      </if>
+      <if test="dirImpFeeRat != null" >
+        dir_imp_fee_rat,
+      </if>
+      <if test="dirImpFeeAmt != null" >
+        dir_imp_fee_amt,
+      </if>
+      <if test="capMonYn != null" >
+        cap_mon_yn,
+      </if>
+      <if test="capMonAmt != null" >
+        cap_mon_amt,
+      </if>
+      <if test="delayMm != null" >
+        delay_mm,
+      </if>
+      <if test="delayRat != null" >
+        delay_rat,
+      </if>
+      <if test="authVerType != null" >
+        auth_ver_type,
+      </if>
+      <if test="scheduleChangeCd != null" >
+        schedule_change_cd,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="firmCd != null" >
+        #{firmCd,jdbcType=VARCHAR},
+      </if>
+      <if test="cntrtNo != null" >
+        #{cntrtNo,jdbcType=VARCHAR},
+      </if>
+      <if test="extCnt != null" >
+        #{extCnt,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsCd != null" >
+        #{goodsCd,jdbcType=VARCHAR},
+      </if>
+      <if test="contFrm != null" >
+        #{contFrm,jdbcType=VARCHAR},
+      </if>
+      <if test="acctProc != null" >
+        #{acctProc,jdbcType=VARCHAR},
+      </if>
+      <if test="custNo != null" >
+        #{custNo,jdbcType=VARCHAR},
+      </if>
+      <if test="reqCustNo != null" >
+        #{reqCustNo,jdbcType=VARCHAR},
+      </if>
+      <if test="reqClerk != null" >
+        #{reqClerk,jdbcType=VARCHAR},
+      </if>
+      <if test="jusoGb != null" >
+        #{jusoGb,jdbcType=VARCHAR},
+      </if>
+      <if test="useClerk != null" >
+        #{useClerk,jdbcType=VARCHAR},
+      </if>
+      <if test="lsRlsGb != null" >
+        #{lsRlsGb,jdbcType=VARCHAR},
+      </if>
+      <if test="saleCmp != null" >
+        #{saleCmp,jdbcType=VARCHAR},
+      </if>
+      <if test="vndrCustNo != null" >
+        #{vndrCustNo,jdbcType=VARCHAR},
+      </if>
+      <if test="contDept != null" >
+        #{contDept,jdbcType=VARCHAR},
+      </if>
+      <if test="mgtDept != null" >
+        #{mgtDept,jdbcType=VARCHAR},
+      </if>
+      <if test="bizClerk != null" >
+        #{bizClerk,jdbcType=VARCHAR},
+      </if>
+      <if test="mgtClerk != null" >
+        #{mgtClerk,jdbcType=VARCHAR},
+      </if>
+      <if test="agreeReqYmd != null" >
+        #{agreeReqYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="contEmpno != null" >
+        #{contEmpno,jdbcType=VARCHAR},
+      </if>
+      <if test="productYn != null" >
+        #{productYn,jdbcType=VARCHAR},
+      </if>
+      <if test="autoAgreeGb != null" >
+        #{autoAgreeGb,jdbcType=VARCHAR},
+      </if>
+      <if test="agreeYmd != null" >
+        #{agreeYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="ackRst != null" >
+        #{ackRst,jdbcType=VARCHAR},
+      </if>
+      <if test="judgeEmpno != null" >
+        #{judgeEmpno,jdbcType=VARCHAR},
+      </if>
+      <if test="costSetDate != null" >
+        #{costSetDate,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsSetDate != null" >
+        #{goodsSetDate,jdbcType=VARCHAR},
+      </if>
+      <if test="docSetDate != null" >
+        #{docSetDate,jdbcType=VARCHAR},
+      </if>
+      <if test="contSetYmd != null" >
+        #{contSetYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="contSetEmpno != null" >
+        #{contSetEmpno,jdbcType=VARCHAR},
+      </if>
+      <if test="contVltYmd != null" >
+        #{contVltYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="mrtgGb != null" >
+        #{mrtgGb,jdbcType=VARCHAR},
+      </if>
+      <if test="contYmd != null" >
+        #{contYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="exeYmd != null" >
+        #{exeYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="exprYmd != null" >
+        #{exprYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="endYmd != null" >
+        #{endYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="endSlipNo != null" >
+        #{endSlipNo,jdbcType=VARCHAR},
+      </if>
+      <if test="endGb != null" >
+        #{endGb,jdbcType=VARCHAR},
+      </if>
+      <if test="acctYmd != null" >
+        #{acctYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="slipNo != null" >
+        #{slipNo,jdbcType=VARCHAR},
+      </if>
+      <if test="lmtMgtMth != null" >
+        #{lmtMgtMth,jdbcType=VARCHAR},
+      </if>
+      <if test="dlyRatCd != null" >
+        #{dlyRatCd,jdbcType=VARCHAR},
+      </if>
+      <if test="dlyRemitDd != null" >
+        #{dlyRemitDd,jdbcType=NUMERIC},
+      </if>
+      <if test="payCyl != null" >
+        #{payCyl,jdbcType=VARCHAR},
+      </if>
+      <if test="nxtPayYmd != null" >
+        #{nxtPayYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="lstDatYn != null" >
+        #{lstDatYn,jdbcType=VARCHAR},
+      </if>
+      <if test="repayMth != null" >
+        #{repayMth,jdbcType=VARCHAR},
+      </if>
+      <if test="firstIjaCalcMth != null" >
+        #{firstIjaCalcMth,jdbcType=VARCHAR},
+      </if>
+      <if test="firstIjaAmt != null" >
+        #{firstIjaAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="rcpMth != null" >
+        #{rcpMth,jdbcType=VARCHAR},
+      </if>
+      <if test="chrgAsstYn != null" >
+        #{chrgAsstYn,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeNo != null" >
+        #{chargeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="preDefGb != null" >
+        #{preDefGb,jdbcType=VARCHAR},
+      </if>
+      <if test="reqSndYn != null" >
+        #{reqSndYn,jdbcType=VARCHAR},
+      </if>
+      <if test="equiptCd != null" >
+        #{equiptCd,jdbcType=VARCHAR},
+      </if>
+      <if test="assuSttlWay != null" >
+        #{assuSttlWay,jdbcType=VARCHAR},
+      </if>
+      <if test="assuRat != null" >
+        #{assuRat,jdbcType=NUMERIC},
+      </if>
+      <if test="assrnAmt != null" >
+        #{assrnAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="assuSetoffWay != null" >
+        #{assuSetoffWay,jdbcType=VARCHAR},
+      </if>
+      <if test="assStffRat != null" >
+        #{assStffRat,jdbcType=NUMERIC},
+      </if>
+      <if test="assrnSetoffAmt != null" >
+        #{assrnSetoffAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="uarvRtnRat != null" >
+        #{uarvRtnRat,jdbcType=NUMERIC},
+      </if>
+      <if test="uarvPayAmt != null" >
+        #{uarvPayAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="impFeeRat != null" >
+        #{impFeeRat,jdbcType=NUMERIC},
+      </if>
+      <if test="impFee != null" >
+        #{impFee,jdbcType=NUMERIC},
+      </if>
+      <if test="payFeeRat != null" >
+        #{payFeeRat,jdbcType=NUMERIC},
+      </if>
+      <if test="payFeeAmt != null" >
+        #{payFeeAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="obtnCst != null" >
+        #{obtnCst,jdbcType=NUMERIC},
+      </if>
+      <if test="stdRatCd != null" >
+        #{stdRatCd,jdbcType=VARCHAR},
+      </if>
+      <if test="stdRat != null" >
+        #{stdRat,jdbcType=NUMERIC},
+      </if>
+      <if test="ftpCd != null" >
+        #{ftpCd,jdbcType=VARCHAR},
+      </if>
+      <if test="ftpRat != null" >
+        #{ftpRat,jdbcType=NUMERIC},
+      </if>
+      <if test="ftpAdstRat != null" >
+        #{ftpAdstRat,jdbcType=NUMERIC},
+      </if>
+      <if test="sbzDayBef != null" >
+        #{sbzDayBef,jdbcType=NUMERIC},
+      </if>
+      <if test="trmCalcWay != null" >
+        #{trmCalcWay,jdbcType=VARCHAR},
+      </if>
+      <if test="minRat != null" >
+        #{minRat,jdbcType=NUMERIC},
+      </if>
+      <if test="inhrRat != null" >
+        #{inhrRat,jdbcType=NUMERIC},
+      </if>
+      <if test="bfrIrr != null" >
+        #{bfrIrr,jdbcType=NUMERIC},
+      </if>
+      <if test="aftIrr != null" >
+        #{aftIrr,jdbcType=NUMERIC},
+      </if>
+      <if test="prPtRat != null" >
+        #{prPtRat,jdbcType=NUMERIC},
+      </if>
+      <if test="useRat != null" >
+        #{useRat,jdbcType=NUMERIC},
+      </if>
+      <if test="bizLsPt != null" >
+        #{bizLsPt,jdbcType=NUMERIC},
+      </if>
+      <if test="earnAmt != null" >
+        #{earnAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="dspLssPrf != null" >
+        #{dspLssPrf,jdbcType=NUMERIC},
+      </if>
+      <if test="prsVal != null" >
+        #{prsVal,jdbcType=NUMERIC},
+      </if>
+      <if test="term1Mm != null" >
+        #{term1Mm,jdbcType=NUMERIC},
+      </if>
+      <if test="term1Dd != null" >
+        #{term1Dd,jdbcType=NUMERIC},
+      </if>
+      <if test="term1Ww != null" >
+        #{term1Ww,jdbcType=NUMERIC},
+      </if>
+      <if test="t1PayRat != null" >
+        #{t1PayRat,jdbcType=NUMERIC},
+      </if>
+      <if test="t1PayAmt != null" >
+        #{t1PayAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="t1Spread != null" >
+        #{t1Spread,jdbcType=NUMERIC},
+      </if>
+      <if test="t1CapIntAmt != null" >
+        #{t1CapIntAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="t1CarTax != null" >
+        #{t1CarTax,jdbcType=NUMERIC},
+      </if>
+      <if test="t1InsuAmt != null" >
+        #{t1InsuAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="term2Mm != null" >
+        #{term2Mm,jdbcType=NUMERIC},
+      </if>
+      <if test="t2PayRat != null" >
+        #{t2PayRat,jdbcType=NUMERIC},
+      </if>
+      <if test="t2PayAmt != null" >
+        #{t2PayAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="t2Spread != null" >
+        #{t2Spread,jdbcType=NUMERIC},
+      </if>
+      <if test="t2CapIntAmt != null" >
+        #{t2CapIntAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="t2CarTax != null" >
+        #{t2CarTax,jdbcType=NUMERIC},
+      </if>
+      <if test="t2InsuAmt != null" >
+        #{t2InsuAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="term3Mm != null" >
+        #{term3Mm,jdbcType=NUMERIC},
+      </if>
+      <if test="t3PayRat != null" >
+        #{t3PayRat,jdbcType=NUMERIC},
+      </if>
+      <if test="t3PayAmt != null" >
+        #{t3PayAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="t3Spread != null" >
+        #{t3Spread,jdbcType=NUMERIC},
+      </if>
+      <if test="t3CapIntAmt != null" >
+        #{t3CapIntAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="t3CarTax != null" >
+        #{t3CarTax,jdbcType=NUMERIC},
+      </if>
+      <if test="t3InsuAmt != null" >
+        #{t3InsuAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="rlsTrm != null" >
+        #{rlsTrm,jdbcType=NUMERIC},
+      </if>
+      <if test="rlsSprRat != null" >
+        #{rlsSprRat,jdbcType=NUMERIC},
+      </if>
+      <if test="rlrCpinAmt != null" >
+        #{rlrCpinAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="rlsCarTax != null" >
+        #{rlsCarTax,jdbcType=NUMERIC},
+      </if>
+      <if test="rlsInsRat != null" >
+        #{rlsInsRat,jdbcType=NUMERIC},
+      </if>
+      <if test="snglUntCd != null" >
+        #{snglUntCd,jdbcType=VARCHAR},
+      </if>
+      <if test="snglPrcCd != null" >
+        #{snglPrcCd,jdbcType=VARCHAR},
+      </if>
+      <if test="stmAmt != null" >
+        #{stmAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="bizMthCd != null" >
+        #{bizMthCd,jdbcType=VARCHAR},
+      </if>
+      <if test="dlrCustNo != null" >
+        #{dlrCustNo,jdbcType=VARCHAR},
+      </if>
+      <if test="dlrPayMth != null" >
+        #{dlrPayMth,jdbcType=VARCHAR},
+      </if>
+      <if test="dlrIncRat != null" >
+        #{dlrIncRat,jdbcType=NUMERIC},
+      </if>
+      <if test="dlrIncAmt != null" >
+        #{dlrIncAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="agntCustNo != null" >
+        #{agntCustNo,jdbcType=VARCHAR},
+      </if>
+      <if test="agtPayMth != null" >
+        #{agtPayMth,jdbcType=VARCHAR},
+      </if>
+      <if test="agtIncnRat != null" >
+        #{agtIncnRat,jdbcType=NUMERIC},
+      </if>
+      <if test="agtIncnAmt != null" >
+        #{agtIncnAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="dealYmd != null" >
+        #{dealYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="dealSeq != null" >
+        #{dealSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="grpYn != null" >
+        #{grpYn,jdbcType=VARCHAR},
+      </if>
+      <if test="clsObjStd != null" >
+        #{clsObjStd,jdbcType=VARCHAR},
+      </if>
+      <if test="appCrrRat != null" >
+        #{appCrrRat,jdbcType=NUMERIC},
+      </if>
+      <if test="rvInclMth != null" >
+        #{rvInclMth,jdbcType=VARCHAR},
+      </if>
+      <if test="silRatAppCd != null" >
+        #{silRatAppCd,jdbcType=VARCHAR},
+      </if>
+      <if test="frFixMm != null" >
+        #{frFixMm,jdbcType=NUMERIC},
+      </if>
+      <if test="liqTerm != null" >
+        #{liqTerm,jdbcType=NUMERIC},
+      </if>
+      <if test="addRat != null" >
+        #{addRat,jdbcType=NUMERIC},
+      </if>
+      <if test="prpyYn != null" >
+        #{prpyYn,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="docNo != null" >
+        #{docNo,jdbcType=VARCHAR},
+      </if>
+      <if test="virAccntNo != null" >
+        #{virAccntNo,jdbcType=VARCHAR},
+      </if>
+      <if test="settleDay != null" >
+        #{settleDay,jdbcType=VARCHAR},
+      </if>
+      <if test="rsltDept != null" >
+        #{rsltDept,jdbcType=VARCHAR},
+      </if>
+      <if test="rsltClerk != null" >
+        #{rsltClerk,jdbcType=VARCHAR},
+      </if>
+      <if test="rsltAmt1 != null" >
+        #{rsltAmt1,jdbcType=NUMERIC},
+      </if>
+      <if test="rsltYmd1 != null" >
+        #{rsltYmd1,jdbcType=VARCHAR},
+      </if>
+      <if test="rsltAmt2 != null" >
+        #{rsltAmt2,jdbcType=NUMERIC},
+      </if>
+      <if test="rsltYmd2 != null" >
+        #{rsltYmd2,jdbcType=VARCHAR},
+      </if>
+      <if test="rsltAmt3 != null" >
+        #{rsltAmt3,jdbcType=NUMERIC},
+      </if>
+      <if test="rsltYmd3 != null" >
+        #{rsltYmd3,jdbcType=VARCHAR},
+      </if>
+      <if test="remark1 != null" >
+        #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null" >
+        #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="sendMth != null" >
+        #{sendMth,jdbcType=VARCHAR},
+      </if>
+      <if test="chgMth != null" >
+        #{chgMth,jdbcType=VARCHAR},
+      </if>
+      <if test="expdAmt != null" >
+        #{expdAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="cnvAmt != null" >
+        #{cnvAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="notarialFee != null" >
+        #{notarialFee,jdbcType=NUMERIC},
+      </if>
+      <if test="pntPrcMsg != null" >
+        #{pntPrcMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="exeGb != null" >
+        #{exeGb,jdbcType=VARCHAR},
+      </if>
+      <if test="cntrTrm != null" >
+        #{cntrTrm,jdbcType=NUMERIC},
+      </if>
+      <if test="contEndYmd != null" >
+        #{contEndYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="clsYmd != null" >
+        #{clsYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="clsWhy != null" >
+        #{clsWhy,jdbcType=VARCHAR},
+      </if>
+      <if test="mngrCustNo != null" >
+        #{mngrCustNo,jdbcType=VARCHAR},
+      </if>
+      <if test="lstExeYn != null" >
+        #{lstExeYn,jdbcType=VARCHAR},
+      </if>
+      <if test="rentFrm != null" >
+        #{rentFrm,jdbcType=VARCHAR},
+      </if>
+      <if test="dcDdCnt != null" >
+        #{dcDdCnt,jdbcType=NUMERIC},
+      </if>
+      <if test="sttlMth != null" >
+        #{sttlMth,jdbcType=VARCHAR},
+      </if>
+      <if test="buyAmt != null" >
+        #{buyAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="saleAmt1 != null" >
+        #{saleAmt1,jdbcType=NUMERIC},
+      </if>
+      <if test="feeCustNo != null" >
+        #{feeCustNo,jdbcType=VARCHAR},
+      </if>
+      <if test="notarialPaySubj != null" >
+        #{notarialPaySubj,jdbcType=VARCHAR},
+      </if>
+      <if test="stmPaySubj != null" >
+        #{stmPaySubj,jdbcType=VARCHAR},
+      </if>
+      <if test="reFixYmd != null" >
+        #{reFixYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="lstMrepayYmd != null" >
+        #{lstMrepayYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="exeNo != null" >
+        #{exeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="jdgSeq != null" >
+        #{jdgSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="carTaxReqyn != null" >
+        #{carTaxReqyn,jdbcType=VARCHAR},
+      </if>
+      <if test="thpyInsuAmt != null" >
+        #{thpyInsuAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="rtlCalcMth != null" >
+        #{rtlCalcMth,jdbcType=VARCHAR},
+      </if>
+      <if test="insEmpno != null" >
+        #{insEmpno,jdbcType=VARCHAR},
+      </if>
+      <if test="insDt != null" >
+        #{insDt,jdbcType=DATE},
+      </if>
+      <if test="lstUdtEmpno != null" >
+        #{lstUdtEmpno,jdbcType=VARCHAR},
+      </if>
+      <if test="lstUdtDt != null" >
+        #{lstUdtDt,jdbcType=DATE},
+      </if>
+      <if test="escapeFee != null" >
+        #{escapeFee,jdbcType=NUMERIC},
+      </if>
+      <if test="feeCd != null" >
+        #{feeCd,jdbcType=VARCHAR},
+      </if>
+      <if test="debtStyle != null" >
+        #{debtStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="uarvRtnRat2 != null" >
+        #{uarvRtnRat2,jdbcType=NUMERIC},
+      </if>
+      <if test="uarvPayAmt2 != null" >
+        #{uarvPayAmt2,jdbcType=NUMERIC},
+      </if>
+      <if test="returnAmt != null" >
+        #{returnAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="returnYmd != null" >
+        #{returnYmd,jdbcType=VARCHAR},
+      </if>
+      <if test="perPayYn != null" >
+        #{perPayYn,jdbcType=VARCHAR},
+      </if>
+      <if test="perPayYmd1 != null" >
+        #{perPayYmd1,jdbcType=VARCHAR},
+      </if>
+      <if test="perPayYmd2 != null" >
+        #{perPayYmd2,jdbcType=VARCHAR},
+      </if>
+      <if test="perPayYmd3 != null" >
+        #{perPayYmd3,jdbcType=VARCHAR},
+      </if>
+      <if test="perPayYmd4 != null" >
+        #{perPayYmd4,jdbcType=VARCHAR},
+      </if>
+      <if test="perPayAmt != null" >
+        #{perPayAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="perPayAmt1 != null" >
+        #{perPayAmt1,jdbcType=NUMERIC},
+      </if>
+      <if test="perPayAmt2 != null" >
+        #{perPayAmt2,jdbcType=NUMERIC},
+      </if>
+      <if test="perPayAmt3 != null" >
+        #{perPayAmt3,jdbcType=NUMERIC},
+      </if>
+      <if test="perPayAmt4 != null" >
+        #{perPayAmt4,jdbcType=NUMERIC},
+      </if>
+      <if test="impFee1Cd != null" >
+        #{impFee1Cd,jdbcType=VARCHAR},
+      </if>
+      <if test="impFee2Cd != null" >
+        #{impFee2Cd,jdbcType=VARCHAR},
+      </if>
+      <if test="impFee3Cd != null" >
+        #{impFee3Cd,jdbcType=VARCHAR},
+      </if>
+      <if test="impFee4Cd != null" >
+        #{impFee4Cd,jdbcType=VARCHAR},
+      </if>
+      <if test="impFee1 != null" >
+        #{impFee1,jdbcType=NUMERIC},
+      </if>
+      <if test="impFee2 != null" >
+        #{impFee2,jdbcType=NUMERIC},
+      </if>
+      <if test="impFee3 != null" >
+        #{impFee3,jdbcType=NUMERIC},
+      </if>
+      <if test="impFee4 != null" >
+        #{impFee4,jdbcType=NUMERIC},
+      </if>
+      <if test="impFeeYn != null" >
+        #{impFeeYn,jdbcType=VARCHAR},
+      </if>
+      <if test="agtAssrnRat != null" >
+        #{agtAssrnRat,jdbcType=NUMERIC},
+      </if>
+      <if test="agtAssrnAmt != null" >
+        #{agtAssrnAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="sLoanMgtNo != null" >
+        #{sLoanMgtNo,jdbcType=VARCHAR},
+      </if>
+      <if test="agntCntrtNo != null" >
+        #{agntCntrtNo,jdbcType=VARCHAR},
+      </if>
+      <if test="agntExtCnt != null" >
+        #{agntExtCnt,jdbcType=VARCHAR},
+      </if>
+      <if test="extGb != null" >
+        #{extGb,jdbcType=VARCHAR},
+      </if>
+      <if test="realUser != null" >
+        #{realUser,jdbcType=VARCHAR},
+      </if>
+      <if test="rentTxt != null" >
+        #{rentTxt,jdbcType=VARCHAR},
+      </if>
+      <if test="enIndustForm0 != null" >
+        #{enIndustForm0,jdbcType=VARCHAR},
+      </if>
+      <if test="enIndustTxt != null" >
+        #{enIndustTxt,jdbcType=VARCHAR},
+      </if>
+      <if test="industAddr != null" >
+        #{industAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="nolocalYn != null" >
+        #{nolocalYn,jdbcType=VARCHAR},
+      </if>
+      <if test="industMonth != null" >
+        #{industMonth,jdbcType=VARCHAR},
+      </if>
+      <if test="industIncome != null" >
+        #{industIncome,jdbcType=NUMERIC},
+      </if>
+      <if test="industAccount != null" >
+        #{industAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="idea != null" >
+        #{idea,jdbcType=VARCHAR},
+      </if>
+      <if test="sysLevel != null" >
+        #{sysLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="sysResult != null" >
+        #{sysResult,jdbcType=VARCHAR},
+      </if>
+      <if test="finalStatus != null" >
+        #{finalStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="seqNo != null" >
+        #{seqNo,jdbcType=VARCHAR},
+      </if>
+      <if test="applyNo != null" >
+        #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="enIndustForm1 != null" >
+        #{enIndustForm1,jdbcType=VARCHAR},
+      </if>
+      <if test="enIndustForm2 != null" >
+        #{enIndustForm2,jdbcType=VARCHAR},
+      </if>
+      <if test="enIndustForm3 != null" >
+        #{enIndustForm3,jdbcType=VARCHAR},
+      </if>
+      <if test="enIndustForm4 != null" >
+        #{enIndustForm4,jdbcType=VARCHAR},
+      </if>
+      <if test="enIndustForm5 != null" >
+        #{enIndustForm5,jdbcType=VARCHAR},
+      </if>
+      <if test="enIndustForm6 != null" >
+        #{enIndustForm6,jdbcType=VARCHAR},
+      </if>
+      <if test="enIndustForm7 != null" >
+        #{enIndustForm7,jdbcType=VARCHAR},
+      </if>
+      <if test="stdRatCdAdd != null" >
+        #{stdRatCdAdd,jdbcType=VARCHAR},
+      </if>
+      <if test="payCylType != null" >
+        #{payCylType,jdbcType=VARCHAR},
+      </if>
+      <if test="rlsPayRat != null" >
+        #{rlsPayRat,jdbcType=NUMERIC},
+      </if>
+      <if test="rlsPayAmt != null" >
+        #{rlsPayAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="t1AppRat != null" >
+        #{t1AppRat,jdbcType=NUMERIC},
+      </if>
+      <if test="t2AppRat != null" >
+        #{t2AppRat,jdbcType=NUMERIC},
+      </if>
+      <if test="t3AppRat != null" >
+        #{t3AppRat,jdbcType=NUMERIC},
+      </if>
+      <if test="rlsAppRat != null" >
+        #{rlsAppRat,jdbcType=NUMERIC},
+      </if>
+      <if test="agntCustNm != null" >
+        #{agntCustNm,jdbcType=VARCHAR},
+      </if>
+      <if test="finallyNo != null" >
+        #{finallyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="calcWay != null" >
+        #{calcWay,jdbcType=VARCHAR},
+      </if>
+      <if test="closeState != null" >
+        #{closeState,jdbcType=VARCHAR},
+      </if>
+      <if test="syndCustNo != null" >
+        #{syndCustNo,jdbcType=VARCHAR},
+      </if>
+      <if test="syndCustCnt != null" >
+        #{syndCustCnt,jdbcType=VARCHAR},
+      </if>
+      <if test="sortNo != null" >
+        #{sortNo,jdbcType=VARCHAR},
+      </if>
+      <if test="impFee1CdRat != null" >
+        #{impFee1CdRat,jdbcType=NUMERIC},
+      </if>
+      <if test="impFee2CdRat != null" >
+        #{impFee2CdRat,jdbcType=NUMERIC},
+      </if>
+      <if test="cntrtEmpno != null" >
+        #{cntrtEmpno,jdbcType=VARCHAR},
+      </if>
+      <if test="cntrtInsDt != null" >
+        #{cntrtInsDt,jdbcType=DATE},
+      </if>
+      <if test="obtnCstNetAmt != null" >
+        #{obtnCstNetAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="obtnCstVatAmt != null" >
+        #{obtnCstVatAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="impFeeNetAmt != null" >
+        #{impFeeNetAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="impFeeVatAmt != null" >
+        #{impFeeVatAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="pakInfo != null" >
+        #{pakInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="insurYn != null" >
+        #{insurYn,jdbcType=VARCHAR},
+      </if>
+      <if test="insurRat != null" >
+        #{insurRat,jdbcType=VARCHAR},
+      </if>
+      <if test="insurFee != null" >
+        #{insurFee,jdbcType=NUMERIC},
+      </if>
+      <if test="cntrtType != null" >
+        #{cntrtType,jdbcType=VARCHAR},
+      </if>
+      <if test="sunshidanbaoYn != null" >
+        #{sunshidanbaoYn,jdbcType=VARCHAR},
+      </if>
+      <if test="dcCsshInstallmentType != null" >
+        #{dcCsshInstallmentType,jdbcType=VARCHAR},
+      </if>
+      <if test="dcCsshInstallmentRate != null" >
+        #{dcCsshInstallmentRate,jdbcType=NUMERIC},
+      </if>
+      <if test="dcCsshInstallmentAmt != null" >
+        #{dcCsshInstallmentAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="dcCsshInstallmentMm != null" >
+        #{dcCsshInstallmentMm,jdbcType=NUMERIC},
+      </if>
+      <if test="installmentRatCd != null" >
+        #{installmentRatCd,jdbcType=VARCHAR},
+      </if>
+      <if test="installmentRat != null" >
+        #{installmentRat,jdbcType=NUMERIC},
+      </if>
+      <if test="installmentRatCdAdd != null" >
+        #{installmentRatCdAdd,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeType != null" >
+        #{tradeType,jdbcType=VARCHAR},
+      </if>
+      <if test="fixRentAmt != null" >
+        #{fixRentAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="rentAssrnAmt != null" >
+        #{rentAssrnAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="smsSendYn != null" >
+        #{smsSendYn,jdbcType=VARCHAR},
+      </if>
+      <if test="dcsNo != null" >
+        #{dcsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="dcCsshAmtZe != null" >
+        #{dcCsshAmtZe,jdbcType=NUMERIC},
+      </if>
+      <if test="payIntZe != null" >
+        #{payIntZe,jdbcType=NUMERIC},
+      </if>
+      <if test="goodsCd2 != null" >
+        #{goodsCd2,jdbcType=VARCHAR},
+      </if>
+      <if test="advancesYn != null" >
+        #{advancesYn,jdbcType=VARCHAR},
+      </if>
+      <if test="advancesAmt != null" >
+        #{advancesAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="dirImpFeeYn != null" >
+        #{dirImpFeeYn,jdbcType=VARCHAR},
+      </if>
+      <if test="dirImpFeeSubYn != null" >
+        #{dirImpFeeSubYn,jdbcType=VARCHAR},
+      </if>
+      <if test="dirImpFeeRat != null" >
+        #{dirImpFeeRat,jdbcType=NUMERIC},
+      </if>
+      <if test="dirImpFeeAmt != null" >
+        #{dirImpFeeAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="capMonYn != null" >
+        #{capMonYn,jdbcType=VARCHAR},
+      </if>
+      <if test="capMonAmt != null" >
+        #{capMonAmt,jdbcType=NUMERIC},
+      </if>
+      <if test="delayMm != null" >
+        #{delayMm,jdbcType=NUMERIC},
+      </if>
+      <if test="delayRat != null" >
+        #{delayRat,jdbcType=NUMERIC},
+      </if>
+      <if test="authVerType != null" >
+        #{authVerType,jdbcType=VARCHAR},
+      </if>
+      <if test="scheduleChangeCd != null" >
+        #{scheduleChangeCd,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
