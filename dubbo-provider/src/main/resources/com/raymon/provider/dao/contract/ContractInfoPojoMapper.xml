@@ -399,13 +399,13 @@
   <select id="queryData" resultMap="BaseResultMap">
     select DISTINCT
     <include refid="Base_Column_List" />
-    from bex1000t
+    from contract_info
     where cntrt_no = '217EX200189' and ext_cnt = '0001'
   </select>
   <select id="queryDataByContractNO" resultMap="BaseResultMap" parameterType="com.raymon.api.pojo.contract.ContractInfoPojo">
     select DISTINCT
     <include refid="Base_Column_List" />
-    from bex1000t
+    from contract_info
     where cntrt_no = #{cntrtNo,jdbcType=VARCHAR}
   </select>
   <insert id="insert" parameterType="com.raymon.api.pojo.contract.ContractInfoPojo" >
