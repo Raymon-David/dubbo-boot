@@ -20,8 +20,6 @@ public class ContractController {
             url = "dubbo://localhost:20880")
     private ContractService contractService;
 
-    private RedisService redisService;
-
     /**
      * 查询合同信息
      * @return
