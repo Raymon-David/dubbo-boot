@@ -1,11 +1,10 @@
-package com.raymon.api.config;
+package com.raymon.provider.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cache.Cache;
@@ -16,7 +15,12 @@ import org.springframework.cache.interceptor.CacheErrorHandler;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.RedisPassword;
+import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
+import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
@@ -24,6 +28,12 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
+
+import java.time.Duration;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 @Configuration
 @EnableCaching
@@ -33,10 +43,6 @@ public class RedisConfig extends CachingConfigurerSupport {
      * Logger
      */
     private static final Logger lg = LoggerFactory.getLogger(RedisConfig.class);
-
-
-    @Autowired
-    private JedisConnectionFactory jedisConnectionFactory;
 
     @Bean
     @Override
@@ -59,20 +65,38 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
     @Bean
-    @Override
-    public CacheManager cacheManager() {
-        // 初始化缓存管理器，在这里我们可以缓存的整体过期时间什么的，我这里默认没有配置
-        lg.info("初始化 -> [{}]", "CacheManager RedisCacheManager Start");
-        RedisCacheManager.RedisCacheManagerBuilder builder = RedisCacheManager
-                .RedisCacheManagerBuilder
-                .fromConnectionFactory(jedisConnectionFactory);
-        return builder.build();
+    public CacheManager cacheManager(RedisConnectionFactory factory) {
+        // 生成一个默认配置，通过config对象即可对缓存进行自定义配置
+        RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig();
+        // 设置缓存的默认过期时间，也是使用Duration设置, 设置为30分钟
+        config = config.entryTtl(Duration.ofMinutes(30))
+                // 不缓存空值
+                .disableCachingNullValues();
+
+        // 设置一个初始化的缓存空间set集合, 就是注解@Cacheable(value = "my-redis-cache2")中的value值,
+        Set<String> cacheNames = new HashSet<>();
+        cacheNames.add("demo-redis-cache0");
+        cacheNames.add("demo-redis-cache1");
+
+        // 对每个缓存空间应用不同的配置
+        Map<String, RedisCacheConfiguration> configMap = new HashMap<>(16);
+        configMap.put("demo-redis-cache0", config);
+        // 设置过期时间为 30s
+        configMap.put("demo-redis-cache1", config.entryTtl(Duration.ofSeconds(30)));
+
+        // 使用自定义的缓存配置初始化一个cacheManager
+        return RedisCacheManager.builder(factory)
+                // 注意这两句的调用顺序，一定要先调用该方法设置初始化的缓存名，再初始化相关的配置
+                .initialCacheNames(cacheNames)
+                .withInitialCacheConfigurations(configMap)
+                .transactionAware()
+                .build();
     }
 
     @Bean
     public RedisTemplate<String, Object> redisTemplate(JedisConnectionFactory jedisConnectionFactory ) {
         //设置序列化
-        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
+        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
         ObjectMapper om = new ObjectMapper();
         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
         om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
@@ -141,12 +165,16 @@ public class RedisConfig extends CachingConfigurerSupport {
         @Bean
         JedisConnectionFactory jedisConnectionFactory() {
             lg.info("Create JedisConnectionFactory successful");
-            JedisConnectionFactory factory = new JedisConnectionFactory();
-            factory.setHostName(host);
-            factory.setPort(port);
-            factory.setTimeout(timeout);
-            factory.setPassword(password);
-            return factory;
+            RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
+            redisStandaloneConfiguration.setHostName(host);
+            redisStandaloneConfiguration.setPort(port);
+            redisStandaloneConfiguration.setDatabase(0);
+            redisStandaloneConfiguration.setPassword(RedisPassword.of(password));
+
+            JedisClientConfiguration.JedisClientConfigurationBuilder jedisClientConfiguration = JedisClientConfiguration.builder();
+            jedisClientConfiguration.connectTimeout(Duration.ofMillis(timeout));
+            return new JedisConnectionFactory(redisStandaloneConfiguration,
+                    jedisClientConfiguration.build());
         }
         @Bean
         public JedisPool redisPoolFactory() {

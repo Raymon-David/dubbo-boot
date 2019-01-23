@@ -9,5 +9,7 @@ import com.raymon.api.pojo.contract.ContractInfoPojo;
 public interface ContractService {
     public ContractInfoPojo queryContractInfo();
 
+    public ContractInfoPojo queryContractInfoByRedis();
+
     public ContractInfoPojo queryContractInfoByContractNO(ContractInfoPojo record);
 }

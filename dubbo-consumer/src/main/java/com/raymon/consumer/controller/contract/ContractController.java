@@ -20,6 +20,8 @@ public class ContractController {
             url = "dubbo://localhost:20880")
     private ContractService contractService;
 
+    private RedisService redisService;
+
     /**
      * 查询合同信息
      * @return
@@ -38,5 +40,15 @@ public class ContractController {
         ContractInfoPojo record = new ContractInfoPojo();
         record.setCntrtNo(contract_no);
         return contractService.queryContractInfoByContractNO(record);
+    }
+
+    /**
+     * 通过redis查询合同信息
+     * @return
+     */
+    @RequestMapping(value ="/contract/queryContractInfoByRedis" ,method = RequestMethod.GET)
+    public ContractInfoPojo queryContractInfoByRedis(){
+
+        return contractService.queryContractInfoByRedis();
     }
 }
