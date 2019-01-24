@@ -40,7 +40,7 @@ public class ContractServiceImpl implements ContractService {
 
         if(redisTemplate.opsForValue().get("queryContractInfoByRedis") != null){
                 String str = JSON.toJSONString(redisTemplate.opsForValue().get("queryContractInfoByRedis"));
-                JSONObject userJson = JSONObject.parseObject(str);
+                 JSONObject userJson = JSONObject.parseObject(str);
                 contractInfoPojo = JSON.toJavaObject(userJson, ContractInfoPojo.class);
         }else{
             redisTemplate.opsForValue().set("queryContractInfoByRedis", mapper.queryData());
