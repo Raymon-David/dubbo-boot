@@ -1,4 +1,4 @@
-package com.raymon.api.service;
+package com.raymon.api.http;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
