@@ -16,7 +16,7 @@ public class ZCXMD5 {
             String account = URLEncoder.encode("DCFL0011", "utf-8");
             String custIdNumber = "341281198712082521";
             String custNm = "路三妮";
-            //				 生成一个MD5加密计算摘要
+            //生成一个MD5加密计算摘要
             MessageDigest md = MessageDigest.getInstance("MD5");
             // 计算md5函数
             md.update(("account" + account + "cid" + custIdNumber + "name" + custNm + sy).getBytes());
@@ -41,12 +41,12 @@ public class ZCXMD5 {
             //return buf.toString().substring(8, 24);
 
 
-//		        String sinStr = new BigInteger(1, md.digest()).toString(16);
+            //String sinStr = new BigInteger(1, md.digest()).toString(16);
             String sign = URLEncoder.encode(aa.toUpperCase(), "utf-8");
 
 
             //测试119.254.66.247   正式119.254.66.233  端口不变
-            String url = "http://58.57.24.181:8085/data-service/identity/auth?account=" + account;
+            String url = "http://119.254.66.233:8085/data-service/identity/auth?account=" + account;
             url = url + "&cid=" + custIdNumber;
             url = url + "&name=" + URLEncoder.encode(custNm,"UTF-8");
             url = url + "&sign=" + sign;
@@ -73,6 +73,8 @@ public class ZCXMD5 {
             }
 
             int responseCode = httpConnection.getResponseCode();
+            System.out.println("responseCode is : " + responseCode);
+            System.out.println("responseMessage is : " + httpConnection.getResponseMessage());
             if (responseCode == HttpURLConnection.HTTP_OK) {
                 InputStream in = httpConnection.getInputStream();
                 InputStreamReader isr = new InputStreamReader(in, "utf-8");
