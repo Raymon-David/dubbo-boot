@@ -1,7 +1,7 @@
 package com.raymon.api.core.shiro.filter;
 
-import com.raymon.api.common.model.UUser;
-import com.raymon.api.common.utils.LoggerUtils;
+import com.raymon.api.pojo.user.User;
+import com.raymon.api.utils.LoggerUtils;
 import com.raymon.api.core.shiro.token.manager.TokenManager;
 import org.apache.shiro.web.filter.AccessControlFilter;
 
@@ -25,7 +25,7 @@ public class LoginFilter  extends AccessControlFilter {
 	protected boolean isAccessAllowed(ServletRequest request,
                                       ServletResponse response, Object mappedValue) throws Exception {
 		
-		UUser token = TokenManager.getToken();
+		User token = TokenManager.getToken();
 		
 		if(null != token || isLoginRequest(request, response)){// && isEnabled()
             return Boolean.TRUE;

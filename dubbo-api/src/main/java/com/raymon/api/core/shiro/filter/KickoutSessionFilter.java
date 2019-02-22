@@ -1,9 +1,9 @@
 package com.raymon.api.core.shiro.filter;
 
-import com.raymon.api.common.utils.LoggerUtils;
 import com.raymon.api.core.shiro.cache.VCache;
 import com.raymon.api.core.shiro.session.ShiroSessionRepository;
 import com.raymon.api.core.shiro.token.manager.TokenManager;
+import com.raymon.api.utils.LoggerUtils;
 import net.sf.json.JSONObject;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
@@ -32,7 +32,7 @@ import java.util.Map;
  * <p>
  * 
  * 区分　责任人　日期　　　　说明<br/>
- * 创建　周柏成　2016年6月2日 　<br/>
+ * 创建　raymon　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
  * @email  so@raymon.api.com

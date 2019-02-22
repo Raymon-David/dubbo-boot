@@ -7,9 +7,9 @@ import com.raymon.api.pojo.contract.ContractInfoPojo;
  * Created by raymon.
  */
 public interface ContractService {
-    public ContractInfoPojo queryContractInfo();
+    ContractInfoPojo queryContractInfo();
 
-    public ContractInfoPojo queryContractInfoByRedis();
+    ContractInfoPojo queryContractInfoByRedis();
 
-    public ContractInfoPojo queryContractInfoByContractNO(ContractInfoPojo record);
+    ContractInfoPojo queryContractInfoByContractNO(ContractInfoPojo record);
 }

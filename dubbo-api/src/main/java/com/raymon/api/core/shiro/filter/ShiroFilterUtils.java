@@ -1,6 +1,6 @@
 package com.raymon.api.core.shiro.filter;
 
-import com.raymon.api.common.utils.LoggerUtils;
+import com.raymon.api.utils.LoggerUtils;
 import net.sf.json.JSONObject;
 
 import javax.servlet.ServletRequest;
@@ -21,7 +21,7 @@ import java.util.Map;
  * <p>
  * 
  * 区分　责任人　日期　　　　说明<br/>
- * 创建　周柏成　2016年5月27日 　<br/>
+ * 创建　raymon　2016年5月27日 　<br/>
  * <p>
  * *******
  * <p>

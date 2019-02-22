@@ -1,6 +1,6 @@
 package com.raymon.api.core.tags;
 
-import com.raymon.api.common.utils.StringUtils;
+import com.raymon.api.utils.StringUtils;
 
 import java.util.Map;
 
@@ -16,7 +16,7 @@ import java.util.Map;
  * <p>
  * 
  * 区分　责任人　日期　　　　说明<br/>
- * 创建　周柏成　2016年6月2日 　<br/>
+ * 创建　raymon　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
  * @email  so@raymon.api.com

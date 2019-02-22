@@ -1,7 +1,7 @@
 package com.raymon.api.core.shiro.token.manager;
 
-import com.raymon.api.common.model.UUser;
-import com.raymon.api.common.utils.SpringContextUtil;
+import com.raymon.api.pojo.user.User;
+import com.raymon.api.utils.SpringContextUtil;
 import com.raymon.api.core.shiro.session.CustomSessionManager;
 import com.raymon.api.core.shiro.token.SampleRealm;
 import com.raymon.api.core.shiro.token.ShiroToken;
@@ -19,7 +19,7 @@ import java.util.List;
  * <p>
  * 
  * 区分　责任人　日期　　　　说明<br/>
- * 创建　周柏成　2014年3月3日 　<br/>
+ * 创建　raymon　2014年3月3日 　<br/>
  * <p>
  * 
  * @author zhou-baicheng
@@ -37,8 +37,8 @@ public class TokenManager {
 	 * 获取当前登录的用户User对象
 	 * @return
 	 */
-	public static UUser getToken(){
-		UUser token = (UUser)SecurityUtils.getSubject().getPrincipal();
+	public static User getToken(){
+		User token = (User)SecurityUtils.getSubject().getPrincipal();
 		return token ;
 	}
 	
@@ -98,7 +98,7 @@ public class TokenManager {
 	 * @param rememberMe
 	 * @return
 	 */
-	public static UUser login(UUser user,Boolean rememberMe){
+	public static User login(User user, Boolean rememberMe){
 		ShiroToken token = new ShiroToken(user.getEmail(), user.getPswd());
 		token.setRememberMe(rememberMe);
 		SecurityUtils.getSubject().login(token);

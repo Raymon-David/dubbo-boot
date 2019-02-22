@@ -17,7 +17,7 @@ import org.apache.shiro.util.Destroyable;
  * <p>
  * 
  * 区分　责任人　日期　　　　说明<br/>
- * 创建　周柏成　2016年4月29日 　<br/>
+ * 创建　raymon　2016年4月29日 　<br/>
  * <p>
  * *******
  * <p>

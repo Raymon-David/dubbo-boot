@@ -1,11 +1,11 @@
 package com.raymon.api.core.shiro.session;
 
 
-import com.raymon.api.common.model.UUser;
-import com.raymon.api.common.utils.LoggerUtils;
-import com.raymon.api.common.utils.StringUtils;
+import com.raymon.api.pojo.user.User;
+import com.raymon.api.utils.LoggerUtils;
+import com.raymon.api.utils.StringUtils;
 import com.raymon.api.core.shiro.CustomShiroSessionDAO;
-import com.raymon.api.user.bo.UserOnlineBo;
+import com.raymon.api.pojo.user.UserOnlineBo;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.SimplePrincipalCollection;
 import org.apache.shiro.subject.support.DefaultSubjectContext;
@@ -25,7 +25,7 @@ import java.util.*;
  * <p>
  * 
  * 区分　责任人　日期　　　　说明<br/>
- * 创建　周柏成　2016年6月2日 　<br/>
+ * 创建　raymon　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
  * @email  so@raymon.api.com
@@ -83,8 +83,8 @@ public class CustomSessionManager {
 				SimplePrincipalCollection spc = (SimplePrincipalCollection)obj;
 				//判断用户，匹配用户ID。
 				obj = spc.getPrimaryPrincipal();
-				if(null != obj && obj instanceof UUser){
-					UUser user = (UUser)obj;
+				if(null != obj && obj instanceof User){
+					User user = (User)obj;
 					//比较用户ID，符合即加入集合
 					if(null != user && idset.contains(user.getId())){
 						list.add(spc);
@@ -121,9 +121,9 @@ public class CustomSessionManager {
 			 * return new SimpleAuthenticationInfo(user,user.getPswd(), getName());的user 对象。
 			 */
 			obj = spc.getPrimaryPrincipal();
-			if(null != obj && obj instanceof UUser){
+			if(null != obj && obj instanceof User){
 				//存储session + user 综合信息
-				UserOnlineBo userBo = new UserOnlineBo((UUser)obj);
+				UserOnlineBo userBo = new UserOnlineBo((User)obj);
 				//最后一次和系统交互的时间
 				userBo.setLastAccess(session.getLastAccessTime());
 				//主机的ip地址

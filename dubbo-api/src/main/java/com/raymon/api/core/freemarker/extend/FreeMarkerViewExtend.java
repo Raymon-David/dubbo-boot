@@ -1,7 +1,7 @@
 package com.raymon.api.core.freemarker.extend;
 
-import com.raymon.api.common.model.UUser;
-import com.raymon.api.common.utils.LoggerUtils;
+import com.raymon.api.pojo.user.User;
+import com.raymon.api.utils.LoggerUtils;
 import com.raymon.api.core.shiro.token.manager.TokenManager;
 import com.raymon.api.core.statics.Constant;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
@@ -21,7 +21,7 @@ public class FreeMarkerViewExtend extends FreeMarkerView {
 		}
 		model.put(Constant.CONTEXT_PATH, request.getContextPath());
 		model.putAll(Freemarker.initMap);
-		UUser token = TokenManager.getToken();
+		User token = TokenManager.getToken();
 		//String ip = IPUtils.getIP(request);
 		model.put("token", token);//登录的token
 		model.put("_time", new Date().getTime());

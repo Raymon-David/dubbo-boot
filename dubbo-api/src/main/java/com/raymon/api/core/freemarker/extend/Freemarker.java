@@ -1,8 +1,8 @@
 package com.raymon.api.core.freemarker.extend;
 
-import com.raymon.api.common.utils.SpringContextUtil;
-import com.raymon.api.common.utils.StringUtils;
-import com.raymon.api.common.utils.UtilPath;
+import com.raymon.api.utils.SpringContextUtil;
+import com.raymon.api.utils.StringUtils;
+import com.raymon.api.utils.UtilPath;
 import com.raymon.api.core.tags.APITemplateModel;
 import freemarker.template.*;
 import org.apache.commons.logging.Log;

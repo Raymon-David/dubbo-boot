@@ -1,6 +1,6 @@
 package com.raymon.api.core.statics;
 
-import com.raymon.api.common.utils.DateUtil;
+import com.raymon.api.utils.DateUtil;
 import com.raymon.api.core.config.IConfig;
 
 import java.util.Calendar;
@@ -17,7 +17,7 @@ import java.util.Calendar;
  * <p>
  * 
  * 区分　责任人　日期　　　　说明<br/>
- * 创建　周柏成　2016年6月2日 　<br/>
+ * 创建　raymon　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
  * @email  so@raymon.api.com

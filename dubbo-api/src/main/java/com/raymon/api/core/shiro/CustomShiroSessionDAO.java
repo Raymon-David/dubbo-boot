@@ -1,6 +1,6 @@
 package com.raymon.api.core.shiro;
 
-import com.raymon.api.common.utils.LoggerUtils;
+import com.raymon.api.utils.LoggerUtils;
 import com.raymon.api.core.shiro.session.ShiroSessionRepository;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.UnknownSessionException;
@@ -21,7 +21,7 @@ import java.util.Collection;
  * <p>
  * 
  * 区分　责任人　日期　　　　说明<br/>
- * 创建　周柏成　2016年6月2日 　<br/>
+ * 创建　raymon　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
  * @email  so@raymon.api.com

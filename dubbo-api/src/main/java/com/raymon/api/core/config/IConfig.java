@@ -1,6 +1,6 @@
 package com.raymon.api.core.config;
 
-import com.raymon.api.common.utils.LoggerUtils;
+import com.raymon.api.utils.LoggerUtils;
 
 import java.io.IOException;
 import java.util.Properties;

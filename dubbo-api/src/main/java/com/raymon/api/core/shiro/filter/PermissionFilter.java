@@ -1,6 +1,6 @@
 package com.raymon.api.core.shiro.filter;
 
-import com.raymon.api.common.utils.LoggerUtils;
+import com.raymon.api.utils.LoggerUtils;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.StringUtils;
 import org.apache.shiro.web.filter.AccessControlFilter;
@@ -25,7 +25,7 @@ import java.util.Map;
  * <p>
  * 
  * 区分　责任人　日期　　　　说明<br/>
- * 创建　周柏成　2016年6月2日 　<br/>
+ * 创建　raymon　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
  * @email  so@raymon.api.com

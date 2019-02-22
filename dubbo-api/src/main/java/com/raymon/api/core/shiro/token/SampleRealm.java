@@ -1,10 +1,10 @@
 package com.raymon.api.core.shiro.token;
 
-import com.raymon.api.common.model.UUser;
 import com.raymon.api.core.shiro.token.manager.TokenManager;
-import com.raymon.api.premission.service.PermissionService;
-import com.raymon.api.premission.service.RoleService;
-import com.raymon.api.user.service.UUserService;
+import com.raymon.api.pojo.user.User;
+import com.raymon.api.service.permission.PermissionService;
+import com.raymon.api.service.permission.RoleService;
+import com.raymon.api.service.user.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -30,7 +30,7 @@ import java.util.Set;
  * <p>
  * 
  * 区分　责任人　日期　　　　说明<br/>
- * 创建　周柏成　2016年6月2日 　<br/>
+ * 创建　raymon　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
  * @email  so@raymon.api.com
@@ -40,7 +40,7 @@ import java.util.Set;
 public class SampleRealm extends AuthorizingRealm {
 
 	@Autowired
-	UUserService userService;
+	UserService userService;
 	@Autowired
 	PermissionService permissionService;
 	@Autowired
@@ -56,13 +56,13 @@ public class SampleRealm extends AuthorizingRealm {
 			AuthenticationToken authcToken) throws AuthenticationException {
 		
 		ShiroToken token = (ShiroToken) authcToken;
-		UUser user = userService.login(token.getUsername(),token.getPswd());
+		User user = userService.login(token.getUsername(),token.getPswd());
 		if(null == user){
 			throw new AccountException("帐号或密码不正确！");
 		/**
 		 * 如果用户的status为禁用。那么就抛出<code>DisabledAccountException</code>
 		 */
-		}else if(UUser._0.equals(user.getStatus())){
+		}else if(User._0.equals(user.getStatus())){
 			throw new DisabledAccountException("帐号已经禁止登录！");
 		}else{
 			//更新登录时间 last login time
