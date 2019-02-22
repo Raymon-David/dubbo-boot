@@ -1,15 +1,15 @@
 package com.raymon.api.core.shiro.cache.impl;
 
-import com.foryou.core.shiro.cache.JedisManager;
-import com.foryou.core.shiro.cache.JedisShiroCache;
-import com.foryou.core.shiro.cache.ShiroCacheManager;
+import com.raymon.api.core.shiro.cache.JedisManager;
+import com.raymon.api.core.shiro.cache.JedisShiroCache;
+import com.raymon.api.core.shiro.cache.ShiroCacheManager;
 import org.apache.shiro.cache.Cache;
 
 /**
  * 
- * 开发公司：foryou在线工具 <p>
- * 版权所有：© www.foryou.com<p>
- * 博客地址：http://www.foryou.com/blog/  <p>
+ * 开发公司：raymon.api在线工具 <p>
+ * 版权所有：© www.raymon.api.com<p>
+ * 博客地址：http://www.raymon.api.com/blog/  <p>
  * <p>
  * 
  * JRedis管理
@@ -20,7 +20,7 @@ import org.apache.shiro.cache.Cache;
  * 创建　周柏成　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
- * @email  so@foryou.com
+ * @email  so@raymon.api.com
  * @version 1.0,2016年6月2日 <br/>
  * 
  */

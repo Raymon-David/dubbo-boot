@@ -1,6 +1,6 @@
 package com.raymon.api.core.shiro.filter;
 
-import com.foryou.common.utils.LoggerUtils;
+import com.raymon.api.common.utils.LoggerUtils;
 import net.sf.json.JSONObject;
 
 import javax.servlet.ServletRequest;

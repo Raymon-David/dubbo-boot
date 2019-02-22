@@ -1,6 +1,6 @@
 package com.raymon.api.core.shiro.cache.impl;
 
-import com.foryou.core.shiro.cache.ShiroCacheManager;
+import com.raymon.api.core.shiro.cache.ShiroCacheManager;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;
 import org.apache.shiro.cache.CacheManager;
@@ -8,8 +8,8 @@ import org.apache.shiro.util.Destroyable;
 
 /**
  * 
- * 开发公司：foryou.com<br/>
- * 版权：foryou.com<br/>
+ * 开发公司：raymon.api.com<br/>
+ * 版权：raymon.api.com<br/>
  * <p>
  * 
  * shiro Custom Cache
@@ -22,7 +22,7 @@ import org.apache.shiro.util.Destroyable;
  * *******
  * <p>
  * @author zhou-baicheng
- * @email  json@foryou.com
+ * @email  json@raymon.api.com
  * @version 1.0,2016年4月29日 <br/>
  * 
  */

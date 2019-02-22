@@ -1,10 +1,10 @@
 package com.raymon.api.core.shiro.token;
 
-import com.foryou.common.model.UUser;
-import com.foryou.core.shiro.token.manager.TokenManager;
-import com.foryou.premission.service.PermissionService;
-import com.foryou.premission.service.RoleService;
-import com.foryou.user.service.UUserService;
+import com.raymon.api.common.model.UUser;
+import com.raymon.api.core.shiro.token.manager.TokenManager;
+import com.raymon.api.premission.service.PermissionService;
+import com.raymon.api.premission.service.RoleService;
+import com.raymon.api.user.service.UUserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -20,9 +20,9 @@ import java.util.Set;
 
 /**
  * 
- * 开发公司：foryou在线工具 <p>
- * 版权所有：© www.foryou.com<p>
- * 博客地址：http://www.foryou.com/blog/  <p>
+ * 开发公司：raymon.api在线工具 <p>
+ * 版权所有：© www.raymon.api.com<p>
+ * 博客地址：http://www.raymon.api.com/blog/  <p>
  * <p>
  * 
  * shiro 认证 + 授权   重写
@@ -33,7 +33,7 @@ import java.util.Set;
  * 创建　周柏成　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
- * @email  so@foryou.com
+ * @email  so@raymon.api.com
  * @version 1.0,2016年6月2日 <br/>
  * 
  */

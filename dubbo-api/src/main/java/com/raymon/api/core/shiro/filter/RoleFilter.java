@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 
- * 开发公司：foryou在线工具 <p>
- * 版权所有：© www.foryou.com<p>
- * 博客地址：http://www.foryou.com/blog/  <p>
+ * 开发公司：raymon.api在线工具 <p>
+ * 版权所有：© www.raymon.api.com<p>
+ * 博客地址：http://www.raymon.api.com/blog/  <p>
  * <p>
  * 
  * 角色判断校验
@@ -24,14 +24,14 @@ import javax.servlet.http.HttpServletResponse;
  * 创建　周柏成　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
- * @email  so@foryou.com
+ * @email  so@raymon.api.com
  * @version 1.0,2016年6月2日 <br/>
  * 
  */
 public class RoleFilter extends AccessControlFilter {
 
-	static final String LOGIN_URL = "http://www.foryou.com/user/open/toLogin.shtml";
-	static final String UNAUTHORIZED_URL = "http://www.foryou.com/unauthorized.html";
+	static final String LOGIN_URL = "http://www.raymon.api.com/user/open/toLogin.shtml";
+	static final String UNAUTHORIZED_URL = "http://www.raymon.api.com/unauthorized.html";
 	
 	@Override
 	protected boolean isAccessAllowed(ServletRequest request,

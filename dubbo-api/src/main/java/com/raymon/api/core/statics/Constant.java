@@ -1,15 +1,15 @@
 package com.raymon.api.core.statics;
 
-import com.foryou.common.utils.DateUtil;
-import com.foryou.core.config.IConfig;
+import com.raymon.api.common.utils.DateUtil;
+import com.raymon.api.core.config.IConfig;
 
 import java.util.Calendar;
 
 /**
  * 
- * 开发公司：foryou在线工具 <p>
- * 版权所有：© www.foryou.com<p>
- * 博客地址：http://www.foryou.com/blog/  <p>
+ * 开发公司：raymon.api在线工具 <p>
+ * 版权所有：© www.raymon.api.com<p>
+ * 博客地址：http://www.raymon.api.com/blog/  <p>
  * <p>
  * 
  * 静态变量
@@ -20,7 +20,7 @@ import java.util.Calendar;
  * 创建　周柏成　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
- * @email  so@foryou.com
+ * @email  so@raymon.api.com
  * @version 1.0,2016年6月2日 <br/>
  * 
  */
@@ -78,5 +78,5 @@ public interface Constant {
 	
 	
 	//存储到缓存，标识用户的禁止状态，解决在线用户踢出的问题
-	final static String  EXECUTE_CHANGE_USER = "foryou_EXECUTE_CHANGE_USER";
+	final static String  EXECUTE_CHANGE_USER = "raymon.api_EXECUTE_CHANGE_USER";
 }

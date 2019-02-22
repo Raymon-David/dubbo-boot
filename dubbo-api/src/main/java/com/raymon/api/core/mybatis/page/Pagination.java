@@ -4,9 +4,9 @@ import java.util.List;
 
 /**
  * 
- * 开发公司：foryou在线工具 <p>
- * 版权所有：© www.foryou.com<p>
- * 博客地址：http://www.foryou.com/blog/  <p>
+ * 开发公司：raymon.api在线工具 <p>
+ * 版权所有：© www.raymon.api.com<p>
+ * 博客地址：http://www.raymon.api.com/blog/  <p>
  * <p>
  * 
  * 分页的对象，以及分页页码输出
@@ -17,7 +17,7 @@ import java.util.List;
  * 创建　周柏成　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
- * @email  so@foryou.com
+ * @email  so@raymon.api.com
  * @version 1.0,2016年6月2日 <br/>
  * 
  */
@@ -56,7 +56,7 @@ public class Pagination<T> extends SimplePage implements java.io.Serializable,
 	}
 
 	
-	/**foryou SEO 翻页版本*/
+	/**raymon.api SEO 翻页版本*/
 	public String getWebPage(String page){
 		StringBuffer pageHtml = new StringBuffer("<ul class='pagination'>");
 		if(this.getPageNo()>1){

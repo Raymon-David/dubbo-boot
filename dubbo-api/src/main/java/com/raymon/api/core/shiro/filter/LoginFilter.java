@@ -1,8 +1,8 @@
 package com.raymon.api.core.shiro.filter;
 
-import com.foryou.common.model.UUser;
-import com.foryou.common.utils.LoggerUtils;
-import com.foryou.core.shiro.token.manager.TokenManager;
+import com.raymon.api.common.model.UUser;
+import com.raymon.api.common.utils.LoggerUtils;
+import com.raymon.api.core.shiro.token.manager.TokenManager;
 import org.apache.shiro.web.filter.AccessControlFilter;
 
 import javax.servlet.ServletRequest;

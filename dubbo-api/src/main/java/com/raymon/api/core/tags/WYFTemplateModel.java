@@ -1,7 +1,7 @@
 package com.raymon.api.core.tags;
 
 
-import com.foryou.core.freemarker.utils.FreemarkerTagUtil;
+import com.raymon.api.core.freemarker.utils.FreemarkerTagUtil;
 import freemarker.core.Environment;
 import freemarker.template.*;
 

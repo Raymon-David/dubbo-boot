@@ -1,11 +1,11 @@
 package com.raymon.api.core.shiro.session;
 
 
-import com.foryou.common.model.UUser;
-import com.foryou.common.utils.LoggerUtils;
-import com.foryou.common.utils.StringUtils;
-import com.foryou.core.shiro.CustomShiroSessionDAO;
-import com.foryou.user.bo.UserOnlineBo;
+import com.raymon.api.common.model.UUser;
+import com.raymon.api.common.utils.LoggerUtils;
+import com.raymon.api.common.utils.StringUtils;
+import com.raymon.api.core.shiro.CustomShiroSessionDAO;
+import com.raymon.api.user.bo.UserOnlineBo;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.SimplePrincipalCollection;
 import org.apache.shiro.subject.support.DefaultSubjectContext;
@@ -15,9 +15,9 @@ import java.util.*;
 
 /**
  * 
- * 开发公司：foryou在线工具 <p>
- * 版权所有：© www.foryou.com<p>
- * 博客地址：http://www.foryou.com/blog/  <p>
+ * 开发公司：raymon.api在线工具 <p>
+ * 版权所有：© www.raymon.api.com<p>
+ * 博客地址：http://www.raymon.api.com/blog/  <p>
  * <p>
  * 
  * 用户Session 手动管理
@@ -28,7 +28,7 @@ import java.util.*;
  * 创建　周柏成　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
- * @email  so@foryou.com
+ * @email  so@raymon.api.com
  * @version 1.0,2016年6月2日 <br/>
  * 
  */
@@ -38,7 +38,7 @@ public class CustomSessionManager {
 	/**
 	 * session status 
 	 */
-	public static final String SESSION_STATUS ="foryou-online-status";
+	public static final String SESSION_STATUS ="raymon.api-online-status";
 	@Autowired
 	ShiroSessionRepository shiroSessionRepository;
 	

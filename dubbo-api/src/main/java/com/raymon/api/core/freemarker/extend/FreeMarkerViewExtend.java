@@ -1,9 +1,9 @@
 package com.raymon.api.core.freemarker.extend;
 
-import com.foryou.common.model.UUser;
-import com.foryou.common.utils.LoggerUtils;
-import com.foryou.core.shiro.token.manager.TokenManager;
-import com.foryou.core.statics.Constant;
+import com.raymon.api.common.model.UUser;
+import com.raymon.api.common.utils.LoggerUtils;
+import com.raymon.api.core.shiro.token.manager.TokenManager;
+import com.raymon.api.core.statics.Constant;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
 
 import javax.servlet.http.HttpServletRequest;

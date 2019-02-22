@@ -1,14 +1,14 @@
 package com.raymon.api.core.tags;
 
-import com.foryou.common.utils.StringUtils;
+import com.raymon.api.common.utils.StringUtils;
 
 import java.util.Map;
 
 /**
  * 
- * 开发公司：foryou在线工具 <p>
- * 版权所有：© www.foryou.com<p>
- * 博客地址：http://www.foryou.com/blog/  <p>
+ * 开发公司：raymon.api在线工具 <p>
+ * 版权所有：© www.raymon.api.com<p>
+ * 博客地址：http://www.raymon.api.com/blog/  <p>
  * <p>
  * 
  *  自定义标签的父类。
@@ -19,7 +19,7 @@ import java.util.Map;
  * 创建　周柏成　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
- * @email  so@foryou.com
+ * @email  so@raymon.api.com
  * @version 1.0,2016年6月2日 <br/>
  * 
  */

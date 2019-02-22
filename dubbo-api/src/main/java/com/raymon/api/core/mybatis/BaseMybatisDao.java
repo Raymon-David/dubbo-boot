@@ -1,9 +1,9 @@
 package com.raymon.api.core.mybatis;
 
-import com.foryou.common.utils.LoggerUtils;
-import com.foryou.common.utils.StringUtils;
-import com.foryou.core.mybatis.page.MysqlDialect;
-import com.foryou.core.mybatis.page.Pagination;
+import com.raymon.api.common.utils.LoggerUtils;
+import com.raymon.api.common.utils.StringUtils;
+import com.raymon.api.core.mybatis.page.MysqlDialect;
+import com.raymon.api.core.mybatis.page.Pagination;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.mapping.BoundSql;

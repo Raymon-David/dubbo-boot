@@ -1,8 +1,8 @@
 package com.raymon.api.core.shiro.service.impl;
 
-import com.foryou.common.utils.LoggerUtils;
-import com.foryou.core.config.INI4j;
-import com.foryou.core.shiro.service.ShiroManager;
+import com.raymon.api.common.utils.LoggerUtils;
+import com.raymon.api.core.config.INI4j;
+import com.raymon.api.core.shiro.service.ShiroManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.filter.mgt.DefaultFilterChainManager;
 import org.apache.shiro.web.filter.mgt.PathMatchingFilterChainResolver;
@@ -16,9 +16,9 @@ import java.util.Set;
 
 /**
  * 
- * 开发公司：foryou在线工具 <p>
- * 版权所有：© www.foryou.com<p>
- * 博客地址：http://www.foryou.com/blog/  <p>
+ * 开发公司：raymon.api在线工具 <p>
+ * 版权所有：© www.raymon.api.com<p>
+ * 博客地址：http://www.raymon.api.com/blog/  <p>
  * <p>
  * 
  * 动态加载权限 Service
@@ -29,7 +29,7 @@ import java.util.Set;
  * 创建　周柏成　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
- * @email  so@foryou.com
+ * @email  so@raymon.api.com
  * @version 1.0,2016年6月2日 <br/>
  * 
  */

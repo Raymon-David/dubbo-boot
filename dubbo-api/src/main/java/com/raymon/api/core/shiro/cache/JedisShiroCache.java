@@ -1,7 +1,7 @@
 package com.raymon.api.core.shiro.cache;
 
-import com.foryou.common.utils.LoggerUtils;
-import com.foryou.common.utils.SerializeUtil;
+import com.raymon.api.common.utils.LoggerUtils;
+import com.raymon.api.common.utils.SerializeUtil;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;
 
@@ -10,8 +10,8 @@ import java.util.Set;
 
 /**
  * 
- * 开发公司：foryou.com<br/>
- * 版权：foryou.com<br/>
+ * 开发公司：raymon.api.com<br/>
+ * 版权：raymon.api.com<br/>
  * <p>
  * 
  * 缓存获取Manager
@@ -24,7 +24,7 @@ import java.util.Set;
  * *******
  * <p>
  * @author zhou-baicheng
- * @email  json@foryou.com
+ * @email  json@raymon.api.com
  * @version 1.0,2016年4月29日 <br/>
  * 
  */

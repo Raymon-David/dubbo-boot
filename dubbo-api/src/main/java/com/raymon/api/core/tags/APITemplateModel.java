@@ -1,8 +1,8 @@
 package com.raymon.api.core.tags;
 
-import com.foryou.common.utils.LoggerUtils;
-import com.foryou.common.utils.SpringContextUtil;
-import com.foryou.core.statics.Constant;
+import com.raymon.api.common.utils.LoggerUtils;
+import com.raymon.api.common.utils.SpringContextUtil;
+import com.raymon.api.core.statics.Constant;
 import freemarker.template.TemplateModel;
 import freemarker.template.TemplateModelException;
 
@@ -13,9 +13,9 @@ import static freemarker.template.ObjectWrapper.DEFAULT_WRAPPER;
 
 /**
  * 
- * 开发公司：foryou在线工具 <p>
- * 版权所有：© www.foryou.com<p>
- * 博客地址：http://www.foryou.com/blog/  <p>
+ * 开发公司：raymon.api在线工具 <p>
+ * 版权所有：© www.raymon.api.com<p>
+ * 博客地址：http://www.raymon.api.com/blog/  <p>
  * <p>
  * 
  * Freemarker 自定义标签 API公共入口
@@ -26,7 +26,7 @@ import static freemarker.template.ObjectWrapper.DEFAULT_WRAPPER;
  * 创建　周柏成　2016年6月2日 　<br/>
  *
  * @author zhou-baicheng
- * @email  so@foryou.com
+ * @email  so@raymon.api.com
  * @version 1.0,2016年6月2日 <br/>
  * 
  */

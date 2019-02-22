@@ -1,10 +1,10 @@
 package com.raymon.api.core.shiro.token.manager;
 
-import com.foryou.common.model.UUser;
-import com.foryou.common.utils.SpringContextUtil;
-import com.foryou.core.shiro.session.CustomSessionManager;
-import com.foryou.core.shiro.token.SampleRealm;
-import com.foryou.core.shiro.token.ShiroToken;
+import com.raymon.api.common.model.UUser;
+import com.raymon.api.common.utils.SpringContextUtil;
+import com.raymon.api.core.shiro.session.CustomSessionManager;
+import com.raymon.api.core.shiro.token.SampleRealm;
+import com.raymon.api.core.shiro.token.ShiroToken;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.SimplePrincipalCollection;
