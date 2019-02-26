@@ -6,8 +6,8 @@
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 		<link   rel="icon" href="http://img.wenyifan.net/images/favicon.ico" type="image/x-icon" />
 		<link   rel="shortcut icon" href="http://img.wenyifan.net/images/favicon.ico" />
-		<link href="${basePath}/js/common/bootstrap/3.3.5/css/bootstrap.min.css?${_v}" rel="stylesheet"/>
-		<link href="${basePath}/css/common/base.css?${_v}" rel="stylesheet"/>
+		<link href="${basePath}/static/js/common/bootstrap/3.3.5/css/bootstrap.min.css?${_v}" rel="stylesheet"/>
+		<link href="${basePath}/static/css/common/base.css?${_v}" rel="stylesheet"/>
 	</head>
 	<body data-target="#one" data-spy="scroll">
 		
@@ -61,9 +61,9 @@
 			<#--/row-->
 		</div>
 		<script  src="http://open.sojson.com/common/jquery/jquery1.8.3.min.js"></script>
-		<script  src="${basePath}/js/common/layer/layer.js"></script>
-		<script  src="${basePath}/js/common/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script  src="${basePath}/js/common/bootstrap/bootstrap-treeview.js"></script>
-		<script  src="${basePath}/js/shiro.demo.js"></script>
+		<script  src="${basePath}/static/js/common/layer/layer.js"></script>
+		<script  src="${basePath}/static/js/common/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script  src="${basePath}/static/js/common/bootstrap/bootstrap-treeview.js"></script>
+		<script  src="${basePath}/static/js/shiro.demo.js"></script>
 	</body>
 </html>

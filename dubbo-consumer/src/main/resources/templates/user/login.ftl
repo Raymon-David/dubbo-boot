@@ -173,7 +173,7 @@
         <script src="http://open.sojson.com/common/MD5.js"></script>
         <script src="http://open.sojson.com/itboy/js/itboy/app/supersized.3.2.7.min.js"></script>
         <script src="http://open.sojson.com/itboy/js/itboy/app/supersized-init.js"></script>
-		<script  src="${basePath}/js/common/layer/layer.js"></script>
+		<script  src="${basePath}/static/js/common/layer/layer.js"></script>
         <script >
 			jQuery(document).ready(function() {
 				try{
