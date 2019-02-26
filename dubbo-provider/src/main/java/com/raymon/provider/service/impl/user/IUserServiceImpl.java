@@ -7,16 +7,16 @@ import java.util.Map;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.raymon.api.pojo.premission.URolePojo;
 import com.raymon.api.pojo.premission.UserRoleAllocationPojo;
-import com.raymon.api.core.mybatis.BaseMybatisDao;
+import com.raymon.provider.config.BaseMybatisDao;
 import com.raymon.api.core.mybatis.page.Pagination;
 import com.raymon.api.core.shiro.session.CustomSessionManager;
 import com.raymon.api.core.shiro.token.manager.TokenManager;
 import com.raymon.api.pojo.user.User;
 import com.raymon.api.pojo.user.UserRole;
-import com.raymon.api.service.user.UserService;
+import com.raymon.api.service.user.IUserService;
 import com.raymon.api.utils.LoggerUtils;
-import com.raymon.provider.dao.user.UserMapper;
-import com.raymon.provider.dao.user.UUserRoleMapper;
+import com.raymon.provider.dao.user.IUserMapper;
+import com.raymon.provider.dao.user.UserRoleMapper;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
@@ -26,16 +26,16 @@ import org.springframework.ui.ModelMap;
 		protocol = "${dubbo.protocol.id}",
 		registry = "${dubbo.registry.id}"
 )
-public class UserServiceImpl extends BaseMybatisDao<UserMapper> implements UserService {
+public class IUserServiceImpl extends BaseMybatisDao<IUserMapper> implements IUserService {
 	/***
 	 * 用户手动操作Session
 	 * */
 	@Autowired
-	CustomSessionManager customSessionManager;
+	private CustomSessionManager customSessionManager;
 	@Autowired
-	UserMapper userMapper;
+	private IUserMapper userMapper;
 	@Autowired
-	UUserRoleMapper userRoleMapper;
+	private UserRoleMapper userRoleMapper;
 
 	@Override
 	public int deleteByPrimaryKey(Long id) {
@@ -101,7 +101,7 @@ public class UserServiceImpl extends BaseMybatisDao<UserMapper> implements UserS
 			}else{
 				idArray = new String[]{ids};
 			}
-			
+
 			for (String id : idArray) {
 				count+=this.deleteByPrimaryKey(new Long(id));
 			}
@@ -122,11 +122,11 @@ public class UserServiceImpl extends BaseMybatisDao<UserMapper> implements UserS
 			User user = selectByPrimaryKey(id);
 			user.setStatus(status);
 			updateByPrimaryKeySelective(user);
-			
+
 			//如果当前用户在线，需要标记并且踢出
 			customSessionManager.forbidUserById(id,status);
-			
-			
+
+
 			resultMap.put("status", 200);
 		} catch (Exception e) {
 			resultMap.put("status", 500);

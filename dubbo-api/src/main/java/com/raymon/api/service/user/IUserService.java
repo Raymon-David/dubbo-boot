@@ -10,7 +10,7 @@ import org.springframework.ui.ModelMap;
 
 import com.raymon.api.core.mybatis.page.Pagination;
 
-public interface UserService {
+public interface IUserService {
 
 	int deleteByPrimaryKey(Long id);
 

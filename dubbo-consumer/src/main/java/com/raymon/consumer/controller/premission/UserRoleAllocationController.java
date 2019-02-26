@@ -1,17 +1,17 @@
 package com.raymon.consumer.controller.premission;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.raymon.api.core.mybatis.page.Pagination;
 import com.raymon.api.pojo.premission.URolePojo;
 import com.raymon.api.pojo.premission.UserRoleAllocationPojo;
 import com.raymon.api.service.permission.PermissionService;
-import com.raymon.api.service.user.UserService;
+import com.raymon.api.service.user.IUserService;
 import com.raymon.consumer.controller.common.BaseController;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -27,14 +27,20 @@ import java.util.Map;
  *
  * 
  */
-@Controller
+@RestController
 @Scope(value="prototype")
 @RequestMapping("role")
 public class UserRoleAllocationController extends BaseController {
-	@Autowired
-	UserService userService;
-	@Autowired
-	PermissionService permissionService;
+
+	@Reference(version = "${demo.service.version}",
+			application = "${dubbo.application.id}",
+			url = "dubbo://localhost:20880")
+	private IUserService userService;
+
+	@Reference(version = "${demo.service.version}",
+			application = "${dubbo.application.id}",
+			url = "dubbo://localhost:20880")
+	private PermissionService permissionService;
 	/**
 	 * 用户角色权限分配
 	 * @param modelMap

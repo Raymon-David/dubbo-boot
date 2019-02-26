@@ -8,7 +8,7 @@ import java.util.Set;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.raymon.api.pojo.premission.UPermissionPojo;
 import com.raymon.api.utils.StringUtils;
-import com.raymon.api.core.mybatis.BaseMybatisDao;
+import com.raymon.provider.config.BaseMybatisDao;
 import com.raymon.api.core.mybatis.page.Pagination;
 import com.raymon.api.core.shiro.token.manager.TokenManager;
 import com.raymon.api.pojo.user.UPermission;
@@ -17,8 +17,7 @@ import com.raymon.api.service.permission.PermissionService;
 import com.raymon.api.utils.LoggerUtils;
 import com.raymon.provider.dao.user.UPermissionMapper;
 import com.raymon.provider.dao.user.URolePermissionMapper;
-import com.raymon.provider.dao.user.UserMapper;
-import com.raymon.provider.dao.user.UUserRoleMapper;
+import com.raymon.provider.dao.user.UserRoleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -30,13 +29,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class PermissionServiceImpl extends BaseMybatisDao<UPermissionMapper> implements PermissionService {
 
 	@Autowired
-	UPermissionMapper permissionMapper;
+	private UPermissionMapper permissionMapper;
 	@Autowired
-	UserMapper userMapper;
+	private URolePermissionMapper rolePermissionMapper;
 	@Autowired
-	URolePermissionMapper rolePermissionMapper;
-	@Autowired
-	UUserRoleMapper userRoleMapper;
+	private UserRoleMapper userRoleMapper;
 	
 	@Override
 	public int deleteByPrimaryKey(Long id) {

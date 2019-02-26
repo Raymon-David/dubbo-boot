@@ -9,7 +9,7 @@ import java.util.Map;
 
 @Component
 @Mapper
-public interface UUserRoleMapper {
+public interface UserRoleMapper {
     int insert(UserRole record);
 
     int insertSelective(UserRole record);

@@ -3,13 +3,13 @@ package com.raymon.consumer.controller.user;
 import java.util.Date;
 import java.util.Map;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.raymon.api.core.shiro.token.manager.TokenManager;
 import com.raymon.api.pojo.user.User;
 import com.raymon.api.pojo.user.manager.UserManager;
-import com.raymon.api.service.user.UserService;
+import com.raymon.api.service.user.IUserService;
 import com.raymon.api.utils.LoggerUtils;
 import com.raymon.api.utils.StringUtils;
 import com.raymon.api.utils.VerifyCodeUtils;
@@ -20,10 +20,10 @@ import org.apache.shiro.authc.DisabledAccountException;
 import org.apache.shiro.web.util.SavedRequest;
 import org.apache.shiro.web.util.WebUtils;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -46,13 +46,15 @@ import org.springframework.web.servlet.ModelAndView;
  * @version 1.0,2016年5月3日 <br/>
  * 
  */
-@Controller
+@RestController
 @Scope(value="prototype")
 @RequestMapping("u")
 public class UserLoginController extends BaseController {
 
-	@Resource
-	UserService userService;
+	@Reference(version = "${demo.service.version}",
+			application = "${dubbo.application.id}",
+			url = "dubbo://localhost:20880")
+	private IUserService userService;
 	
 	/**
 	 * 登录跳转

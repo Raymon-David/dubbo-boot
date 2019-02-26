@@ -7,7 +7,7 @@ import java.util.Set;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.raymon.api.pojo.premission.RolePermissionAllocationPojo;
-import com.raymon.api.core.mybatis.BaseMybatisDao;
+import com.raymon.provider.config.BaseMybatisDao;
 import com.raymon.api.core.mybatis.page.Pagination;
 import com.raymon.api.core.shiro.token.manager.TokenManager;
 import com.raymon.api.pojo.user.URole;
@@ -15,7 +15,7 @@ import com.raymon.api.service.permission.RoleService;
 import com.raymon.api.utils.LoggerUtils;
 import com.raymon.provider.dao.user.URoleMapper;
 import com.raymon.provider.dao.user.URolePermissionMapper;
-import com.raymon.provider.dao.user.UserMapper;
+import com.raymon.provider.dao.user.IUserMapper;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -27,11 +27,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class RoleServiceImpl extends BaseMybatisDao<URoleMapper> implements RoleService {
 
 	@Autowired
-	URoleMapper roleMapper;
+	private URoleMapper roleMapper;
 	@Autowired
-	UserMapper userMapper;
+	private IUserMapper userMapper;
 	@Autowired
-	URolePermissionMapper rolePermissionMapper;
+	private URolePermissionMapper rolePermissionMapper;
 
 	@Override
 	public int deleteByPrimaryKey(Long id) {

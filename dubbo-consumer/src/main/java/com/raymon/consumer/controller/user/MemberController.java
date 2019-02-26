@@ -3,20 +3,16 @@ package com.raymon.consumer.controller.user;
 import java.util.List;
 import java.util.Map;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.raymon.api.core.mybatis.page.Pagination;
 import com.raymon.api.core.shiro.session.CustomSessionManager;
 import com.raymon.api.pojo.user.User;
 import com.raymon.api.pojo.user.UserOnlineBo;
-import com.raymon.api.service.user.UserService;
+import com.raymon.api.service.user.IUserService;
 import com.raymon.consumer.controller.common.BaseController;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 /**
  * 
@@ -38,17 +34,23 @@ import org.springframework.web.servlet.ModelAndView;
  * @version 1.0,2016年5月26日 <br/>
  * 
  */
-@Controller
+@RestController
 @Scope(value="prototype")
 @RequestMapping("member")
 public class MemberController extends BaseController {
 	/***
 	 * 用户手动操作Session
 	 * */
-	@Autowired
-	CustomSessionManager customSessionManager;
-	@Autowired
-	UserService userService;
+
+	@Reference(version = "${demo.service.version}",
+			application = "${dubbo.application.id}",
+			url = "dubbo://localhost:20880")
+	private CustomSessionManager customSessionManager;
+
+	@Reference(version = "${demo.service.version}",
+			application = "${dubbo.application.id}",
+			url = "dubbo://localhost:20880")
+	private IUserService userService;
 	/**
 	 * 用户列表管理
 	 * @return

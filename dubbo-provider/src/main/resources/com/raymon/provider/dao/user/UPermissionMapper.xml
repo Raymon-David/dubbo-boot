@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.foryou.common.dao.UPermissionMapper" >
-  <resultMap id="BaseResultMap" type="com.foryou.common.model.UPermission" >
+<mapper namespace="com.raymon.provider.dao.user.UPermissionMapper" >
+  <resultMap id="BaseResultMap" type="com.raymon.api.pojo.user.UPermission" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="url" property="url" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
@@ -38,7 +38,7 @@
   	<include refid="where_all" />
   </select>
   
-  <select id="selectPermissionById" resultType="com.foryou.permission.bo.UPermissionBo">
+  <select id="selectPermissionById" resultType="com.raymon.api.pojo.premission.UPermissionPojo">
 		select up.id,ur.id roleId,up.name,up.url,ifnull(ur.id,0)marker from u_permission up
 		left join u_role_permission urp on urp.pid = up.id
 		left join (select id from u_role where id = #{id,jdbcType=BIGINT}) ur on ur.id = urp.rid
@@ -61,11 +61,11 @@
     delete from u_permission
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.foryou.common.model.UPermission" >
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.raymon.api.pojo.user.UPermission" >
     insert into u_permission (id, url, name)
     values (#{id,jdbcType=BIGINT}, #{url,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.foryou.common.model.UPermission" >
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.raymon.api.pojo.user.UPermission" >
     insert into u_permission
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -90,7 +90,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.foryou.common.model.UPermission" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.raymon.api.pojo.user.UPermission" >
     update u_permission
     <set >
       <if test="url != null" >
@@ -102,7 +102,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.foryou.common.model.UPermission" >
+  <update id="updateByPrimaryKey" parameterType="com.raymon.api.pojo.user.UPermission" >
     update u_permission
     set url = #{url,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR}

@@ -1,5 +1,6 @@
 package com.raymon.consumer.controller.premission;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.raymon.api.core.mybatis.page.Pagination;
 import com.raymon.api.pojo.user.URole;
 import com.raymon.api.pojo.user.manager.UserManager;
@@ -13,6 +14,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -27,12 +29,15 @@ import java.util.Map;
  * <p>
  * 
  */
-@Controller
+@RestController
 @Scope(value="prototype")
 @RequestMapping("role")
 public class RoleController extends BaseController {
-	@Autowired
-	RoleService roleService;
+	@Reference(version = "${demo.service.version}",
+			application = "${dubbo.application.id}",
+			url = "dubbo://localhost:20880")
+	private RoleService roleService;
+
 	/**
 	 * 角色列表
 	 * @return

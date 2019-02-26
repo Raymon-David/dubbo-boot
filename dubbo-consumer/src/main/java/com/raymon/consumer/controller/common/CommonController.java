@@ -1,5 +1,6 @@
 package com.raymon.consumer.controller.common;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.raymon.api.service.permission.RoleService;
 import com.raymon.api.utils.LoggerUtils;
 import com.raymon.api.utils.StringUtils;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.UrlPathHelper;
 
@@ -23,12 +25,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
 
-@Controller
+@RestController
 @Scope(value="prototype")
 @RequestMapping("open")
 public class CommonController extends BaseController{
-    @Resource
+
+    @Reference(version = "${demo.service.version}",
+            application = "${dubbo.application.id}",
+            url = "dubbo://localhost:20880")
     RoleService roleService;
+
     @RequestMapping("refreshDB")
     @ResponseBody
     public Map<String, Object> refreshDB(){

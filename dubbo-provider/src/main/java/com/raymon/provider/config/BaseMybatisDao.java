@@ -1,4 +1,4 @@
-package com.raymon.api.core.mybatis;
+package com.raymon.provider.config;
 
 import com.raymon.api.utils.LoggerUtils;
 import com.raymon.api.utils.StringUtils;
@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@SuppressWarnings( { "unchecked" })
+
 public class BaseMybatisDao<T> extends SqlSessionDaoSupport {
 
 	private String NAMESPACE;

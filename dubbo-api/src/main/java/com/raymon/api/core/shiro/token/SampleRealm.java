@@ -4,7 +4,7 @@ import com.raymon.api.core.shiro.token.manager.TokenManager;
 import com.raymon.api.pojo.user.User;
 import com.raymon.api.service.permission.PermissionService;
 import com.raymon.api.service.permission.RoleService;
-import com.raymon.api.service.user.UserService;
+import com.raymon.api.service.user.IUserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -40,7 +40,7 @@ import java.util.Set;
 public class SampleRealm extends AuthorizingRealm {
 
 	@Autowired
-	UserService userService;
+    IUserService userService;
 	@Autowired
 	PermissionService permissionService;
 	@Autowired

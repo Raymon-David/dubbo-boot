@@ -1,5 +1,6 @@
 package com.raymon.consumer.controller.premission;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.raymon.api.core.mybatis.page.Pagination;
 import com.raymon.api.pojo.premission.RolePermissionAllocationPojo;
 import com.raymon.api.pojo.premission.UPermissionPojo;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -26,15 +28,20 @@ import java.util.Map;
  * <p>
  * 
  */
-@Controller
+@RestController
 @Scope(value="prototype")
 @RequestMapping("permission")
 public class PermissionAllocationController extends BaseController {
-	
-	@Autowired
-	PermissionService permissionService;
-	@Autowired
-	RoleService roleService;
+
+	@Reference(version = "${demo.service.version}",
+			application = "${dubbo.application.id}",
+			url = "dubbo://localhost:20880")
+	private PermissionService permissionService;
+
+	@Reference(version = "${demo.service.version}",
+			application = "${dubbo.application.id}",
+			url = "dubbo://localhost:20880")
+	private RoleService roleService;
 	/**
 	 * 权限分配
 	 * @param modelMap

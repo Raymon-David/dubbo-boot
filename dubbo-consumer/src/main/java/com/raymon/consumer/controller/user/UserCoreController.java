@@ -2,22 +2,17 @@ package com.raymon.consumer.controller.user;
 
 import java.util.Map;
 
-import javax.annotation.Resource;
-
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.raymon.api.core.shiro.token.manager.TokenManager;
 import com.raymon.api.pojo.user.User;
 import com.raymon.api.pojo.user.manager.UserManager;
-import com.raymon.api.service.user.UserService;
+import com.raymon.api.service.user.IUserService;
 import com.raymon.api.utils.LoggerUtils;
 import com.raymon.consumer.controller.common.BaseController;
 import net.sf.json.JSONObject;
 
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -40,13 +35,15 @@ import org.springframework.web.servlet.ModelAndView;
  * @version 1.0,2016年5月3日 <br/>
  * 
  */
-@Controller
+@RestController
 @Scope(value="prototype")
 @RequestMapping("user")
 public class UserCoreController extends BaseController {
 
-	@Resource
-	UserService userService;
+	@Reference(version = "${demo.service.version}",
+			application = "${dubbo.application.id}",
+			url = "dubbo://localhost:20880")
+	private IUserService userService;
 	/**
 	 * 个人资料
 	 * @return

@@ -10,7 +10,7 @@ import java.util.Map;
 
 @Component
 @Mapper
-public interface UserMapper {
+public interface IUserMapper {
     int deleteByPrimaryKey(Long id);
 
     int insert(User record);
