@@ -1,4 +1,4 @@
-package com.raymon.api.core.http;
+package com.raymon.api.http;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -23,8 +23,8 @@ public class HttpsZCXMD5 extends DefaultHttpClient{
         try{
             String sy = "0c95ab2ec86a4a018f77eb56d7ed26e7";
             String account = URLEncoder.encode("DCFL0011", "utf-8");
-            String custIdNumber = "341281198712082521";
-            String custNm = "路三妮";
+            String custIdNumber = "152728198612023613";
+            String custNm = "袭利惠";
             //生成一个MD5加密计算摘要
             MessageDigest md = MessageDigest.getInstance("MD5");
             // 计算md5函数
