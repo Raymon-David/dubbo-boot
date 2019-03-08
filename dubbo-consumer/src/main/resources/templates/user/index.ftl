@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>${token.nickname} —个人中心</title>
-		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, userPojo-scalable=no" name="viewport" />
 		<link   rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
 		<link   rel="shortcut icon" href="${basePath}/favicon.ico" />
 		<link href="${basePath}/js/common/bootstrap/3.3.5/css/bootstrap.min.css?${_v}" rel="stylesheet"/>
@@ -16,7 +16,7 @@
 		<@_top.top 1/>
 		<div class="container" style="padding-bottom: 15px;min-height: 300px; margin-top: 40px;">
 			<div class="row">
-				<@_left.user 1/>
+				<@_left.userPojo 1/>
 				<div class="col-md-10">
 					<h2>个人资料</h2>
 					<hr>

@@ -100,7 +100,7 @@ public class CookieUtils {
             for (int i = 0; i < cookies.length; i++) {
                 Cookie cookie = cookies[i];
                 String cname = cookie.getName();
-                if (!StringUtils.isBlank(cname) && cname.equals(name)) {
+                if (!StringUtil.isBlank(cname) && cname.equals(name)) {
                     string = cookie.getValue();
                 }
 

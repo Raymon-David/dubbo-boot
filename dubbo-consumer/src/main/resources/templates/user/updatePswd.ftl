@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>密码修改—个人中心</title>
-		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, userPojo-scalable=no" name="viewport" />
 		<link   rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
 		<link   rel="shortcut icon" href="${basePath}/favicon.ico" />
 		<link href="${basePath}/js/common/bootstrap/3.3.5/css/bootstrap.min.css?${_v}" rel="stylesheet"/>
@@ -19,11 +19,11 @@
 		<@_top.top 1/>
 		<div class="container" style="padding-bottom: 15px;min-height: 300px; margin-top: 40px;">
 			<div class="row">
-				<@_left.user 1/>
+				<@_left.userPojo 1/>
 				<div class="col-md-10">
 					<h2>密码修改</h2>
 					<hr>
-					<form id="formId" enctype="multipart/form-data" action="${basePath}/user/updatePswd.shtml" method="post">
+					<form id="formId" enctype="multipart/form-data" action="${basePath}/userPojo/updatePswd.shtml" method="post">
 						  <div class="form-group">
 						    <label for="pswd">原密码</label>
 						    <input type="password" class="form-control" autocomplete="off" id="pswd" maxlength="20" name="pswd"  placeholder="请输入原密码">

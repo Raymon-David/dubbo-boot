@@ -17,13 +17,13 @@
     where phone =  #{phone,jdbcType=VARCHAR}
   </select>
   <insert id="insert" parameterType="com.raymon.api.pojo.User" >
-    insert into user (username, phone, email, 
+    insert into userPojo (username, phone, email,
       age)
     values (#{username,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{age,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.raymon.api.pojo.User" >
-    insert into user
+    insert into userPojo
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="username != null" >
         username,

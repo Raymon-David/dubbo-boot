@@ -62,7 +62,7 @@ public class Generator {
         // public static final String ID = "test_id";
         // strategy.setEntityColumnConstant(true);
         // 【实体】是否为构建者模型（默认 false）
-        // public User setName(String name) {this.name = name; return this;}
+        // public UserPojo setName(String name) {this.name = name; return this;}
         // strategy.setEntityBuliderModel(true);
         strategy.setLogicDeleteFieldName("enable");
         mpg.setStrategy(strategy);
