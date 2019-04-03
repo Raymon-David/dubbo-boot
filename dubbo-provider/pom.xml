@@ -100,26 +100,6 @@
 			<groupId>org.xmlunit</groupId>
 			<artifactId>xmlunit-core</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.raymon</groupId>
-			<artifactId>dubbo-provider</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.raymon</groupId>
-			<artifactId>dubbo-provider</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.raymon</groupId>
-			<artifactId>dubbo-provider</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.raymon</groupId>
-			<artifactId>dubbo-provider</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
         <!-- mybatis/spring包 -->
         <dependency>
             <groupId>org.mybatis</groupId>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.raymon.provider.dao.excelExport.ExcelExportInfoCommonMapper" >
+  <resultMap id="BaseResultMap" type="com.raymon.api.pojo.excelExport.ExcelExportPojo" >
+    <result column="EXPORT_ID" property="exportId" jdbcType="DECIMAL" />
+    <result column="SAVE_PATH" property="savePath" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR" />
+    <result column="OBJECT_VERSION_NUMBER" property="objectVersionNumber" jdbcType="DECIMAL" />
+    <result column="REQUEST_ID" property="requestId" jdbcType="DECIMAL" />
+    <result column="PROGRAM_ID" property="programId" jdbcType="DECIMAL" />
+    <result column="CREATED_BY" property="createdBy" jdbcType="DECIMAL" />
+    <result column="CREATION_DATE" property="creationDate" jdbcType="DATE" />
+    <result column="LAST_UPDATED_BY" property="lastUpdatedBy" jdbcType="DECIMAL" />
+    <result column="LAST_UPDATE_DATE" property="lastUpdateDate" jdbcType="DATE" />
+    <result column="LAST_UPDATE_LOGIN" property="lastUpdateLogin" jdbcType="DECIMAL" />
+    <result column="FILE_NAME" property="fileName" jdbcType="VARCHAR" />
+    <result column="FILE_TYPE" property="fileType" jdbcType="VARCHAR" />
+    <result column="SQL_CONTENT" property="sqlContent" jdbcType="LONGVARCHAR" />
+    <result column="COLUMN_INFO" property="columnInfo" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Blob_Column_List" >
+    SQL_CONTENT, COLUMN_INFO
+  </sql>
+  <insert id="insert" parameterType="com.raymon.api.pojo.excelExport.ExcelExportPojo" >
+    insert into excel_export_info (EXPORT_ID, SAVE_PATH, STATUS,
+    OBJECT_VERSION_NUMBER, REQUEST_ID, PROGRAM_ID,
+    CREATED_BY, CREATION_DATE, LAST_UPDATED_BY,
+    LAST_UPDATE_DATE, LAST_UPDATE_LOGIN, FILE_NAME,
+    FILE_TYPE, SQL_CONTENT, COLUMN_INFO
+    )
+    values (#{exportId,jdbcType=DECIMAL}, #{savePath,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR},
+    #{objectVersionNumber,jdbcType=DECIMAL}, #{requestId,jdbcType=DECIMAL}, #{programId,jdbcType=DECIMAL},
+    #{createdBy,jdbcType=DECIMAL}, #{creationDate,jdbcType=DATE}, #{lastUpdatedBy,jdbcType=DECIMAL},
+    #{lastUpdateDate,jdbcType=DATE}, #{lastUpdateLogin,jdbcType=DECIMAL}, #{fileName,jdbcType=VARCHAR},
+    #{fileType,jdbcType=VARCHAR}, #{sqlContent,jdbcType=LONGVARCHAR}, #{columnInfo,jdbcType=LONGVARCHAR}
+    )
+  </insert>
+
+  <select id="findById" parameterType="java.lang.Long">
+  select *
+  from excel_export_info
+  where export_id = #{exportId,jdbcType=DECIMAL}
+</select>
+
+  <select id="findFirstByStatusOrderByCreationDate" parameterType="java.lang.String">
+    select *
+    from excel_export_info
+    where STATUS = #{status,jdbcType=VARCHAR}
+  </select>
+</mapper>
