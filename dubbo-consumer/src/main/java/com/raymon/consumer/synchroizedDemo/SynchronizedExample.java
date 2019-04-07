@@ -1,4 +1,4 @@
-package com.raymon.consumer.controller;
+package com.raymon.consumer.synchroizedDemo;
 
 public class SynchronizedExample implements Runnable{
     static SynchronizedExample instance = new SynchronizedExample();

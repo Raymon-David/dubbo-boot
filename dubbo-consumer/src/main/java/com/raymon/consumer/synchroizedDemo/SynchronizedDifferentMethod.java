@@ -1,4 +1,4 @@
-package com.raymon.consumer.controller;
+package com.raymon.consumer.synchroizedDemo;
 
 /**
  * Author: raymon
