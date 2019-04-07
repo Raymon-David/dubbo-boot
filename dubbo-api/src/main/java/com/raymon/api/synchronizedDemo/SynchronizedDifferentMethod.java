@@ -1,4 +1,4 @@
-package com.raymon.consumer.synchroizedDemo;
+package com.raymon.api.synchronizedDemo;
 
 /**
  * Author: raymon

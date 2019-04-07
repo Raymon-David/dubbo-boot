@@ -1,4 +1,4 @@
-package com.raymon.consumer.synchroizedDemo;
+package com.raymon.api.synchronizedDemo;
 
 public class SynchronizedExample implements Runnable{
     static SynchronizedExample instance = new SynchronizedExample();
