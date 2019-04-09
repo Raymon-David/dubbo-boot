@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * Date: 2019/4/7
  * Description:synchronized和lock等价的类
  */
-public class SynchronizedToLock {
+public class SynchronizedToLock13 {
 
     public synchronized void method1(){
         System.out.println("This is synchronized");
@@ -27,7 +27,7 @@ public class SynchronizedToLock {
     }
 
     public static void main(String[] args) {
-        SynchronizedToLock synchronizedToLock = new SynchronizedToLock();
+        SynchronizedToLock13 synchronizedToLock = new SynchronizedToLock13();
         synchronizedToLock.method1();
         synchronizedToLock.method2();
     }
