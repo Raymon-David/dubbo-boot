@@ -5,9 +5,9 @@ package com.raymon.api.synchronizedDemo;
  * Date: 2019/3/31
  * Description:同时访问同一个类中的不同的同步方法
  */
-public class SynchronizedDifferentMethod implements Runnable{
+public class SynchronizedDifferentMethod7 implements Runnable{
 
-    static SynchronizedDifferentMethod instance = new SynchronizedDifferentMethod();
+    static SynchronizedDifferentMethod7 instance = new SynchronizedDifferentMethod7();
 
     @Override
     public void run() {
