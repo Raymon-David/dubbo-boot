@@ -1,4 +1,4 @@
-package com.raymon.api.constent;
+package com.raymon.api.constant;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;

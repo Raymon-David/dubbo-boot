@@ -569,4 +569,15 @@ public class DateUtil {
         String timeDir=DateUtil.dateToString(new Date(),DateUtil.ISO_EXPANDED_DATE_FORMAT);
         System.out.println(timeDir);
     }
+
+    /**
+     * rabbitmq发送订单使用
+     * @param orderTime
+     * @param orderTimeout
+     * @return
+     */
+    public static Date addMinutes(Date orderTime, int orderTimeout) {
+        Date afterDate = new Date(orderTime.getTime() + 60000*orderTimeout);
+        return afterDate;
+    }
 }

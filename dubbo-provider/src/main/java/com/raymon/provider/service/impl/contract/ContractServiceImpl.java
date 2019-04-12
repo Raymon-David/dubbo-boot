@@ -36,16 +36,20 @@ public class ContractServiceImpl implements ContractService {
     }
 
     public ContractInfoPojo queryContractInfoByRedis() {
-        ContractInfoPojo contractInfoPojo;
+        log.info(" ------ ContractServiceImpl queryContractInfoByRedis start -----");
+
+        ContractInfoPojo contractInfo;
 
         if(redisTemplate.opsForValue().get("queryContractInfoByRedis") != null){
                 String str = JSON.toJSONString(redisTemplate.opsForValue().get("queryContractInfoByRedis"));
                  JSONObject userJson = JSONObject.parseObject(str);
-                contractInfoPojo = JSON.toJavaObject(userJson, ContractInfoPojo.class);
+            contractInfo = JSON.toJavaObject(userJson, ContractInfoPojo.class);
         }else{
             redisTemplate.opsForValue().set("queryContractInfoByRedis", mapper.queryData());
-            contractInfoPojo= mapper.queryData();
+            contractInfo= mapper.queryData();
         }
-        return contractInfoPojo;
+
+        log.info(" ------ ContractServiceImpl queryContractInfoByRedis end -----");
+        return contractInfo;
     }
 }
