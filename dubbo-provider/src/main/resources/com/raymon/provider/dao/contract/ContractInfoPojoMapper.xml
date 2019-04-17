@@ -409,7 +409,7 @@
     where cntrt_no = #{cntrtNo,jdbcType=VARCHAR}
   </select>
   <insert id="insert" parameterType="com.raymon.api.pojo.contract.ContractInfoPojo" >
-    insert into bex1000t (firm_cd, cntrt_no, ext_cnt, 
+    insert into contract_info (firm_cd, cntrt_no, ext_cnt,
       goods_cd, cont_frm, acct_proc, 
       cust_no, req_cust_no, req_clerk, 
       juso_gb, use_clerk, ls_rls_gb, 
@@ -609,7 +609,7 @@
       #{scheduleChangeCd,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.raymon.api.pojo.contract.ContractInfoPojo" >
-    insert into bex1000t
+    insert into contract_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="firmCd != null" >
         firm_cd,
@@ -2367,4 +2367,13 @@
       </if>
     </trim>
   </insert>
+  <select id="queryMaxContract" resultMap="BaseResultMap">
+    select concat(SUBSTR(date_format(now(), '%Y%m%d'), 1, 1),
+			SUBSTR(date_format(now(), '%Y%m%d'), 3, 2),
+			'EX',
+			'1',
+			trim(ifnull(max(SUBSTR(cntrt_no, 7, 5)), 0) + 1)
+			) as max_cntrt_no
+    from contract_info
+  </select>
 </mapper>
