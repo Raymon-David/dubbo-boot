@@ -4,13 +4,13 @@
 		<meta charset="utf-8" />
 		<title>${token.nickname} —个人中心</title>
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, userPojo-scalable=no" name="viewport" />
-		<link   rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
-		<link   rel="shortcut icon" href="${basePath}/favicon.ico" />
-		<link href="${basePath}/js/common/bootstrap/3.3.5/css/bootstrap.min.css?${_v}" rel="stylesheet"/>
-		<link href="${basePath}/css/common/base.css?${_v}" rel="stylesheet"/>
-		<script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
-		<script  src="${basePath}/js/common/layer/layer.js"></script>
-		<script  src="${basePath}/js/common/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<link   rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<link   rel="shortcut icon" href="/favicon.ico" />
+		<link href="/static/js/common/bootstrap/3.3.5/css/bootstrap.min.css?${_v}" rel="stylesheet"/>
+		<link href="/static/css/common/base.css?${_v}" rel="stylesheet"/>
+		<script  src="/static/js/common/jquery/jquery1.8.3.min.js"></script>
+		<script  src="/static/js/common/layer/layer.js"></script>
+		<script  src="/static/js/common/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</head>
 	<body data-target="#one" data-spy="scroll">
 		<@_top.top 1/>

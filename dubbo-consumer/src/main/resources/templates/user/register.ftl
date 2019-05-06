@@ -11,15 +11,15 @@
 
         <!-- CSS -->
         <#--link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'-->
-		<link rel="stylesheet" href="${basePath}/css/login/reset.css"/>
-        <link rel="stylesheet" href="${basePath}/css/login/supersized.css"/>
-        <link rel="stylesheet" href="${basePath}/css/login/style.css"/>
+		<link rel="stylesheet" href="/static/css/login/reset.css"/>
+        <link rel="stylesheet" href="/static/css/login/supersized.css"/>
+        <link rel="stylesheet" href="/static/css/login/style.css"/>
 		<style>
 			#vcode >img{cursor:pointer;margin-bottom: -15px;border-radius:5px;}
 		</style>
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
-            <script src="${basePath}/js/common/html5shiv.js"></script>
+            <script src="/static/js/common/html5shiv.js"></script>
         <![endif]-->
     </head>
 
@@ -33,7 +33,7 @@
                 <input type="password" id="re_password"  placeholder="Repeat the password">
                 <div style="text-align: left; margin-left: 10px;" id="vcode">
 	                <input type="text" name="vcode"   placeholder="Verification code" style="width: 110px; margin-left: -8px; margin-right: 8px;">
-                	<img src="${basePath}/open/getGifCode.shtml" />
+                	<img src="/static/open/getGifCode.shtml" />
                 </div>
                 <button type="button" class="register">Register</button>
                 <button type="button" id="login" >Login</button>
@@ -42,20 +42,20 @@
         </div>
 
         <!-- Javascript -->
-        <script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
-        <script  src="${basePath}/js/common/MD5.js"></script>
-        <script  src="${basePath}/js/common/supersized.3.2.7.min.js"></script>
-        <script  src="${basePath}/js/common/supersized-init.js"></script>
-		<script  src="${basePath}/js/common/layer/layer.js"></script>
+        <script  src="/static/js/common/jquery/jquery1.8.3.min.js"></script>
+        <script  src="/static/js/common/MD5.js"></script>
+        <script  src="/static/js/common/supersized.3.2.7.min.js"></script>
+        <script  src="/static/js/common/supersized-init.js"></script>
+		<script  src="/static/js/common/layer/layer.js"></script>
         <script >
 			jQuery(document).ready(function() {
 				//验证码
 				$("#vcode").on("click",'img',function(){
 					/**动态验证码，改变地址，多次在火狐浏览器下，不会变化的BUG，故这样解决*/
 					var i = new Image();
-					i.src = '${basePath}/open/getGifCode.shtml?'  + Math.random();
+					i.src = '/static/open/getGifCode.shtml?'  + Math.random();
 					$(i).replaceAll(this);
-					//$(this).clone(true).attr("src",'${basePath}/open/getGifCode.shtml?'  + Math.random()).replaceAll(this);
+					//$(this).clone(true).attr("src",'/static/open/getGifCode.shtml?'  + Math.random()).replaceAll(this);
 				});
 			    $('.register').click(function(){
 			    	var form = $('#_form');
@@ -84,13 +84,13 @@
 			    		return layer.msg('验证码的长度为4位！',function(){}),!1;
 			    	}
 			    	var load = layer.load();
-			    	$.post("${basePath}/u/subRegister.shtml",$("#_form").serialize() ,function(result){
+			    	$.post("/static/u/subRegister.shtml",$("#_form").serialize() ,function(result){
 			    		layer.close(load);
 			    		if(result && result.status!= 200){
 			    			return layer.msg(result.message,function(){}),!1;
 			    		}else{
 			    			layer.msg('注册成功！' );
-			    			window.location.href= result.back_url || "${basePath}/";
+			    			window.location.href= result.back_url || "/static/";
 			    		}
 			    	},"json");
 			        
