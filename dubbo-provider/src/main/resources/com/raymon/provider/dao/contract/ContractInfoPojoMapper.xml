@@ -398,9 +398,9 @@
   </sql>
   <select id="queryData" resultMap="BaseResultMap">
     select DISTINCT
-    <include refid="Base_Column_List" />
+    cntrt_no
     from contract_info
-    where cntrt_no = '217EX200189' and ext_cnt = '0001'
+    where ext_cnt = '0001'
   </select>
   <select id="queryDataByContractNO" resultMap="BaseResultMap" parameterType="com.raymon.api.pojo.contract.ContractInfoPojo">
     select DISTINCT
@@ -2367,7 +2367,7 @@
       </if>
     </trim>
   </insert>
-  <select id="queryMaxContract" resultMap="BaseResultMap">
+  <select id="queryMaxContract" resultType="java.util.Map">
     select concat(SUBSTR(date_format(now(), '%Y%m%d'), 1, 1),
 			SUBSTR(date_format(now(), '%Y%m%d'), 3, 2),
 			'EX',
@@ -2375,5 +2375,44 @@
 			trim(ifnull(max(SUBSTR(cntrt_no, 7, 5)), 0) + 1)
 			) as max_cntrt_no
     from contract_info
+  </select>
+
+  <select id="querySchedule" resultType="java.util.Map">
+    select *
+    from (
+    select ci.cntrt_no,
+                 cs.req_ymd,
+                 cs.repay_cnt,
+                 cs.req_won,
+                 cs.req_int,
+                 cs.req_tot,
+                 ci.imp_fee,
+                 ci.obtn_cst,
+                 cs.req_tot as new_obtn
+    from contract_info ci
+    left join contract_schedule cs
+    on ci.cntrt_no = cs.cntrt_no
+    and ci.ext_cnt = cs.ext_cnt
+    and cs.repay_cnt != '900'
+    where 1 = 1
+    and ci.cntrt_no = #{contractNo,jdbcType=VARCHAR}
+    union all
+    select ci.cntrt_no,
+                 cs.req_ymd,
+                 '000',
+                 0,
+                 0,
+                 0,
+                 ci.imp_fee,
+                 ci.obtn_cst,
+                 ci.obtn_cst * -1 as new_obtn
+    from contract_info ci
+    left join contract_schedule cs
+    on ci.cntrt_no = cs.cntrt_no
+    and ci.ext_cnt = cs.ext_cnt
+    and cs.repay_cnt = '001'
+    where 1 = 1
+    and ci.cntrt_no = #{contractNo,jdbcType=VARCHAR}) aa
+    order by aa.cntrt_no, aa.repay_cnt;
   </select>
 </mapper>

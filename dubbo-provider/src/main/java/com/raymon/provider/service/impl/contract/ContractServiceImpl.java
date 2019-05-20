@@ -11,6 +11,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
+import java.util.List;
+import java.util.Map;
+
 @Service(version = "${demo.service.version}",
         application = "${dubbo.application.id}",
         protocol = "${dubbo.protocol.id}",
@@ -26,7 +29,7 @@ public class ContractServiceImpl implements ContractService {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    public ContractInfoPojo queryContractInfo() {
+    public List<ContractInfoPojo> queryContractInfo() {
         return mapper.queryData();
     }
 
@@ -35,10 +38,15 @@ public class ContractServiceImpl implements ContractService {
         return mapper.queryDataByContractNO(record);
     }
 
+    @Override
+    public List<Map<String, Object>> querySchedule(String contractNo) {
+        return mapper.querySchedule(contractNo);
+    }
+
     public ContractInfoPojo queryContractInfoByRedis() {
         log.info(" ------ ContractServiceImpl queryContractInfoByRedis start -----");
 
-        ContractInfoPojo contractInfo;
+        ContractInfoPojo contractInfo = null;
 
         if(redisTemplate.opsForValue().get("queryContractInfoByRedis") != null){
                 String str = JSON.toJSONString(redisTemplate.opsForValue().get("queryContractInfoByRedis"));
@@ -46,7 +54,7 @@ public class ContractServiceImpl implements ContractService {
             contractInfo = JSON.toJavaObject(userJson, ContractInfoPojo.class);
         }else{
             redisTemplate.opsForValue().set("queryContractInfoByRedis", mapper.queryData());
-            contractInfo= mapper.queryData();
+            List<ContractInfoPojo> ll = mapper.queryData();
         }
 
         log.info(" ------ ContractServiceImpl queryContractInfoByRedis end -----");
