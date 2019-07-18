@@ -1,4 +1,4 @@
-package com.raymon.api.patternsDemo;
+package com.raymon.api.demo.patternsDemo;
 
 /**
  * Author: raymon

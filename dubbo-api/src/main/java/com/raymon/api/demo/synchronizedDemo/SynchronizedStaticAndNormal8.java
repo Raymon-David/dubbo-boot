@@ -1,14 +1,12 @@
-package com.raymon.api.synchronizedDemo;
+package com.raymon.api.demo.synchronizedDemo;
 
 /**
  * Author: raymon
- * Date: 2019/3/31
- * Description:同时访问同一个类中的不同的同步方法
+ * Date: 2019/4/10
+ * Description:同时访问静态同步方法和非静态同步方法
  */
-public class SynchronizedDifferentMethod7 implements Runnable{
-
-    static SynchronizedDifferentMethod7 instance = new SynchronizedDifferentMethod7();
-
+public class SynchronizedStaticAndNormal8 implements Runnable{
+    static SynchronizedStaticAndNormal8 instance = new SynchronizedStaticAndNormal8();
     @Override
     public void run() {
         if(Thread.currentThread().getName().equals("Thread-0")){
@@ -30,8 +28,8 @@ public class SynchronizedDifferentMethod7 implements Runnable{
         System.out.println("执行完毕");
     }
 
-    public synchronized void method1(){
-        System.out.println("这是第method1，是加锁的" + Thread.currentThread().getName());
+    public synchronized static void method1(){
+        System.out.println("这是第method1，是静态加锁的" + Thread.currentThread().getName());
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -41,7 +39,7 @@ public class SynchronizedDifferentMethod7 implements Runnable{
     }
 
     public synchronized void method2(){
-        System.out.println("这是第method2，是加锁的" + Thread.currentThread().getName());
+        System.out.println("这是第method2，是非静态加锁的" + Thread.currentThread().getName());
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {

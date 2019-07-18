@@ -1,4 +1,4 @@
-package com.raymon.api.synchronizedDemo;
+package com.raymon.api.demo.synchronizedDemo;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
