@@ -20,7 +20,7 @@ import java.io.File;
  * Date: 2019/4/8
  * Description:邮件发送接口实现类
  */
-@Service(version = "${demo.service.version}",
+@Service(version = "${dubbo.service.version}",
         application = "${dubbo.application.id}",
         protocol = "${dubbo.protocol.id}",
         registry = "${dubbo.registry.id}"

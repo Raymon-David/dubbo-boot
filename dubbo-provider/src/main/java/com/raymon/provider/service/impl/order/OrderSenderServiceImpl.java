@@ -22,7 +22,7 @@ import java.util.Date;
  * Date: 2019/4/11
  * Description:rabbitmq发送order
  */
-@Service(version = "${demo.service.version}",
+@Service(version = "${dubbo.service.version}",
         application = "${dubbo.application.id}",
         protocol = "${dubbo.protocol.id}",
         registry = "${dubbo.registry.id}"

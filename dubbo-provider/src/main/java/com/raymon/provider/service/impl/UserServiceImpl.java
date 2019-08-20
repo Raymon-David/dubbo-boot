@@ -7,7 +7,7 @@ import com.raymon.provider.dao.UserMapper;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@Service(version = "${demo.service.version}",
+@Service(version = "${dubbo.service.version}",
         application = "${dubbo.application.id}",
         protocol = "${dubbo.protocol.id}",
         registry = "${dubbo.registry.id}"

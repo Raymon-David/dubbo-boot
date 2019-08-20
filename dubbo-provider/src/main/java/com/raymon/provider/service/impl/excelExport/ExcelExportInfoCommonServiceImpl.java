@@ -15,7 +15,7 @@ import java.util.Optional;
  * Date: 2019/4/2
  * Description:
  */
-@Service(version = "${demo.service.version}",
+@Service(version = "${dubbo.service.version}",
         application = "${dubbo.application.id}",
         protocol = "${dubbo.protocol.id}",
         registry = "${dubbo.registry.id}"

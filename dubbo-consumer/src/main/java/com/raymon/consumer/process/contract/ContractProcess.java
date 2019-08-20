@@ -26,7 +26,7 @@ public class ContractProcess extends BaseProcess{
 
     private static final Logger log =  LoggerFactory.getLogger(ContractProcess.class);
 
-    @Reference(version = "${demo.service.version}",
+    @Reference(version = "${dubbo.service.version}",
             application = "${dubbo.application.id}",
             url = "dubbo://localhost:20880")
     private ContractService contractService;
