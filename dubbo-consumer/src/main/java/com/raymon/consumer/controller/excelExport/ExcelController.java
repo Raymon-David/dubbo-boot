@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ExcelController {
 
-    @Reference(version = "${demo.service.version}",
+    @Reference(version = "${dubbo.service.version}",
             application = "${dubbo.application.id}",
             url = "dubbo://localhost:20880")
     private ExcelExportService excelExportService;

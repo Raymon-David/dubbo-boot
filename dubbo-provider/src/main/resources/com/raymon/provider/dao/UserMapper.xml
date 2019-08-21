@@ -13,7 +13,7 @@
   <select id="queryInfo" resultMap="BaseResultMap" parameterType="com.raymon.api.pojo.User">
     select
     <include refid="Base_Column_List" />
-    from USER
+    from user
     where phone =  #{phone,jdbcType=VARCHAR}
   </select>
   <insert id="insert" parameterType="com.raymon.api.pojo.User" >

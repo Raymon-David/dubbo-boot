@@ -27,7 +27,7 @@ public class OrderController {
 
     private static final Logger log = LoggerFactory.getLogger(OrderController.class);
 
-    @Reference(version = "${demo.service.version}",
+    @Reference(version = "${dubbo.service.version}",
             application = "${dubbo.application.id}",
             url = "dubbo://localhost:20880")
     private OrderSenderService orderSenderService;

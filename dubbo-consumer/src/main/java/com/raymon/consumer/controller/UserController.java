@@ -15,7 +15,7 @@ public class UserController {
 
     private static final Logger log =  LoggerFactory.getLogger(UserController.class);
 
-    @Reference(version = "${demo.service.version}",
+    @Reference(version = "${dubbo.service.version}",
             application = "${dubbo.application.id}",
             url = "dubbo://localhost:20880")
     private UserService userService;

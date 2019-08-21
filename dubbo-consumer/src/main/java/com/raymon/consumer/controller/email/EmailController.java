@@ -22,7 +22,7 @@ import javax.annotation.Resource;
 public class EmailController {
     private static final Logger log = LoggerFactory.getLogger(EmailController.class);
 
-    @Reference(version = "${demo.service.version}",
+    @Reference(version = "${dubbo.service.version}",
             application = "${dubbo.application.id}",
             url = "dubbo://localhost:20880")
     private EmailService emailService;

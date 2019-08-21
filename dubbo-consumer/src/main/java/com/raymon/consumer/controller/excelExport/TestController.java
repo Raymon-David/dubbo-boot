@@ -10,7 +10,7 @@ public class TestController {
     @Autowired
 //    private JdbcTemplate jdbcTemplate;
 
-    @Reference(version = "${demo.service.version}",
+    @Reference(version = "${dubbo.service.version}",
             application = "${dubbo.application.id}",
             url = "dubbo://localhost:20880")
 //    private ExcelExportInfoRepository repository;
