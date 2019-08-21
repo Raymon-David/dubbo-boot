@@ -28,7 +28,7 @@ public class UserController {
     @RequestMapping(value ="/user/hello")
     public User hello() {
         User user = new User();
-        user.setPhone("17600808516");
+        user.setPhone("13901100110");
         return userService.getUser(user);
     }
 
