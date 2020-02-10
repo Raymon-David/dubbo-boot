@@ -67,7 +67,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>RELEASE</version>
+            <version>1.2.25</version>
         </dependency>
 		<!-- FreeeMarker模板引擎所需依赖 -->
 		<dependency>
